@@ -1,0 +1,297 @@
+@import 'bootstrap-custom';
+@import 'font-awesome-custom';
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons-Regular.eot"); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url("../fonts/MaterialIcons-Regular.woff2") format('woff2'),
+    url("../fonts/MaterialIcons-Regular.woff") format('woff'),
+    url("../fonts/MaterialIcons-Regular.ttf") format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 48px;  /* Preferred icon size is 24px */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: #a43f33;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Droid Serif', serif;
+    color: #403F3C;
+}
+h1 {
+    text-transform: uppercase;
+}
+p {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 18px;
+    color: #4E4D4A;
+}
+a {
+    color: #428bca;
+}
+.assistive-text { /*For accessibility to skip navigation*/
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+.btn-label { /*To hide empty links on social media links*/
+    font-size: 0;
+    height: 1px;
+    overflow: hidden;
+}
+
+.responsive-object {
+    display: block;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+    line-height: 1.42857;
+    margin-bottom: 20px;
+    padding: 4px;
+    transition: border 0.2s ease-in-out 0s; 
+    iframe, object, embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ==========================================================================
+  HEADER
+   ========================================================================== */
+
+/* Navigation */
+.navbar {
+    background-color: #3b536c;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    a.navbar-brand {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        background-color: #a43f33;
+        color: #fff;
+        text-shadow: none;
+        letter-spacing: 0.229rem;
+        height: 50px;
+        &:hover {
+            background-color: #a43f33;
+            color: #fff;
+        }
+    }
+    .nav {
+        li {
+            a {
+                text-transform: uppercase;
+                color: #fff !important;
+                text-decoration: none;
+                letter-spacing: 0.229rem;
+                display: block;
+                &:hover {
+                    background-color: #403F3C !important;
+                    color: #fff !important;
+                }
+            }
+            &.active a, &.active a:hover {
+                background-color: #b94a48 !important;
+                color: #fff !important;    
+            }                  
+        } 
+    } 
+}
+.navbar-default .navbar-toggle {
+  border-color: #b94a48;
+}
+
+
+/* ==========================================================================
+  CONTENT
+   ========================================================================== */
+/* Figure */
+figure {
+    img {
+        width: 100%;
+        height: auto;
+    }
+    figcaption p {
+        font-size: 12px;
+        &:before {
+            content: "Caption: ";
+            font-weight: bold;
+        }
+    }  
+}
+
+/* Blog Listing */
+.blogListingH1 {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.flickr {
+    float: left;
+    margin: 12px;
+}
+
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+footer {
+    padding: 12px 0 12px 0;
+    background-color: #403F3C;
+    display: block;
+    overflow: hidden;
+    .footerRight {
+        text-align: right;
+    }
+    ul {
+        margin: 10px 25px;
+        padding: 0;
+        list-style: none;
+        li {
+            i {
+                color: #fff;
+            }
+            a {
+                color: #2790b0;
+                &:hover {
+                    color: #fff;
+                }
+            }
+            &.copyright {
+                color: #b94a48;
+            }
+        }
+        &.footerLeft li {
+            float: left;
+            padding-right: 16px;
+            position: relative;
+            top: 20px;
+            i {
+                font-size: 22px;
+            }
+            a {
+                &:hover {
+                    i {
+                        text-decoration: none;
+                        color: #2790B0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   STYLEGUIDE
+   ========================================================================== */
+code {
+    white-space: normal;
+}
+.codeColor {
+    margin: 30px 0;
+    code {
+        &.swatchFooterGrey {
+            background-color: #403F3C;
+            padding: 20px;
+            color: #fff;
+        }
+        &.swatchDarkGrey {
+            background-color: #4E4D4A;
+            padding: 20px;
+            color: #fff;
+        }
+        &.swatchDarkBlue {
+            background-color: #2B4E72;
+            padding: 20px;
+            color: #fff;
+        }
+        &.swatchBlue {
+            background-color: #2790B0;
+            padding: 20px;
+            color: #fff;
+        }
+        &.swatchRed {
+            background-color: #B94A48;
+            padding: 20px;
+            color: #fff;
+        }
+        &.swatchGrey {
+            background-color: #999999;
+            padding: 20px;
+            color: #fff;
+        }
+        &.swatchLightGrey {
+            background-color: #E6E6E6;
+            padding: 20px;
+            color: #fff;
+        }
+    }
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* Large desktop */
+@media (min-width: 1200px) {  }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    footer ul {
+        text-align: center;
+    }
+    footer, footer .footerRight {
+        text-align: left;
+    }
+    article .blogListing ul {
+        padding: 0;
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 29px;
+    }
+}

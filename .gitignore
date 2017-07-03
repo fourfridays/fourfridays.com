@@ -10,6 +10,7 @@ dev.py
 node_modules
 ua-wagtailenv
 umairabbasi_tags.py
+**/migration/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

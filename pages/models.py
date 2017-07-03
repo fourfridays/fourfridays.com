@@ -48,7 +48,7 @@ class SingleColumnBlock(StructBlock):
     column = StandardHTMLBlock()
 
     class Meta:
-        template = 'fourfridays/single_column_block.html'
+        template = 'single_column_block.html'
         icon = 'placeholder'
         label = 'Single Column'
 
@@ -58,7 +58,7 @@ class TwoColumnBlock(StructBlock):
     right_column = StandardHTMLBlock (icon='arrow-right')
 
     class Meta:
-        template = 'fourfridays/two_column_block.html'
+        template = 'two_column_block.html'
         icon = 'placeholder'
         label = 'Two Columns'
 
@@ -70,7 +70,7 @@ class FourColumnBlock(StructBlock):
     right_column_2 = StandardHTMLBlock(icon='arrow-right')
 
     class Meta:
-        template = 'fourfridays/four_column_block.html'
+        template = 'four_column_block.html'
         label = 'Four Columns'
 
 

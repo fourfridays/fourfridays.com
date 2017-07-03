@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="css/fourfridays.css">
     </head>
 
-    <body>
+    <body class="{% block body_class %}{% endblock %}">
         {% block content %}{% endblock %}
 
         {# Global javascript #}

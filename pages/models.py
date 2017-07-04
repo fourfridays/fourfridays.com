@@ -45,7 +45,20 @@ class StandardHTMLBlock(StructBlock):
 
 
 class SingleColumnBlock(StructBlock):
-    column = StandardHTMLBlock()
+    column = StreamBlock([
+        ('h2', CharBlock(classname="title")),
+        ('h3', CharBlock(classname="title")),
+        ('h4', CharBlock(classname="title")),
+        ('paragraph', RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('document', DocumentChooserBlock(icon="doc-full-inverse")),
+        ('embedded_video', EmbedBlock()),
+        ('lead_body', CharBlock(classname="lead")),
+        ('small_text', CharBlock(classname="small")),
+        ('blockquote', CharBlock(classname="blockquote")),
+        ('pull_quote', PullQuoteBlock()),
+        ('raw_html', RawHTMLBlock()),
+    ],label='Body')
 
     class Meta:
         template = 'single_column_block.html'
@@ -54,8 +67,34 @@ class SingleColumnBlock(StructBlock):
 
 
 class TwoColumnBlock(StructBlock):
-    left_column = StandardHTMLBlock(icon='arrow-left')
-    right_column = StandardHTMLBlock (icon='arrow-right')
+    left_column = StreamBlock([
+        ('h2', CharBlock(classname="title")),
+        ('h3', CharBlock(classname="title")),
+        ('h4', CharBlock(classname="title")),
+        ('paragraph', RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('document', DocumentChooserBlock(icon="doc-full-inverse")),
+        ('embedded_video', EmbedBlock()),
+        ('lead_body', CharBlock(classname="lead")),
+        ('small_text', CharBlock(classname="small")),
+        ('blockquote', CharBlock(classname="blockquote")),
+        ('pull_quote', PullQuoteBlock()),
+        ('raw_html', RawHTMLBlock()),
+    ],label='Body')
+    right_column = StreamBlock([
+        ('h2', CharBlock(classname="title")),
+        ('h3', CharBlock(classname="title")),
+        ('h4', CharBlock(classname="title")),
+        ('paragraph', RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('document', DocumentChooserBlock(icon="doc-full-inverse")),
+        ('embedded_video', EmbedBlock()),
+        ('lead_body', CharBlock(classname="lead")),
+        ('small_text', CharBlock(classname="small")),
+        ('blockquote', CharBlock(classname="blockquote")),
+        ('pull_quote', PullQuoteBlock()),
+        ('raw_html', RawHTMLBlock()),
+    ],label='Body')
 
     class Meta:
         template = 'two_column_block.html'
@@ -64,10 +103,62 @@ class TwoColumnBlock(StructBlock):
 
 
 class FourColumnBlock(StructBlock):
-    left_column_1 = StandardHTMLBlock(icon='arrow-left')
-    left_column_2 = StandardHTMLBlock(icon='arrow-left')
-    right_column_1 = StandardHTMLBlock(icon='arrow-right')
-    right_column_2 = StandardHTMLBlock(icon='arrow-right')
+    left_column_1 = StreamBlock([
+        ('h2', CharBlock(classname="title")),
+        ('h3', CharBlock(classname="title")),
+        ('h4', CharBlock(classname="title")),
+        ('paragraph', RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('document', DocumentChooserBlock(icon="doc-full-inverse")),
+        ('embedded_video', EmbedBlock()),
+        ('lead_body', CharBlock(classname="lead")),
+        ('small_text', CharBlock(classname="small")),
+        ('blockquote', CharBlock(classname="blockquote")),
+        ('pull_quote', PullQuoteBlock()),
+        ('raw_html', RawHTMLBlock()),
+    ],label='Body')
+    left_column_2 = StreamBlock([
+        ('h2', CharBlock(classname="title")),
+        ('h3', CharBlock(classname="title")),
+        ('h4', CharBlock(classname="title")),
+        ('paragraph', RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('document', DocumentChooserBlock(icon="doc-full-inverse")),
+        ('embedded_video', EmbedBlock()),
+        ('lead_body', CharBlock(classname="lead")),
+        ('small_text', CharBlock(classname="small")),
+        ('blockquote', CharBlock(classname="blockquote")),
+        ('pull_quote', PullQuoteBlock()),
+        ('raw_html', RawHTMLBlock()),
+    ],label='Body')
+    right_column_1 = StreamBlock([
+        ('h2', CharBlock(classname="title")),
+        ('h3', CharBlock(classname="title")),
+        ('h4', CharBlock(classname="title")),
+        ('paragraph', RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('document', DocumentChooserBlock(icon="doc-full-inverse")),
+        ('embedded_video', EmbedBlock()),
+        ('lead_body', CharBlock(classname="lead")),
+        ('small_text', CharBlock(classname="small")),
+        ('blockquote', CharBlock(classname="blockquote")),
+        ('pull_quote', PullQuoteBlock()),
+        ('raw_html', RawHTMLBlock()),
+    ],label='Body')
+    right_column_2 = StreamBlock([
+        ('h2', CharBlock(classname="title")),
+        ('h3', CharBlock(classname="title")),
+        ('h4', CharBlock(classname="title")),
+        ('paragraph', RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('document', DocumentChooserBlock(icon="doc-full-inverse")),
+        ('embedded_video', EmbedBlock()),
+        ('lead_body', CharBlock(classname="lead")),
+        ('small_text', CharBlock(classname="small")),
+        ('blockquote', CharBlock(classname="blockquote")),
+        ('pull_quote', PullQuoteBlock()),
+        ('raw_html', RawHTMLBlock()),
+    ],label='Body')
 
     class Meta:
         template = 'four_column_block.html'

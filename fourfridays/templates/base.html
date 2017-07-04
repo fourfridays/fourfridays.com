@@ -9,7 +9,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>
             {% block title %}
-                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %} | fourfridays
+                {% if self.seo_title == 'Home' %}
+                    fourfridays
+                {% else %}
+                    {{ self.seo_title }} | fourfridays
+                {% endif %}
             {% endblock %}
         </title>
         <meta name="description" content="" />

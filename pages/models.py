@@ -23,9 +23,11 @@ class PullQuoteBlock(StructBlock):
         icon = 'openquote'
 
 
-class HTMLAlignmentChoiceBlock(FieldBlock):
+class BackgroundColorBlock(FieldBlock):
     field = forms.ChoiceField(choices=(
-        ('normal', 'Normal'), ('full', 'Full width'),
+        ('normal', 'Normal'), 
+        ('white-smoke', 'White Smoke'),
+        ('aqua-island', 'Aqua Island')
     ))
 
 
@@ -45,7 +47,7 @@ class SingleColumnBlock(StructBlock):
         ('pull_quote', PullQuoteBlock()),
         ('raw_html', RawHTMLBlock()),
     ],label='Body')
-    alignment = HTMLAlignmentChoiceBlock()
+    background_color = BackgroundColorBlock()
 
     class Meta:
         template = 'single_column_block.html'
@@ -84,7 +86,7 @@ class TwoColumnBlock(StructBlock):
         ('pull_quote', PullQuoteBlock()),
         ('raw_html', RawHTMLBlock()),
     ],label='Body')
-    alignment = HTMLAlignmentChoiceBlock()
+    background_color = BackgroundColorBlock()
 
     class Meta:
         template = 'two_column_block.html'
@@ -153,7 +155,7 @@ class FourColumnBlock(StructBlock):
         ('pull_quote', PullQuoteBlock()),
         ('raw_html', RawHTMLBlock()),
     ],label='Body')
-    alignment = HTMLAlignmentChoiceBlock()
+    background_color = BackgroundColorBlock()
 
     class Meta:
         template = 'four_column_block.html'

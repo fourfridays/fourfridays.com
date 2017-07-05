@@ -1,5 +1,5 @@
-{% if self.alignment == 'full' %}
-    <article class="full-width">
+{% if self.background_color.value != 'normal' %}
+    <article class="full-width {{ self.background_color }}">
 {% else %}
     <article>
 {% endif %}

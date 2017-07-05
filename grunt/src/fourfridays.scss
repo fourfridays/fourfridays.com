@@ -148,8 +148,13 @@ a {
 /* Home */
 .fourfridays {
     article {
-        &.full-width {
+        &.white-smoke {
             background-color: rgba(236, 236, 236, 1);
+        }
+        &.aqua-island {
+            background-color: rgba(162, 222, 208, 1);
+        }
+        &.full-width {
             padding: 20px 0;
             i {
                 position: relative;
@@ -163,7 +168,6 @@ a {
             }
         }
     }
-
 }
 
 /* Figure */

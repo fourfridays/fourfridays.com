@@ -145,6 +145,27 @@ a {
 /* ==========================================================================
   CONTENT
    ========================================================================== */
+/* Home */
+.fourfridays {
+    article {
+        &.full-width {
+            background-color: rgba(236, 236, 236, 1);
+            padding: 20px 0;
+            i {
+                position: relative;
+                left: -15px;
+            }
+            h4 {
+                margin-top: 0;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    }
+
+}
+
 /* Figure */
 figure {
     img {

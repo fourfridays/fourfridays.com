@@ -45,6 +45,7 @@ class SingleColumnBlock(StructBlock):
         ('pull_quote', PullQuoteBlock()),
         ('raw_html', RawHTMLBlock()),
     ],label='Body')
+    alignment = HTMLAlignmentChoiceBlock()
 
     class Meta:
         template = 'single_column_block.html'
@@ -83,6 +84,7 @@ class TwoColumnBlock(StructBlock):
         ('pull_quote', PullQuoteBlock()),
         ('raw_html', RawHTMLBlock()),
     ],label='Body')
+    alignment = HTMLAlignmentChoiceBlock()
 
     class Meta:
         template = 'two_column_block.html'
@@ -151,6 +153,7 @@ class FourColumnBlock(StructBlock):
         ('pull_quote', PullQuoteBlock()),
         ('raw_html', RawHTMLBlock()),
     ],label='Body')
+    alignment = HTMLAlignmentChoiceBlock()
 
     class Meta:
         template = 'four_column_block.html'

@@ -1,14 +1,22 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-3">
-       {% include "includes/streamfield.html" with content=self.left_column_1 only %}
+{% if self.alignment == 'full' %}
+    <article class="full-width">
+{% else %}
+    <article>
+{% endif %}
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3">
+           {% include "includes/streamfield.html" with content=self.left_column_1 only %}
+        </div>
+        <div class="col-xs-12 col-sm-3">
+           {% include "includes/streamfield.html" with content=self.left_column_2 only %}
+        </div>
+        <div class="col-xs-12 col-sm-3">
+           {% include "includes/streamfield.html" with content=self.right_column_1 only %}
+        </div>
+        <div class="col-xs-12 col-sm-3">
+           {% include "includes/streamfield.html" with content=self.right_column_2 only %}
+        </div>
     </div>
-    <div class="col-xs-12 col-sm-3">
-       {% include "includes/streamfield.html" with content=self.left_column_2 only %}
-    </div>
-    <div class="col-xs-12 col-sm-3">
-       {% include "includes/streamfield.html" with content=self.right_column_1 only %}
-    </div>
-    <div class="col-xs-12 col-sm-3">
-       {% include "includes/streamfield.html" with content=self.right_column_2 only %}
-    </div>
-</div>
+  </div>
+</article>

@@ -17,14 +17,14 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                '../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
+                '/mnt/volume-nyc1-01-part2/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
             }
         }
     },
     sass: {                              // Task
       dist: {                            // Target
         files: {                         // Dictionary of files
-          '../static/css/fourfridays.css': 'src/fourfridays.scss'
+          '/mnt/volume-nyc1-01-part2/static/css/fourfridays.css': 'src/fourfridays.scss'
         }
       }
     },

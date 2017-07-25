@@ -174,20 +174,6 @@ a {
     }
 }
 
-/* Figure */
-figure {
-    img {
-        width: 100%;
-        height: auto;
-    }
-    figcaption p {
-        font-size: 12px;
-        &:before {
-            content: "Caption: ";
-            font-weight: bold;
-        }
-    }  
-}
 
 /* ==========================================================================
     FOOTER
@@ -256,9 +242,6 @@ footer {
     }
     footer, footer .footerRight {
         text-align: left;
-    }
-    article .blogListing ul {
-        padding: 0;
     }
 }
 

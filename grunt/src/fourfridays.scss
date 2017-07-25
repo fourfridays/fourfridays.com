@@ -238,52 +238,6 @@ footer {
     }
 }
 
-/* ==========================================================================
-   STYLEGUIDE
-   ========================================================================== */
-code {
-    white-space: normal;
-}
-.codeColor {
-    margin: 30px 0;
-    code {
-        &.swatchFooterGrey {
-            background-color: #403F3C;
-            padding: 20px;
-            color: #fff;
-        }
-        &.swatchDarkGrey {
-            background-color: #4E4D4A;
-            padding: 20px;
-            color: #fff;
-        }
-        &.swatchDarkBlue {
-            background-color: #2B4E72;
-            padding: 20px;
-            color: #fff;
-        }
-        &.swatchBlue {
-            background-color: #2790B0;
-            padding: 20px;
-            color: #fff;
-        }
-        &.swatchRed {
-            background-color: #B94A48;
-            padding: 20px;
-            color: #fff;
-        }
-        &.swatchGrey {
-            background-color: #999999;
-            padding: 20px;
-            color: #fff;
-        }
-        &.swatchLightGrey {
-            background-color: #E6E6E6;
-            padding: 20px;
-            color: #fff;
-        }
-    }
-}
 
 /* ==========================================================================
    MEDIA QUERIES

@@ -150,6 +150,27 @@ a {
 /* ==========================================================================
   CONTENT
    ========================================================================== */
+/* Blocks */
+.block-four_columns {
+    .rich-text {
+        p {
+            font-size: 1em;
+        }
+    }
+    i {
+        position: relative;
+        left: -10px;
+    }
+}
+
+.block-two_columns {
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 /* Home */
 .fourfridays {
     article {

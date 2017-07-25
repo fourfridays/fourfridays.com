@@ -27,7 +27,8 @@ class BackgroundColorBlock(FieldBlock):
     field = forms.ChoiceField(choices=(
         ('normal', 'Normal'), 
         ('white-smoke', 'White Smoke'),
-        ('aqua-island', 'Aqua Island')
+        ('aqua-island', 'Aqua Island'),
+        ('concrete', 'Concrete')
     ))
 
 

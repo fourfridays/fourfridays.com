@@ -165,7 +165,7 @@ class FourColumnBlock(StructBlock):
 
 class HeroImageBlock(StructBlock):
     image = ImageChooserBlock(required=True)
-    alternate_text = CharBlock(help_text='Text provided to screen readers')
+    alternate_text = CharBlock(help_text='Text for screen readers')
     caption = CharBlock(required=False, help_text='Caption will be shown below the image')
     overlay_text = BooleanBlock(required=False, help_text='If checked, caption is overlayed on image')
 
@@ -178,7 +178,7 @@ class Pages(Page):
         ('single_column', SingleColumnBlock()),
         ('two_columns', TwoColumnBlock()),
         ('four_columns', FourColumnBlock()),
-        ('hero_image', HeroImageBlock()),
+        ('hero_image', HeroImageBlock(icon='image')),
     ],default='')
 
     content_panels = Page.content_panels + [

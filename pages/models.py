@@ -164,10 +164,10 @@ class FourColumnBlock(StructBlock):
         label = 'Four Columns'
 
 class HeroImageBlock(StructBlock):
-    image = ImageChooserBlock(required=True),
-    alternate_text = CharBlock(required=True, help_text='Text provided to screen readers'),
-    caption = CharBlock(),
-    overlay_text = CharBlock()
+    image = ImageChooserBlock(required=True)
+    alternate_text = CharBlock(required=True, help_text='Text provided to screen readers')
+    caption = CharBlock(required=False)
+    overlay_text = CharBlock(required=False)
 
     class Meta:
         template = 'hero_image_block.html'

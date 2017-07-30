@@ -1,3 +1,4 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
-{% include_block page.body %}
+{% image value.image fill-2560x1084-c100 as heroimage %}
+<img class="img-responsive" src="{{ heroimage.url }}" alt="{% include_block value.alternate_text %}"/>

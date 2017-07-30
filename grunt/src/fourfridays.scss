@@ -279,6 +279,15 @@ footer {
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    /* Hero Images */
+    .block-hero_image figure.overlay {
+        figcaption {
+            padding: 6px; 
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+    }
     footer ul {
         text-align: center;
     }
@@ -291,5 +300,13 @@ footer {
 @media (max-width: 480px) {
     h1 {
         font-size: 29px;
+    }
+    /* Hero Images */
+    .block-hero_image figure.overlay {
+        figcaption {
+            h2 {
+                font-size: 0.9em;
+            }
+        }
     }
 }

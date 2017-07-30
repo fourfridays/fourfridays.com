@@ -15,13 +15,6 @@ from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
 
-class PullQuoteBlock(StructBlock):
-    quote = TextBlock('quote title')
-    attribution = CharBlock()
-
-    class Meta:
-        icon = 'openquote'
-
 
 class BackgroundColorBlock(FieldBlock):
     field = forms.ChoiceField(choices=(
@@ -30,6 +23,14 @@ class BackgroundColorBlock(FieldBlock):
         ('aqua-island', 'Aqua Island'),
         ('concrete', 'Concrete')
     ))
+
+
+class PullQuoteBlock(StructBlock):
+    quote = TextBlock('quote title')
+    attribution = CharBlock()
+
+    class Meta:
+        icon = 'openquote'
 
 
 class SingleColumnBlock(StructBlock):
@@ -162,12 +163,22 @@ class FourColumnBlock(StructBlock):
         template = 'four_column_block.html'
         label = 'Four Columns'
 
+class HeroImageBlock(StructBlock):
+    image = ImageChooserBlock(required=True),
+    alternate_text = CharBlock(required=True),
+    caption = CharBlock(),
+    overlay_text = CharBlock()
+
+    class Meta:
+        template = 'hero_image_block.html'
+
 
 class Pages(Page):
     body = StreamField([
         ('single_column', SingleColumnBlock()),
         ('two_columns', TwoColumnBlock()),
         ('four_columns', FourColumnBlock()),
+        ('hero_image', HeroImageBlock()),
     ],default='')
 
     content_panels = Page.content_panels + [

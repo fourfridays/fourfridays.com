@@ -198,6 +198,24 @@ a {
     }
 }
 
+/* Hero Images */
+.block-hero_image figure.overlay {
+    position: relative; 
+    width: 100%; /* for IE 6 */
+    figcaption {
+        background-color: rgba(192, 57, 43, 0.52);
+        position: absolute;
+        top: 70%;
+        left: 10%;  
+        transform: translate(-10%, -70%);
+        padding: 10px; 
+        h2 {
+            color: #f0f0f0;
+            font-size: 1.7em;
+            letter-spacing: -0.05em;
+        }
+    }
+}
 
 /* ==========================================================================
     FOOTER

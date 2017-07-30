@@ -10,7 +10,7 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
 
 from wagtail.contrib.table_block.blocks import TableBlock
 
-from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock
+from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
@@ -165,9 +165,9 @@ class FourColumnBlock(StructBlock):
 
 class HeroImageBlock(StructBlock):
     image = ImageChooserBlock(required=True)
-    alternate_text = CharBlock(required=True, help_text='Text provided to screen readers')
+    alternate_text = CharBlock(help_text='Text provided to screen readers')
     caption = CharBlock(required=False, help_text='Caption will be shown below the image')
-    overlay_text = CharBlock(required=False, help_text='Text shown on top of the image')
+    overlay_text = BooleanBlock(required=False, help_text='If checked, caption is overlayed on image')
 
     class Meta:
         template = 'hero_image_block.html'

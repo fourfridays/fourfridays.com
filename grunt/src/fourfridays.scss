@@ -203,6 +203,7 @@ a {
     position: relative; 
     width: 100%; /* for IE 6 */
     figcaption {
+        max-width: 45%;
         background-color: rgba(192, 57, 43, 0.52);
         position: absolute;
         top: 70%;
@@ -304,6 +305,7 @@ footer {
     /* Hero Images */
     .block-hero_image figure.overlay {
         figcaption {
+            max-width: 55%;
             h2 {
                 font-size: 0.9em;
             }

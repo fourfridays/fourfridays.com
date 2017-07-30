@@ -165,7 +165,7 @@ class FourColumnBlock(StructBlock):
 
 class HeroImageBlock(StructBlock):
     image = ImageChooserBlock(required=True),
-    alternate_text = CharBlock(required=True),
+    alternate_text = CharBlock(required=True, help_text='Text provided to screen readers'),
     caption = CharBlock(),
     overlay_text = CharBlock()
 

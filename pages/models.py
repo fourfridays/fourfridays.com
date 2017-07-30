@@ -167,7 +167,7 @@ class HeroImageBlock(StructBlock):
     image = ImageChooserBlock(required=True)
     alternate_text = CharBlock(required=True, help_text='Text provided to screen readers')
     caption = CharBlock(required=False)
-    overlay_text = CharBlock(required=False)
+    overlay_text = CharBlock(required=False, help_text='Text shown on top of the image')
 
     class Meta:
         template = 'hero_image_block.html'

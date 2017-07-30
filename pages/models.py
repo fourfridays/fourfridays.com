@@ -10,17 +10,10 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
 
 from wagtail.contrib.table_block.blocks import TableBlock
 
-from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock
+from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
-
-class PullQuoteBlock(StructBlock):
-    quote = TextBlock('quote title')
-    attribution = CharBlock()
-
-    class Meta:
-        icon = 'openquote'
 
 
 class BackgroundColorBlock(FieldBlock):
@@ -30,6 +23,14 @@ class BackgroundColorBlock(FieldBlock):
         ('aqua-island', 'Aqua Island'),
         ('concrete', 'Concrete')
     ))
+
+
+class PullQuoteBlock(StructBlock):
+    quote = TextBlock('quote title')
+    attribution = CharBlock()
+
+    class Meta:
+        icon = 'openquote'
 
 
 class SingleColumnBlock(StructBlock):
@@ -162,12 +163,23 @@ class FourColumnBlock(StructBlock):
         template = 'four_column_block.html'
         label = 'Four Columns'
 
+class HeroImageBlock(StructBlock):
+    image = ImageChooserBlock(required=True)
+    alternate_text = CharBlock(help_text='Text for screen readers')
+    caption = CharBlock(required=False, help_text='Caption will be shown below the image')
+    overlay_text = BooleanBlock(required=False, help_text='If checked, caption is overlayed on image')
+    photo_credit = CharBlock(required=False, help_text='This will show bottom right on the image')
+
+    class Meta:
+        template = 'hero_image_block.html'
+
 
 class Pages(Page):
     body = StreamField([
         ('single_column', SingleColumnBlock()),
         ('two_columns', TwoColumnBlock()),
         ('four_columns', FourColumnBlock()),
+        ('hero_image', HeroImageBlock(icon='image')),
     ],default='')
 
     content_panels = Page.content_panels + [

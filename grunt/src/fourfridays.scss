@@ -2,11 +2,11 @@
 @import 'font-awesome-custom';
 
 @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/MaterialIcons-Regular.eot"); /* For IE6-8 */
-  src: local('Material Icons'),
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/MaterialIcons-Regular.eot"); /* For IE6-8 */
+    src: local('Material Icons'),
     local('MaterialIcons-Regular'),
     url("../fonts/MaterialIcons-Regular.woff2") format('woff2'),
     url("../fonts/MaterialIcons-Regular.woff") format('woff'),
@@ -14,28 +14,28 @@
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  color: #a43f33;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color: #a43f33;
 
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
 
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+    /* Support for IE. */
+    font-feature-settings: 'liga';
 }
 
 .material-icons.md-18 { font-size: 18px; }
@@ -143,7 +143,7 @@ a {
     } 
 }
 .navbar-default .navbar-toggle {
-  border-color: #b94a48;
+    border-color: #b94a48;
 }
 
 
@@ -198,6 +198,36 @@ a {
     }
 }
 
+/* Hero Images */
+.block-hero_image figure.overlay {
+    position: relative; 
+    width: 100%; /* for IE 6 */
+    figcaption {
+        max-width: 45%;
+        background-color: rgba(192, 57, 43, 0.52);
+        position: absolute;
+        top: 65%;
+        left: 10%;  
+        transform: translate(-10%, -65%);
+        padding: 10px; 
+        h2 {
+            color: #f0f0f0;
+            font-size: 1.7em;
+            letter-spacing: -0.03em;
+        }
+    }
+    .photo-credit {
+        position: absolute; /* absolute position (so we can position it where we want)*/
+        bottom: 0; /* position will be on bottom */
+        width: auto;
+        right: 0;
+        padding: 4px;
+        background-color: #000;
+        color: #fff;
+        opacity: 0.5; /* transparency */
+        filter: alpha(opacity=50); /* IE transparency */
+    }
+}
 
 /* ==========================================================================
     FOOTER
@@ -261,6 +291,18 @@ footer {
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    /* Hero Images */
+    .block-hero_image figure.overlay {
+        figcaption {
+            padding: 6px; 
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+        .photo-credit {
+            font-size: 95%;
+        }
+    }
     footer ul {
         text-align: center;
     }
@@ -273,5 +315,18 @@ footer {
 @media (max-width: 480px) {
     h1 {
         font-size: 29px;
+    }
+    /* Hero Images */
+    .block-hero_image figure.overlay {
+        figcaption {
+            max-width: 55%;
+            h2 {
+                font-size: 0.9em;
+            }
+        }
+        .photo-credit {
+            font-size: 65%;
+            padding: 3px;
+        }
     }
 }

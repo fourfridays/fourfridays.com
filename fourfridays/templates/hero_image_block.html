@@ -7,9 +7,19 @@
         <figcaption>
             <h2>{{ value.caption }}</h2>
         </figcaption>
+        {% if value.photo_credit %}
+            <div class="photo-credit">
+                <small>{{ value.photo_credit }}</small>
+            </div>
+        {% endif %}
     {% elif value.caption %}
         <figcaption>
             <small><b>Caption:</b> {{ value.caption }}</small>
         </figcaption>
+        {% if value.photo_credit %}
+            <div class="photo-credit">
+                <small>{{ value.photo_credit }}</small>
+            </div>
+        {% endif %}
     {% endif %}
 </figure>

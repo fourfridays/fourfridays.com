@@ -166,7 +166,7 @@ class FourColumnBlock(StructBlock):
 class HeroImageBlock(StructBlock):
     image = ImageChooserBlock(required=True)
     alternate_text = CharBlock(required=True, help_text='Text provided to screen readers')
-    caption = CharBlock(required=False)
+    caption = CharBlock(required=False, help_text='Caption will be shown below the image')
     overlay_text = CharBlock(required=False, help_text='Text shown on top of the image')
 
     class Meta:

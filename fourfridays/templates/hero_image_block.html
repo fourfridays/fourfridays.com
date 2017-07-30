@@ -1,4 +1,15 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 {% image value.image fill-2560x1084-c100 as heroimage %}
-<img class="img-responsive" src="{{ heroimage.url }}" alt="{% include_block value.alternate_text %}"/>
+<figure {% if value.caption and value.overlay_text %}class="overlay"{% endif %}>
+    <img class="img-responsive" src="{{ heroimage.url }}" alt="{{ value.alternate_text }}"/>
+    {% if value.caption and value.overlay_text %}
+        <figcaption>
+            <h2>{{ value.caption }}</h2>
+        </figcaption>
+    {% elif value.caption %}
+        <figcaption>
+            <small><b>Caption:</b> {{ value.caption }}</small>
+        </figcaption>
+    {% endif %}
+</figure>

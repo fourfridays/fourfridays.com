@@ -32,136 +32,52 @@ class PullQuoteBlock(StructBlock):
     class Meta:
         icon = 'openquote'
 
+class HtmlFormatBlock(StreamBlock):
+    h2 = CharBlock(classname='title')
+    h3 = CharBlock(classname='title')
+    h4 = CharBlock(classname='title')
+    paragraph = RichTextBlock()
+    table = TableBlock(template='includes/table.html')
+    image = ImageChooserBlock()
+    document = DocumentChooserBlock(icon='doc-full-inverse')
+    embedded_video = EmbedBlock()
+    lead_body = CharBlock(classname='lead')
+    small_text = CharBlock(classname='small')
+    blockquote = CharBlock(classname='blockquote')
+    pull_quote = PullQuoteBlock()
+    raw_html = RawHTMLBlock()
+
 
 class SingleColumnBlock(StructBlock):
-    column = StreamBlock([
-        ('h2', CharBlock(classname='title')),
-        ('h3', CharBlock(classname='title')),
-        ('h4', CharBlock(classname='title')),
-        ('paragraph', RichTextBlock()),
-        ('table', TableBlock(template='includes/table.html')),
-        ('image', ImageChooserBlock()),
-        ('document', DocumentChooserBlock(icon='doc-full-inverse')),
-        ('embedded_video', EmbedBlock()),
-        ('lead_body', CharBlock(classname='lead')),
-        ('small_text', CharBlock(classname='small')),
-        ('blockquote', CharBlock(classname='blockquote')),
-        ('pull_quote', PullQuoteBlock()),
-        ('raw_html', RawHTMLBlock()),
-    ],label='Body')
+    column = HtmlFormatBlock()
     background_color = BackgroundColorBlock()
 
     class Meta:
         template = 'single_column_block.html'
-        icon = 'placeholder'
         label = 'Single Column'
 
 
 class TwoColumnBlock(StructBlock):
-    left_column = StreamBlock([
-        ('h2', CharBlock(classname='title')),
-        ('h3', CharBlock(classname='title')),
-        ('h4', CharBlock(classname='title')),
-        ('paragraph', RichTextBlock()),
-        ('table', TableBlock(template='includes/table.html')),
-        ('image', ImageChooserBlock()),
-        ('document', DocumentChooserBlock(icon='doc-full-inverse')),
-        ('embedded_video', EmbedBlock()),
-        ('lead_body', CharBlock(classname='lead')),
-        ('small_text', CharBlock(classname='small')),
-        ('blockquote', CharBlock(classname='blockquote')),
-        ('pull_quote', PullQuoteBlock()),
-        ('raw_html', RawHTMLBlock()),
-    ],label='Body')
-    right_column = StreamBlock([
-        ('h2', CharBlock(classname='title')),
-        ('h3', CharBlock(classname='title')),
-        ('h4', CharBlock(classname='title')),
-        ('paragraph', RichTextBlock()),
-        ('table', TableBlock(template='includes/table.html')),
-        ('image', ImageChooserBlock()),
-        ('document', DocumentChooserBlock(icon='doc-full-inverse')),
-        ('embedded_video', EmbedBlock()),
-        ('lead_body', CharBlock(classname='lead')),
-        ('small_text', CharBlock(classname='small')),
-        ('blockquote', CharBlock(classname='blockquote')),
-        ('pull_quote', PullQuoteBlock()),
-        ('raw_html', RawHTMLBlock()),
-    ],label='Body')
+    left_column = HtmlFormatBlock()
+    right_column = HtmlFormatBlock()
     background_color = BackgroundColorBlock()
 
     class Meta:
         template = 'two_column_block.html'
-        icon = 'placeholder'
         label = 'Two Columns'
 
 
 class FourColumnBlock(StructBlock):
-    left_column_1 = StreamBlock([
-        ('h2', CharBlock(classname='title')),
-        ('h3', CharBlock(classname='title')),
-        ('h4', CharBlock(classname='title')),
-        ('paragraph', RichTextBlock()),
-        ('table', TableBlock(template='includes/table.html')),
-        ('image', ImageChooserBlock()),
-        ('document', DocumentChooserBlock(icon='doc-full-inverse')),
-        ('embedded_video', EmbedBlock()),
-        ('lead_body', CharBlock(classname='lead')),
-        ('small_text', CharBlock(classname='small')),
-        ('blockquote', CharBlock(classname='blockquote')),
-        ('pull_quote', PullQuoteBlock()),
-        ('raw_html', RawHTMLBlock()),
-    ],label='Body')
-    left_column_2 = StreamBlock([
-        ('h2', CharBlock(classname='title')),
-        ('h3', CharBlock(classname='title')),
-        ('h4', CharBlock(classname='title')),
-        ('paragraph', RichTextBlock()),
-        ('table', TableBlock(template='includes/table.html')),
-        ('image', ImageChooserBlock()),
-        ('document', DocumentChooserBlock(icon='doc-full-inverse')),
-        ('embedded_video', EmbedBlock()),
-        ('lead_body', CharBlock(classname='lead')),
-        ('small_text', CharBlock(classname='small')),
-        ('blockquote', CharBlock(classname='blockquote')),
-        ('pull_quote', PullQuoteBlock()),
-        ('raw_html', RawHTMLBlock()),
-    ],label='Body')
-    right_column_1 = StreamBlock([
-        ('h2', CharBlock(classname='title')),
-        ('h3', CharBlock(classname='title')),
-        ('h4', CharBlock(classname='title')),
-        ('paragraph', RichTextBlock()),
-        ('table', TableBlock(template='includes/table.html')),
-        ('image', ImageChooserBlock()),
-        ('document', DocumentChooserBlock(icon='doc-full-inverse')),
-        ('embedded_video', EmbedBlock()),
-        ('lead_body', CharBlock(classname='lead')),
-        ('small_text', CharBlock(classname='small')),
-        ('blockquote', CharBlock(classname='blockquote')),
-        ('pull_quote', PullQuoteBlock()),
-        ('raw_html', RawHTMLBlock()),
-    ],label='Body')
-    right_column_2 = StreamBlock([
-        ('h2', CharBlock(classname='title')),
-        ('h3', CharBlock(classname='title')),
-        ('h4', CharBlock(classname='title')),
-        ('paragraph', RichTextBlock()),
-        ('table', TableBlock(template='includes/table.html')),
-        ('image', ImageChooserBlock()),
-        ('document', DocumentChooserBlock(icon='doc-full-inverse')),
-        ('embedded_video', EmbedBlock()),
-        ('lead_body', CharBlock(classname='lead')),
-        ('small_text', CharBlock(classname='small')),
-        ('blockquote', CharBlock(classname='blockquote')),
-        ('pull_quote', PullQuoteBlock()),
-        ('raw_html', RawHTMLBlock()),
-    ],label='Body')
+    left_column_1 = HtmlFormatBlock()
+    left_column_2 = HtmlFormatBlock()
+    right_column_1 = HtmlFormatBlock()
+    right_column_2 = HtmlFormatBlock()
     background_color = BackgroundColorBlock()
 
     class Meta:
         template = 'four_column_block.html'
         label = 'Four Columns'
+
 
 class HeroImageBlock(StructBlock):
     image = ImageChooserBlock(required=True)

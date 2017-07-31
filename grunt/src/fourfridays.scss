@@ -320,6 +320,13 @@ footer {
     h1 {
         font-size: 29px;
     }
+    .block-two_columns {
+        .row {
+            display: block;
+            justify-content: none;
+            align-items: none;
+        }
+    }
     /* Hero Images */
     .block-hero_image figure.overlay {
         figcaption {

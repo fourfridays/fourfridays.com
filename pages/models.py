@@ -25,12 +25,49 @@ class BackgroundColorBlock(FieldBlock):
     ))
 
 
+class FontAwesomeIconSizeBlock(FieldBlock):
+    field = forms.ChoiceField(choices=(
+        ('lg', 'fa-lg'), 
+        ('2x', 'fa-2x'),
+        ('3x', 'fa-3x'),
+        ('4x', 'fa-4x'),
+        ('5x', 'fa-5x'),
+    ))
+
+
+class MaterialIconSizeBlock(FieldBlock):
+    field = forms.ChoiceField(choices=(
+        ('18', '18'), 
+        ('24', '24'),
+        ('36', '36'),
+        ('48', '48'),
+        ('60', '60'),
+        ('72', '72'),
+        ('84', '84'),
+        ('96', '96'),
+        ('108', '108'),
+        ('120', '120'),
+    ))
+
+
 class PullQuoteBlock(StructBlock):
     quote = TextBlock('quote title')
     attribution = CharBlock()
 
     class Meta:
         icon = 'openquote'
+
+
+class IconBlock(StructBlock):
+    font_awesome_icon_name = CharBlock(required=False)
+    font_awesome_icon_size = FontAwesomeIconSizeBlock()
+    material_icon_name = CharBlock(required=False)
+    material_icon_size = MaterialIconSizeBlock()
+
+    class Meta:
+        template = 'icon_block.html'
+        label = 'Icon'
+
 
 class HtmlFormatBlock(StreamBlock):
     h2 = CharBlock(classname='title')
@@ -45,6 +82,7 @@ class HtmlFormatBlock(StreamBlock):
     small_text = CharBlock(classname='small')
     blockquote = CharBlock(classname='blockquote')
     pull_quote = PullQuoteBlock()
+    icon = IconBlock()
     raw_html = RawHTMLBlock()
 
 
@@ -92,9 +130,9 @@ class HeroImageBlock(StructBlock):
 
 class Pages(Page):
     body = StreamField([
-        ('single_column', SingleColumnBlock()),
-        ('two_columns', TwoColumnBlock()),
-        ('four_columns', FourColumnBlock()),
+        ('single_column', SingleColumnBlock(group='COLUMNS')),
+        ('two_columns', TwoColumnBlock(group='COLUMNS')),
+        ('four_columns', FourColumnBlock(group='COLUMNS')),
         ('hero_image', HeroImageBlock(icon='image')),
     ],default='')
 

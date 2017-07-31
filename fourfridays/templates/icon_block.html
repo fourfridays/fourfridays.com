@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %}
+
+{% if value.font_awesome_icon_name %}
+    <i class="fa {{ value.font_awesome_icon_name }} {{ value.font_awesome_icon_size }}" aria-hidden="true"></i>
+{% elif value.material_icon_name %}
+    <i class="material-icons md-{{ value.material_icon_size }}">{{ value.material_icon_name }}</i>
+{% endif %}

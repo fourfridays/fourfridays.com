@@ -152,9 +152,12 @@ a {
    ========================================================================== */
 /* Blocks */
 .block-four_columns {
+    h2, h3, h4 {
+        margin-top: 0;
+    }    
     .rich-text {
         p {
-            font-size: 1em;
+            font-size: 1.04em;
         }
     }
     i {
@@ -185,9 +188,6 @@ a {
         }
         &.full-width {
             padding: 50px 0;
-            h4 {
-                margin-top: 0;
-            }
             .col-md-6 {
                 i {
                     display: block;

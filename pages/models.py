@@ -82,9 +82,9 @@ class FourColumnBlock(StructBlock):
 class HeroImageBlock(StructBlock):
     image = ImageChooserBlock(required=True)
     alternate_text = CharBlock(help_text='Text for screen readers')
-    caption = CharBlock(required=False, help_text='Caption will be shown below the image')
+    caption = CharBlock(required=False, max_length=120, help_text='Caption will be shown below the image')
     overlay_text = BooleanBlock(required=False, help_text='If checked, caption is overlayed on image')
-    photo_credit = CharBlock(required=False, help_text='This will show bottom right on the image')
+    photo_credit = CharBlock(required=False, max_length=80, help_text='This will show bottom right on the image')
 
     class Meta:
         template = 'hero_image_block.html'

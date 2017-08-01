@@ -164,7 +164,7 @@ a {
             font-size: 1.04em;
         }
     }
-    i {
+    .icon {
         position: relative;
         left: -10px;
     }
@@ -307,6 +307,16 @@ footer {
             font-size: 95%;
         }
     }
+    .block-four_columns {
+        h2, h3, h4 {
+            text-align: center;
+        }    
+        .icon {
+            position: none;
+            left: 0;
+            text-align: center;
+        }
+    }
     footer ul {
         text-align: center;
     }
@@ -325,6 +335,9 @@ footer {
             display: block;
             justify-content: none;
             align-items: none;
+            h2 {
+                text-align: center;
+            }
         }
     }
     /* Hero Images */

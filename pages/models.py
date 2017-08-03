@@ -4,9 +4,9 @@ from django.db import models
 from django import forms
 
 from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import StreamField
+from wagtail.wagtailcore.fields import StreamField, RichTextField
 from wagtail.wagtailcore import blocks
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
 
 from wagtail.contrib.table_block.blocks import TableBlock
 
@@ -14,6 +14,10 @@ from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, Fiel
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
+
+
+from modelcluster.fields import ParentalKey
+from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
 
 
 class BackgroundColorBlock(FieldBlock):
@@ -126,6 +130,28 @@ class HeroImageBlock(StructBlock):
 
     class Meta:
         template = 'hero_image_block.html'
+
+
+class FormField(AbstractFormField):
+    page = ParentalKey('FormPage', related_name='form_fields')
+
+
+class FormPage(AbstractEmailForm):
+    intro = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel('intro', classname="full"),
+        InlinePanel('form_fields', label="Form fields", classname='form-group'),
+        FieldPanel('thank_you_text', classname="full"),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('from_address', classname="col6"),
+                FieldPanel('to_address', classname="col6"),
+            ]),
+            FieldPanel('subject'),
+        ], "Email"),
+    ]
 
 
 class Pages(Page):

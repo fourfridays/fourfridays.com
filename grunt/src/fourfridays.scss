@@ -68,6 +68,12 @@ p {
 a {
     color: #428bca;
 }
+
+.btn-primary {
+    background-color: #a43f33;
+    border-color: #a43f33;
+}
+
 .assistive-text { /*For accessibility to skip navigation*/
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
@@ -113,17 +119,19 @@ a {
     background-image: none;
     border: none;
     border-radius: 0;
-    a.navbar-brand {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 18px;
-        background-color: #a43f33;
-        color: #fff;
-        text-shadow: none;
-        letter-spacing: 0.119rem;
-        height: 50px;
-        &:hover {
+    a {
+        &.navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
             background-color: #a43f33;
             color: #fff;
+            text-shadow: none;
+            letter-spacing: 0.119rem;
+            height: 50px;
+            &:hover {
+                background-color: #a43f33;
+                color: #fff;
+            }
         }
     }
     .nav {
@@ -154,6 +162,9 @@ a {
 /* ==========================================================================
   CONTENT
    ========================================================================== */
+main {
+    margin-bottom: 20px;
+}
 /* Blocks */
 .block-four_columns {
     h2, h3, h4 {
@@ -230,6 +241,31 @@ a {
         color: #fff;
         opacity: 0.5; /* transparency */
         filter: alpha(opacity=50); /* IE transparency */
+    }
+}
+
+/* ==========================================================================
+    FORMS
+   ========================================================================== */
+form {
+    @extend .col-sm-offset-1;
+    p {
+        @extend .form-group, .col-sm-8;
+        span.helptext {
+            @extend .help-block, .small;
+        }
+        textarea {
+            @extend .form-control;
+        }
+    }
+    input {
+        &[type="text"] {
+            @extend .form-control;
+            @extend .input-lg;
+        }
+        &[type="submit"] {
+            @extend .col-xs-offset-4, .btn, .btn-primary;
+        }
     }
 }
 

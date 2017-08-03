@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+{% block body_class %}{{ self.title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                {{ page.thank_you_text|richtext }}
+            </div>
+        </div>
+        <div class ="row">
+            <div class="col-xs-12">
+                <a href="/"><button class="btn btn-primary btn-sm">Return to homepage</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

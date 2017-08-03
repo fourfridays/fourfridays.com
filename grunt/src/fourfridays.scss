@@ -267,7 +267,7 @@ form {
             @extend .input-lg;
         }
         &[type="submit"] {
-            @extend .col-xs-offset-4, .btn, .btn-primary;
+            @extend .col-xs-offset-5, .btn, .btn-primary;
         }
     }
 }

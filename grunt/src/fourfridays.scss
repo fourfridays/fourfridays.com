@@ -168,6 +168,7 @@ a {
 main {
     margin-bottom: 20px;
 }
+
 /* Blocks */
 .block-four_columns {
     h2, h3, h4 {
@@ -207,7 +208,7 @@ main {
         &.full-width {
             padding: 50px 0;
             .col-md-6 {
-                .icon {
+                .icon, a {
                     display: block;
                     text-align: center;
                 }

@@ -262,7 +262,7 @@ form {
         }
     }
     input {
-        &[type="text"] {
+        &[type="text"], &[type="email"] {
             @extend .form-control;
             @extend .input-lg;
         }

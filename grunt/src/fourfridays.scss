@@ -72,6 +72,9 @@ a {
 .btn-primary {
     background-color: #a43f33;
     border-color: #a43f33;
+    &:hover {
+        background-color: #3b536c;
+    }
 }
 
 .assistive-text { /*For accessibility to skip navigation*/

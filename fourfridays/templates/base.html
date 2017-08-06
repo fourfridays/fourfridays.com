@@ -7,16 +7,10 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>
-            {% block title %}
-                {% if self.seo_title == 'Home' %}
-                    fourfridays
-                {% else %}
-                    {{ self.seo_title }} | fourfridays
-                {% endif %}
-            {% endblock %}
+        <title>{% block title %}{% if self.seo_title == 'Home' %}fourfridays
+        {% else %}{{ self.seo_title }} | fourfridays{% endif %}{% endblock %}
         </title>
-        <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %} " />
+        <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <!-- Google Tag Manager -->

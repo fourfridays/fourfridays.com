@@ -7,19 +7,16 @@
         {% elif child.block_type == 'h3' %}
             <h3>{{ child }}</h3>
         {% elif child.block_type == 'h4' %}
-            <h4>{{ child }}</h4>
-        
+            <h4>{{ child }}</h4>      
         {% elif child.block_type == 'intro' %}
-            <div class="intro">{{ child }}</div>
-        
-        <!-- RAW HTML -->
+            <div class="intro">{{ child }}</div>    
         {% elif child.block_type == 'raw_html' %}
+            <!-- RAW HTML -->
             <div class="raw-html {{ child.value.alignment }}">
                 {{ child.value.html }}
-            </div>
-        
-        <!-- ICON -->
+            </div>      
         {% elif child.block_type == 'icon' %}
+            <!-- ICON -->
             <div class="icon {{ child.value.alignment }}">
                 {% if child.value.font_awesome_icon_name and value.material_icon_name %}
                     <i class="fa {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
@@ -30,28 +27,23 @@
                     <i class="material-icons md-{{ child.value.material_icon_size }}">{{ child.value.material_icon_name }}</i>
                 {% endif %}
             </div>
-
-        <!-- PULL QUOTE -->    
         {% elif child.block_type == 'pullquote' %}
+            <!-- PULL QUOTE --> 
             <blockquote>
                 {{ child.value.quote }}
                 {% if child.value.attribution %}<span>- {{ child.value.attribution }}</span>{% endif %}
             </blockquote>
-
-        <!-- LEAD BODY -->
         {% elif child.block_type == 'lead_body' %}
+            <!-- LEAD BODY -->
             <p classname="lead">{{ child }}</p>
-
-        <!-- SMALL TEXT -->
         {% elif child.block_type == 'small_text' %}
+            <!-- SMALL TEXT -->
             <small>{{ child }}</small>
-
-        <!-- PARAGRAPH -->
         {% elif child.block_type == 'paragraph' %}
+            <!-- PARAGRAPH -->
             {{ child.value|richtext }}
-
-        <!-- ALIGNED IMAGE -->
         {% elif child.block_type == 'aligned_image' %}
+            <!-- ALIGNED IMAGE -->
             <figure class="img-wrapper {{ child.value.alignment }}">
                 {% if child.value.alignment == "left" or child.value.alignment == "right" %}
                     {% image child.value.image width-300 as theimage %}
@@ -68,13 +60,11 @@
                     </figcaption>
                 {% endif %}
             </figure>
-
-        <!-- IMAGE -->
         {% elif child.block_type == 'image' %}
+            <!-- IMAGE -->
             <figure class="thumbnail">
                 {% image child.value width-900 class="img-responsive" %}
             </figure>
-
         {% else %}
             {{ child }}
         {% endif %}

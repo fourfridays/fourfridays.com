@@ -10,7 +10,7 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel, Fie
 
 from wagtail.contrib.table_block.blocks import TableBlock
 
-from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock
+from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock, ChoiceBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
@@ -18,6 +18,22 @@ from wagtail.wagtailembeds.blocks import EmbedBlock
 
 from modelcluster.fields import ParentalKey
 from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
+
+
+class AlignmentChoiceBlock(ChoiceBlock):
+    choices = [
+        ('normal', 'Normal'),
+        ('text-left', 'Left'),
+        ('text-center', 'Center'),
+        ('text-right', 'Right'),
+        ('text-justify', 'Justify'),
+        ('text-nowrap', 'No Wrap')
+    ]
+
+
+class AlignedRAWHTMLBlock(StructBlock):
+    html = RawHTMLBlock()
+    alignment = AlignmentChoiceBlock(default='normal')
 
 
 class BackgroundColorBlock(FieldBlock):
@@ -67,9 +83,9 @@ class IconBlock(StructBlock):
     font_awesome_icon_size = FontAwesomeIconSizeBlock()
     material_icon_name = CharBlock(required=False)
     material_icon_size = MaterialIconSizeBlock()
+    alignment = AlignmentChoiceBlock(default='normal')
 
     class Meta:
-        template = 'icon_block.html'
         label = 'Icon'
 
 
@@ -87,7 +103,7 @@ class HtmlFormatBlock(StreamBlock):
     blockquote = CharBlock(classname='blockquote')
     pull_quote = PullQuoteBlock()
     icon = IconBlock()
-    raw_html = RawHTMLBlock()
+    raw_html = AlignedRAWHTMLBlock()
 
 
 class SingleColumnBlock(StructBlock):

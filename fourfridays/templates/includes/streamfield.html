@@ -8,14 +8,30 @@
             <h3>{{ child }}</h3>
         {% elif child.block_type == 'h4' %}
             <h4>{{ child }}</h4>
+        
         {% elif child.block_type == 'intro' %}
             <div class="intro">{{ child }}</div>
-        {% elif child.block_type == 'aligned_html' %}
-            {% if child.value.alignment == 'normal' %}
-                {{ child.value.bound_blocks.html.render }}
-            {% else %}
-                {{ child.value.bound_blocks.html.render }}
-            {% endif %}
+        
+        <!-- RAW HTML -->
+        {% elif child.block_type == 'raw_html' %}
+            <div class="raw-html {{ child.value.alignment }}">
+                {{ child.value.html }}
+            </div>
+        
+        <!-- ICON -->
+        {% elif child.block_type == 'icon' %}
+            <div class="icon {{ child.value.alignment }}">
+                {% if child.value.font_awesome_icon_name and value.material_icon_name %}
+                    <i class="fa {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
+                    <i class="material-icons md-{{ child.value.material_icon_size }}">{{ child.value.material_icon_name }}</i>
+                {% elif child.value.font_awesome_icon_name %}
+                    <i class="fa {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
+                {% elif child.value.material_icon_name %}
+                    <i class="material-icons md-{{ child.value.material_icon_size }}">{{ child.value.material_icon_name }}</i>
+                {% endif %}
+            </div>
+
+        <!-- PULL QUOTE -->    
         {% elif child.block_type == 'pullquote' %}
             <blockquote>
                 {{ child.value.quote }}

@@ -13,7 +13,7 @@
                 <form class="sales form-horizontal" action="{% pageurl page %}" method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" value="Submit Form">
+                    <input class="sales-submission" type="submit" value="Submit Form">
                 </form>
             </div>
         </div>

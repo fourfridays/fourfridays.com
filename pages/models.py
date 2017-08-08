@@ -176,6 +176,7 @@ class Pages(Page):
         ('single_column', SingleColumnBlock(group='COLUMNS')),
         ('two_columns', TwoColumnBlock(group='COLUMNS')),
         ('four_columns', FourColumnBlock(group='COLUMNS')),
+        ('H1', CharBlock()),
         ('hero_image', HeroImageBlock(icon='image')),
     ],default='')
 

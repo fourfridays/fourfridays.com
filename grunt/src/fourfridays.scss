@@ -290,9 +290,6 @@ footer {
     background-color: #403F3C;
     display: block;
     overflow: hidden;
-    .footerRight {
-        text-align: right;
-    }
     ul {
         margin: 10px 25px;
         padding: 0;
@@ -311,11 +308,10 @@ footer {
                 color: #b94a48;
             }
         }
+        &.footerRight {
+            text-align: right;
+        }
         &.footerLeft li {
-            float: left;
-            padding-right: 16px;
-            position: relative;
-            top: 20px;
             i {
                 font-size: 22px;
             }
@@ -369,11 +365,8 @@ footer {
             text-align: center;
         }
     }
-    footer ul {
+    footer ul.footerLeft, footer ul.footerRight {
         text-align: center;
-    }
-    footer, footer .footerRight {
-        text-align: left;
     }
 }
 

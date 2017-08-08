@@ -260,6 +260,10 @@ form {
         }
         textarea {
             @extend .form-control;
+            &[required=""]:focus {
+                border-color: rgba(164, 63, 51, 1);
+                box-shadow: 0 1px 1px rgba(164, 63, 51, 0.2) inset, 0 0 8px rgba(164, 63, 51, 0.8);
+            }
         }
     }
     input {
@@ -267,6 +271,11 @@ form {
             @extend .form-control;
             @extend .input-lg;
         }
+        &[required=""]:focus {
+            border-color: rgba(164, 63, 51, 1);
+            box-shadow: 0 1px 1px rgba(164, 63, 51, 0.2) inset, 0 0 8px rgba(164, 63, 51, 0.8);
+        }
+
         &[type="submit"] {
             @extend .col-xs-offset-5, .btn, .btn-primary;
         }

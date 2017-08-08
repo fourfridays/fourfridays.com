@@ -8,7 +8,7 @@
         <figcaption>
             <h2>{{ value.caption }}</h2>
             {% if value.fine_print %}
-                <small>{{ value.fine_print }}</small>
+                <p class="small fine-print">{{ value.fine_print }}</p>
             {% endif %}
         </figcaption>
     {% elif value.caption %}

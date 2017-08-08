@@ -2,7 +2,9 @@
 
 <div class="streamfield">
     {% for child in content %}
-        {% if child.block_type == 'h2' %}
+        {% if child.block_type == 'h1' %}
+            <h1>{{ child }}</h1>
+        {% elif child.block_type == 'h2' %}
             <h2>{{ child }}</h2>
         {% elif child.block_type == 'h3' %}
             <h3>{{ child }}</h3>

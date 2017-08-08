@@ -4,15 +4,12 @@
 
 <figure {% if value.caption and value.overlay_text is True %}class="overlay"{% endif %}>
     <img class="img-responsive" src="{{ heroimage.url }}" alt="{{ value.alternate_text }}"/>
-    {% if value.caption and value.overlay_text is True and value.fine_print %}
+    {% if value.caption and value.overlay_text is True %}
         <figcaption>
             <h2>{{ value.caption }}</h2>
-            <small>{{ value.fine_print }}</small>
-        </figcaption>
-    {% elif value.caption and value.overlay_text is True %}
-        <figcaption>
-            <h2>{{ value.caption }}</h2>
-            <small>{{ value.fine_print }}</small>
+            {% if value.fine_print %}
+                <small>{{ value.fine_print }}</small>
+            {% endif %}
         </figcaption>
     {% elif value.caption %}
         <figcaption>

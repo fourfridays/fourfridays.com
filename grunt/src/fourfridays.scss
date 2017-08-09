@@ -312,6 +312,8 @@ footer {
             text-align: right;
         }
         &.footerLeft li {
+            float: left;
+            margin-right: 12px;
             i {
                 font-size: 22px;
             }

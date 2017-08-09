@@ -291,8 +291,6 @@ footer {
     display: block;
     overflow: hidden;
     ul {
-        margin: 10px 25px;
-        padding: 0;
         list-style: none;
         li {
             i {
@@ -367,13 +365,30 @@ footer {
             text-align: center;
         }
     }
-    footer ul.footerLeft, footer ul.footerRight {
-        text-align: center;
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+    footer {
+        ul {
+            &.footerLeft {
+                text-align: center;
+                li {
+                    float: none;
+                    display: inline-block;
+                }
+            }
+            &.footerRight {
+                text-align: center;
+            }
+        }
     }
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+/* ==========================================================================
+    BLOCKS
+   ========================================================================== */
     .block-two_columns {
         .row {
             display: block;
@@ -384,7 +399,9 @@ footer {
             }
         }
     }
-    /* Hero Images */
+/* ==========================================================================
+    HERO IMAGES
+   ========================================================================== */
     .block-hero_image figure.overlay {
         figcaption {
             max-width: 55%;

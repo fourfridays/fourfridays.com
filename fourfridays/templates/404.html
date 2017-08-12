@@ -1,9 +1,38 @@
 {% extends "base.html" %}
-
-{% block body_class %}template-404{% endblock %}
+{% block body_class %}{{ self.title }}{% endblock %}
 
 {% block content %}
-    <h1>Page not found</h1>
+    <div class="block-hero_image">
+        <figure class="overlay">
+            <img class="img-responsive" src="/media/images/page-not-found.2e16d0ba.fill-2560x1084-c100.jpg" alt="On top of Eiffel Tower next to some binoculars."/>          
+                <figcaption>
+                    <h2>404 - Oops! We can&#39;t find that page</h2>
+                    
+                </figcaption>          
+                <div class="photo-credit">
+                    <small><b>Photo:</b> Overlooking Paris from the second floor of the Eiffel Tower.</small>
+                </div>     
+        </figure>
+    </div>
 
-    <h2>Sorry, this page could not be found.</h2>
+    <div class="block-single_column">
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-10 col-md-offset-1">
+                        <div class="streamfield">
+                            <!-- PARAGRAPH -->
+                            <div class="rich-text"><h2>We are sorry, we know what it feels like</h2>
+                                <p>It's probably like staring at a progress bar that never gets to 100%.</p><p>We have placed a large "fix it" button below to release that frustration. </p><p>Please feel free to hit it as many times as you like to send a barrage of fix it's to our technical know-it-all department.</p>
+                            </div>
+                            <!-- RAW HTML -->
+                            <div class="raw-html normal">
+                                <p class="text-center"><a class="btn btn-primary btn-lg">Fix it</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
 {% endblock %}

@@ -30,6 +30,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: '../static/css',
+          src: ['*.css', '!*.min.css'],
+          dest: '../static/css',
+          ext: '.min.css'
+        }]
+      }
+    },
     watch: {
       scripts: {
         files: 'src/*.*',
@@ -46,11 +57,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
 
-    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'watch']);
     // grunt.registerTask('default', ['sass', 'watch']);
 
 };

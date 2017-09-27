@@ -34,9 +34,9 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: '../static/css',
+          cwd: '/mnt/volume-nyc1-01-part2/static/css',
           src: ['*.css', '!*.min.css'],
-          dest: '../static/css',
+          dest: '/mnt/volume-nyc1-01-part2/static/css',
           ext: '.min.css'
         }]
       }

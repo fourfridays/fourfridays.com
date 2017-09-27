@@ -17,24 +17,24 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                //'/mnt/volume-nyc1-01-part2/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
-                '../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
+                '/mnt/volume-nyc1-01-part2/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
+                //'../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
             }
         }
     },
     sass: {                              // Task
       dist: {                            // Target
         files: {                         // Dictionary of files
-          //'/mnt/volume-nyc1-01-part2/static/css/fourfridays.css': 'src/fourfridays.scss'
-          '../static/css/fourfridays.css': 'src/fourfridays.scss'
+          '/mnt/volume-nyc1-01-part2/static/css/fourfridays.css': 'src/fourfridays.scss'
+          //'../static/css/fourfridays.css': 'src/fourfridays.scss'
         }
       }
     },
     watch: {
       scripts: {
         files: 'src/*.*',
-        // tasks: ['concat', 'uglify', 'sass'],
-        tasks: ['sass'],
+        tasks: ['concat', 'uglify', 'sass'],
+        // tasks: ['sass'],
         options: {
           livereload: true
         },
@@ -43,14 +43,14 @@ module.exports = function(grunt) {
     });
 
     // Load the plugins
-    // grunt.loadNpmTasks('grunt-contrib-concat');
-    // grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
 
-    // grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
-    grunt.registerTask('default', ['sass', 'watch']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
+    // grunt.registerTask('default', ['sass', 'watch']);
 
 };

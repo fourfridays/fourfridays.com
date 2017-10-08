@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                '/mnt/volume-nyc1-01-part2/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
+                '/home/fourfridays/sites/fourfridays/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
                 //'../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
             }
         }
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     sass: {                              // Task
       dist: {                            // Target
         files: {                         // Dictionary of files
-          '/mnt/volume-nyc1-01-part2/static/css/fourfridays.css': 'src/fourfridays.scss'
+          '/home/fourfridays/sites/fourfridays/static/css/fourfridays.css': 'src/fourfridays.scss'
           //'../static/css/fourfridays.css': 'src/fourfridays.scss'
         }
       }
@@ -34,9 +34,9 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: '/mnt/volume-nyc1-01-part2/static/css',
+          cwd: '/home/fourfridays/sites/fourfridays/static/css',
           src: ['*.css', '!*.min.css'],
-          dest: '/mnt/volume-nyc1-01-part2/static/css',
+          dest: '/home/fourfridays/sites/fourfridays/static/css',
           ext: '.min.css'
         }]
       }
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: 'src/*.*',
-        tasks: ['concat', 'uglify', 'sass'],
+        tasks: ['concat', 'uglify', 'sass', 'cssmin'],
         // tasks: ['sass'],
         options: {
           livereload: true

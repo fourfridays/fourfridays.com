@@ -1,5 +1,5 @@
 {
-  "name": "umair-abbasi",
+  "name": "fourfridays.com",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
-    "coffee-script": "~1.6.3",
+    "coffeescript": "~1.6.3",
     "font-awesome": "^4.7.0",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",

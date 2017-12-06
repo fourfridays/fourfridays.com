@@ -103,3 +103,4 @@ ENV/
 .ropeproject
 /grunt/.sass-cache
 /gunicorn.conf.py
+/grunt/package-lock.json

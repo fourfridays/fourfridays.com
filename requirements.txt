@@ -11,6 +11,8 @@ django-taggit==0.22.1
 django-treebeard==4.1.2
 djangorestframework==3.6.4
 docutils==0.14
+gevent==1.2.2
+greenlet==0.4.12
 gunicorn==19.7.1
 html5lib==0.999999999
 idna==2.6

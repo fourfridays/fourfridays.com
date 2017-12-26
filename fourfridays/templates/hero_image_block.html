@@ -3,9 +3,9 @@
 {% image value.image fill-2560x1084-c100 as heroimage %}
 
 <figure {% if value.caption and value.overlay_text is True %}class="overlay"{% endif %}>
-    <img class="img-responsive" src="{{ heroimage.url }}" alt="{{ value.alternate_text }}"/>
+    <img class="img-fluid" src="{{ heroimage.url }}" alt="{{ value.alternate_text }}"/>
     {% if value.caption and value.overlay_text is True %}
-        <figcaption>
+        <figcaption class="p-3">
             <h2>{{ value.caption }}</h2>
             {% if value.fine_print %}
                 <p class="small fine-print">{{ value.fine_print }}</p>

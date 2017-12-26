@@ -5,12 +5,12 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-12 p-4">
                 <h1>{{ page.title }}</h1>
 
                 {{ page.intro|richtext }}
 
-                <form class="sales form-horizontal" action="{% pageurl page %}" method="POST">
+                <form class="sales form-horizontal text-center" action="{% pageurl page %}" method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <input class="sales-submission" type="submit" value="Submit Form">

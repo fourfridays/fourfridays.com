@@ -1,4 +1,4 @@
-@import 'bootstrap-custom';
+@import '../node_modules/bootstrap/scss/bootstrap';
 @import 'font-awesome-custom';
 
 @font-face {
@@ -62,7 +62,7 @@ h1 {
 }
 p {
     font-family: 'Droid Sans', sans-serif;
-    font-size: 1.14em;
+    font-size: 0.99em;
     color: #4E4D4A;
 }
 a {
@@ -86,6 +86,10 @@ a {
     font-size: 0;
     height: 1px;
     overflow: hidden;
+}
+
+.bg-dark {
+    background-color: #3b536c !important;
 }
 
 .responsive-object {
@@ -118,44 +122,42 @@ a {
 
 /* Navigation */
 .navbar {
-    background-color: #3b536c;
-    background-image: none;
-    border: none;
-    border-radius: 0;
-    a {
+    padding: 0;
+    a {   
+        color: #fff !important;
         &.navbar-brand {
             font-family: 'Montserrat', sans-serif;
             font-size: 18px;
             background-color: #a43f33;
             color: #fff;
+            letter-spacing: 0.062rem;
             text-shadow: none;
-            letter-spacing: 0.119rem;
-            height: 50px;
             &:hover {
                 background-color: #a43f33;
                 color: #fff;
             }
         }
+        &:hover {
+            color: #fff !important;  
+        }
     }
-    .nav {
-        li {
-            a {
-                text-transform: uppercase;
+    li {
+        a {
+            text-transform: uppercase;
+            color: #fff !important;
+            text-decoration: none;
+            letter-spacing: 0.229rem;
+            display: block;
+            &:hover {
+                background-color: #403F3C !important;
                 color: #fff !important;
-                text-decoration: none;
-                letter-spacing: 0.229rem;
-                display: block;
-                &:hover {
-                    background-color: #403F3C !important;
-                    color: #fff !important;
-                }
             }
-            &.active a, &.active a:hover {
-                background-color: #b94a48 !important;
-                color: #fff !important;    
-            }                  
-        } 
-    } 
+        }
+        &.active a, &.active a:hover {
+            background-color: #b94a48 !important;
+            color: #fff !important;    
+        }                  
+    }
 }
 .navbar-default .navbar-toggle {
     border-color: #b94a48;
@@ -176,7 +178,7 @@ main {
     }    
     .rich-text {
         p {
-            font-size: 1.04em;
+            font-size: 0.9em;
         }
     }
     .icon {
@@ -222,10 +224,9 @@ main {
         top: 65%;
         left: 10%;  
         transform: translate(-10%, -65%);
-        padding: 10px; 
         h2 {
             color: #f0f0f0;
-            font-size: 1.7em;
+            font-size: 1.4em;
             letter-spacing: -0.03em;
             margin-bottom: 0;
         }
@@ -252,11 +253,10 @@ main {
     FORMS
    ========================================================================== */
 form {
-    @extend .col-sm-offset-1;
     p {
-        @extend .form-group, .col-sm-8;
+        @extend .form-group, .row;
         span.helptext {
-            @extend .help-block, .small;
+            @extend .small;
         }
         textarea {
             @extend .form-control;
@@ -269,7 +269,6 @@ form {
     input {
         &[type="text"], &[type="email"] {
             @extend .form-control;
-            @extend .input-lg;
         }
         &[required=""]:focus {
             border-color: rgba(164, 63, 51, 1);
@@ -277,7 +276,7 @@ form {
         }
 
         &[type="submit"] {
-            @extend .col-xs-offset-5, .btn, .btn-primary;
+            @extend .btn, .btn-primary;
         }
     }
 }
@@ -289,6 +288,7 @@ footer {
     padding: 12px 0 12px 0;
     background-color: #403F3C;
     display: block;
+    font-size: 0.87em;
     overflow: hidden;
     ul {
         list-style: none;

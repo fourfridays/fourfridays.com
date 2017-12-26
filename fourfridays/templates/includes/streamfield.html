@@ -53,7 +53,7 @@
                     {% image child.value.image width-1280 as theimage %}
                 {% endif %}
                 <p class="text-center">
-                    <img class="img-responsive thumbnail" src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" />
+                    <img class="img-fluid img-thumbnail" src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" />
                 </p>
 
                 {% if child.value.caption %}
@@ -64,8 +64,8 @@
             </figure>
         {% elif child.block_type == 'image' %}
             <!-- IMAGE -->
-            <figure class="thumbnail">
-                {% image child.value width-900 class="img-responsive" %}
+            <figure class="img-thumbnail">
+                {% image child.value width-900 class="img-fluid" %}
             </figure>
         {% else %}
             {{ child }}

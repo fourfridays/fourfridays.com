@@ -9,7 +9,11 @@
         {% elif child.block_type == 'h3' %}
             <h3>{{ child }}</h3>
         {% elif child.block_type == 'h4' %}
-            <h4>{{ child }}</h4>      
+            <h4>{{ child }}</h4>
+        {% elif child.block_type == 'h5' %}
+            <h5>{{ child }}</h5>
+        {% elif child.block_type == 'h6' %}
+            <h6>{{ child }}</h6>   
         {% elif child.block_type == 'intro' %}
             <div class="intro">{{ child }}</div>    
         {% elif child.block_type == 'raw_html' %}

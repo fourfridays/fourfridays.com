@@ -94,6 +94,8 @@ class HtmlFormatBlock(StreamBlock):
     h2 = CharBlock(classname='title')
     h3 = CharBlock(classname='title')
     h4 = CharBlock(classname='title')
+    h5 = CharBlock(classname='title')
+    h6 = CharBlock(classname='title')
     paragraph = RichTextBlock()
     table = TableBlock(template='includes/table.html')
     image = ImageChooserBlock()

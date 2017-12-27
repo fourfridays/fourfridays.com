@@ -45,29 +45,7 @@
         {% elif child.block_type == 'paragraph' %}
             <!-- PARAGRAPH -->
             {{ child.value|richtext }}
-        {% elif child.block_type == 'aligned_image' %}
-            <!-- ALIGNED IMAGE -->
-            <figure class="img-wrapper {{ child.value.alignment }}">
-                {% if child.value.alignment == "left" or child.value.alignment == "right" %}
-                    {% image child.value.image width-300 as theimage %}
-                {% else %}
-                    {% image child.value.image width-1280 as theimage %}
-                {% endif %}
-                <p class="text-center">
-                    <img class="img-fluid img-thumbnail" src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" />
-                </p>
 
-                {% if child.value.caption %}
-                    <figcaption>
-                        {{ child.value.caption }}
-                    </figcaption>
-                {% endif %}
-            </figure>
-        {% elif child.block_type == 'image' %}
-            <!-- IMAGE -->
-            <figure class="img-thumbnail">
-                {% image child.value width-900 class="img-fluid" %}
-            </figure>
         {% else %}
             {{ child }}
         {% endif %}

@@ -218,7 +218,7 @@ main {
     width: 100%; /* for IE 6 */
     figcaption {
         max-width: 45%;
-        background-color: rgba(192, 57, 43, 0.52);
+        background-color: rgba(164, 63, 51, 0.82);
         position: absolute;
         top: 65%;
         left: 10%;  
@@ -246,6 +246,49 @@ main {
         opacity: 0.5; /* transparency */
         filter: alpha(opacity=50); /* IE transparency */
     }
+}
+
+
+form[name="blog-search"] {
+    input {
+        &[type="text"] {
+            @extend .form-control;
+        }
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+    .form-control + button  {
+        position: absolute;
+        right: 20px;
+        top: 28px;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+form[name="blog-search-results"] {
+    input {
+        &[type="text"] {
+            @extend .form-control;
+        }
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+    .form-control + button  {
+        position: absolute;
+        right: 20px;
+        top: 40px;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+
+footer.blockquote-footer {
+    background-color: #fff;
 }
 
 /* ==========================================================================
@@ -360,37 +403,7 @@ footer {
             font-size: 95%;
         }
     }
-    .block-four_columns {
-        h2, h3, h4, h5, h6 {
-            text-align: center;
-        }    
-        .icon {
-            position: none;
-            left: 0;
-            text-align: center;
-        }
-    }
-/* ==========================================================================
-    FOOTER
-   ========================================================================== */
-    footer {
-        ul {
-            &.footerLeft {
-                text-align: center;
-                li {
-                    float: none;
-                    display: inline-block;
-                }
-            }
-            &.footerRight {
-                text-align: center;
-            }
-        }
-    }
-}
 
-/* Landscape phones and down */
-@media (max-width: 480px) {
 /* ==========================================================================
     BLOCKS
    ========================================================================== */
@@ -404,6 +417,40 @@ footer {
             }
         }
     }
+    .block-four_columns {
+        h2, h3, h4, h5, h6 {
+            text-align: center;
+        }    
+        .icon {
+            position: none;
+            left: 0;
+            text-align: center;
+        }
+    }
+
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+    footer {
+        ul {
+            &.footerLeft {
+                text-align: center;
+                padding: 0;
+                li {
+                    float: none;
+                    display: inline-block;
+                }
+            }
+            &.footerRight {
+                text-align: center;
+                padding: 0;
+            }
+        }
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 525px) {
 /* ==========================================================================
     HERO IMAGES
    ========================================================================== */

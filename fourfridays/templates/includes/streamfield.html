@@ -15,14 +15,16 @@
         {% elif child.block_type == 'h6' %}
             <h6>{{ child }}</h6>   
         {% elif child.block_type == 'intro' %}
-            <div class="intro">{{ child }}</div>    
+            <div class="intro">{{ child }}</div>
+
+        <!-- RAW HTML -->   
         {% elif child.block_type == 'raw_html' %}
-            <!-- RAW HTML -->
             <div class="raw-html {{ child.value.alignment }}">
                 {{ child.value.html }}
-            </div>      
+            </div>
+
+        <!-- ICON -->
         {% elif child.block_type == 'icon' %}
-            <!-- ICON -->
             <div class="icon {{ child.value.alignment }}">
                 {% if child.value.font_awesome_icon_name and value.material_icon_name %}
                     <i class="fa {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
@@ -33,44 +35,25 @@
                     <i class="material-icons md-{{ child.value.material_icon_size }}">{{ child.value.material_icon_name }}</i>
                 {% endif %}
             </div>
+        <!--PULL QUOTE-->
         {% elif child.block_type == 'pullquote' %}
-            <!-- PULL QUOTE --> 
-            <blockquote>
-                {{ child.value.quote }}
-                {% if child.value.attribution %}<span>- {{ child.value.attribution }}</span>{% endif %}
-            </blockquote>
-        {% elif child.block_type == 'lead_body' %}
-            <!-- LEAD BODY -->
-            <p classname="lead">{{ child }}</p>
-        {% elif child.block_type == 'small_text' %}
-            <!-- SMALL TEXT -->
-            <small>{{ child }}</small>
-        {% elif child.block_type == 'paragraph' %}
-            <!-- PARAGRAPH -->
-            {{ child.value|richtext }}
-        {% elif child.block_type == 'aligned_image' %}
-            <!-- ALIGNED IMAGE -->
-            <figure class="img-wrapper {{ child.value.alignment }}">
-                {% if child.value.alignment == "left" or child.value.alignment == "right" %}
-                    {% image child.value.image width-300 as theimage %}
-                {% else %}
-                    {% image child.value.image width-1280 as theimage %}
-                {% endif %}
-                <p class="text-center">
-                    <img class="img-fluid img-thumbnail" src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" />
-                </p>
+            <p class="lead text-center font-weight-light font-italic">"{{ child }}"</p>
 
-                {% if child.value.caption %}
-                    <figcaption>
-                        {{ child.value.caption }}
-                    </figcaption>
-                {% endif %}
-            </figure>
-        {% elif child.block_type == 'image' %}
-            <!-- IMAGE -->
-            <figure class="img-thumbnail">
-                {% image child.value width-900 class="img-fluid" %}
-            </figure>
+        <!-- BLOCKQUOTE -->     
+        {% elif child.block_type == 'blockquote' %}
+            <blockquote class="blockquote py-3">
+                {{ child.value.quote }}
+                {% if child.value.attribution %}<footer class="blockquote-footer p-1">{{ child.value.attribution }}</footer>{% endif %}
+            </blockquote>
+
+        <!-- SMALL TEXT -->
+        {% elif child.block_type == 'small_text' %}
+            <small>{{ child }}</small>
+
+        <!-- PARAGRAPH -->
+        {% elif child.block_type == 'paragraph' %}
+            {{ child.value|richtext }}
+
         {% else %}
             {{ child }}
         {% endif %}

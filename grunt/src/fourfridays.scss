@@ -249,6 +249,44 @@ main {
 }
 
 
+form[name="blog-search"] {
+    input {
+        &[type="text"] {
+            @extend .form-control;
+        }
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+    .form-control + button  {
+        position: absolute;
+        right: 20px;
+        top: 28px;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+form[name="blog-search-results"] {
+    input {
+        &[type="text"] {
+            @extend .form-control;
+        }
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+    .form-control + button  {
+        position: absolute;
+        right: 20px;
+        top: 40px;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+
 footer.blockquote-footer {
     background-color: #fff;
 }

@@ -54,6 +54,11 @@
         {% elif child.block_type == 'paragraph' %}
             {{ child.value|richtext }}
 
+        <!-- IMAGE -->
+        {% elif child.block_type == 'image' %}
+            <figure class="thumbnail">
+                {% image child.value width-900 class="img-responsive" %}
+
         {% else %}
             {{ child }}
         {% endif %}

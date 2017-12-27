@@ -58,11 +58,11 @@ class AlignedRAWHTMLBlock(StructBlock):
 
 
 class PullQuoteBlock(StructBlock):
-    quote = TextBlock("quote title")
+    quote = TextBlock('quote title')
     attribution = CharBlock()
 
     class Meta:
-        icon = "openquote"
+        icon = 'openquote'
 
 
 class ImageFormatChoiceBlock(FieldBlock):

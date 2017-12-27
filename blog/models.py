@@ -65,6 +65,42 @@ class PullQuoteBlock(StructBlock):
         icon = 'openquote'
 
 
+class FontAwesomeIconSizeBlock(FieldBlock):
+    field = forms.ChoiceField(choices=(
+        ('lg', 'fa-lg'), 
+        ('2x', 'fa-2x'),
+        ('3x', 'fa-3x'),
+        ('4x', 'fa-4x'),
+        ('5x', 'fa-5x'),
+    ))
+
+
+class MaterialIconSizeBlock(FieldBlock):
+    field = forms.ChoiceField(choices=(
+        ('18', '18'), 
+        ('24', '24'),
+        ('36', '36'),
+        ('48', '48'),
+        ('60', '60'),
+        ('72', '72'),
+        ('84', '84'),
+        ('96', '96'),
+        ('108', '108'),
+        ('120', '120'),
+    ))
+
+
+class IconBlock(StructBlock):
+    font_awesome_icon_name = CharBlock(required=False)
+    font_awesome_icon_size = FontAwesomeIconSizeBlock()
+    material_icon_name = CharBlock(required=False)
+    material_icon_size = MaterialIconSizeBlock()
+    alignment = AlignmentChoiceBlock(default='normal')
+
+    class Meta:
+        label = 'Icon'
+
+
 class ImageFormatChoiceBlock(FieldBlock):
     field = forms.ChoiceField(choices=(
         ('left', 'Wrap left'), ('right', 'Wrap right'), ('mid', 'Mid width'), ('full', 'Full width'),
@@ -84,6 +120,7 @@ class BlogStreamBlock(StreamBlock):
     intro = RichTextBlock(icon="pilcrow")
     paragraph = RichTextBlock(icon="pilcrow")
     aligned_image = ImageBlock(label="Aligned image", icon="image")
+    icon = IconBlock()
     pullquote = PullQuoteBlock()
     raw_html = AlignedRAWHTMLBlock()
     document = DocumentChooserBlock(icon="doc-full-inverse")

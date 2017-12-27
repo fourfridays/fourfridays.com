@@ -141,7 +141,7 @@ class BlogIndexPage(Page):
         # Get list of blog pages that are descendants of this page
         blogs = BlogPage.objects.descendant_of(self).live()
         blogs = blogs.order_by(
-            '-first_published_at'
+            '-date'
         ).select_related('owner').prefetch_related(
             'tagged_items__tag',
             'categories',

@@ -10,7 +10,7 @@
             <div class="col-md-9">
                {% include "blog/blog_post.html" with blog=self %}
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 ">
                 <form class="my-4" name="blog-search" action="{% url 'search' %}" method="get">
                     <input class="form-control" type="text" name="query" value="{{ search_query }}">
                     <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -18,7 +18,7 @@
 
                 <h4>Recent Articles</h4>
                 {% for posts in recent_posts %}
-                    <p class="mb-2"><a href="/blog/{{ posts.slug }}">{{ posts }}</a></p>
+                    <p class="mb-2 recent-articles"><a href="/blog/{{ posts.slug }}">{{ posts }}</a></p>
                 {% endfor %}
             </div>
        </div>

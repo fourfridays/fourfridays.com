@@ -57,12 +57,9 @@ class AlignedRAWHTMLBlock(StructBlock):
         icon = 'code'
 
 
-class PullQuoteBlock(StructBlock):
+class BlockQuoteBlock(StructBlock):
     quote = TextBlock('quote title')
     attribution = CharBlock()
-
-    class Meta:
-        icon = 'openquote'
 
 
 class FontAwesomeIconSizeBlock(FieldBlock):
@@ -125,8 +122,8 @@ class BlogStreamBlock(StreamBlock):
     embedded_video = EmbedBlock()
     lead_body = CharBlock(classname='lead')
     small_text = CharBlock(classname='small')
-    pullquote = PullQuoteBlock()
-    blockquote = CharBlock(classname='blockquote')
+    pullquote = CharBlock()
+    blockquote = BlockQuoteBlock(icon = 'openquote', classname='blockquote')
     icon = IconBlock()
     raw_html = AlignedRAWHTMLBlock()
     table = TableBlock(template='includes/table.html')

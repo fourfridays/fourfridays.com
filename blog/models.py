@@ -126,6 +126,8 @@ class BlogStreamBlock(StreamBlock):
     lead_body = CharBlock(classname='lead')
     small_text = CharBlock(classname='small')
     pullquote = PullQuoteBlock()
+    blockquote = CharBlock(classname='blockquote')
+    icon = IconBlock()
     raw_html = AlignedRAWHTMLBlock()
     table = TableBlock(template='includes/table.html')
     document = DocumentChooserBlock(icon="doc-full-inverse")

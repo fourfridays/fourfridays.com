@@ -39,9 +39,6 @@
                 {{ child.value.quote }}
                 {% if child.value.attribution %}<span>- {{ child.value.attribution }}</span>{% endif %}
             </blockquote>
-        {% elif child.block_type == 'lead_body' %}
-            <!-- LEAD BODY -->
-            <p classname="lead">{{ child }}</p>
         {% elif child.block_type == 'small_text' %}
             <!-- SMALL TEXT -->
             <small>{{ child }}</small>

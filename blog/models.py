@@ -120,7 +120,6 @@ class BlogStreamBlock(StreamBlock):
     paragraph = RichTextBlock(icon="pilcrow")   
     icon = IconBlock()
     embedded_video = EmbedBlock()
-    lead_body = CharBlock(classname='lead')
     small_text = CharBlock(classname='small')
     pullquote = CharBlock()
     blockquote = BlockQuoteBlock(icon = 'openquote', classname='blockquote')

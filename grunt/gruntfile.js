@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             dist: {
-                src: ['node_modules/jquery/dist/jquery.slim.js', 'node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js', 'node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js', 'src/fourfridays.js'],
+                src: ['node_modules/jquery/dist/jquery.slim.js', 'node_modules/bootstrap/js/dist/util.js', 'node_modules/bootstrap/js/dist/collapse.js', 'src/fourfridays.js'],
                 dest: 'dist/js/fourfridays.js'
             }
         },

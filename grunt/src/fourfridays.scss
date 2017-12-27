@@ -427,6 +427,7 @@ footer {
             text-align: center;
         }
     }
+
 /* ==========================================================================
     FOOTER
    ========================================================================== */
@@ -434,6 +435,7 @@ footer {
         ul {
             &.footerLeft {
                 text-align: center;
+                padding: 0;
                 li {
                     float: none;
                     display: inline-block;
@@ -441,6 +443,7 @@ footer {
             }
             &.footerRight {
                 text-align: center;
+                padding: 0;
             }
         }
     }

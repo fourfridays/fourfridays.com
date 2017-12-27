@@ -121,7 +121,6 @@ class BlogStreamBlock(StreamBlock):
     h5 = CharBlock(classname='title')
     h6 = CharBlock(classname='title')
     paragraph = RichTextBlock(icon="pilcrow")
-    aligned_image = ImageBlock(label="Aligned image", icon="image")
     icon = IconBlock()
     pullquote = PullQuoteBlock()
     raw_html = AlignedRAWHTMLBlock()

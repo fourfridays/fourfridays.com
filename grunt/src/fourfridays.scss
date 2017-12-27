@@ -403,6 +403,20 @@ footer {
             font-size: 95%;
         }
     }
+
+/* ==========================================================================
+    BLOCKS
+   ========================================================================== */
+    .block-two_columns {
+        .row {
+            display: block;
+            justify-content: none;
+            align-items: none;
+            h2 {
+                text-align: center;
+            }
+        }
+    }
     .block-four_columns {
         h2, h3, h4, h5, h6 {
             text-align: center;
@@ -433,20 +447,6 @@ footer {
 }
 
 /* Landscape phones and down */
-@media (max-width: 480px) {
-/* ==========================================================================
-    BLOCKS
-   ========================================================================== */
-    .block-two_columns {
-        .row {
-            display: block;
-            justify-content: none;
-            align-items: none;
-            h2 {
-                text-align: center;
-            }
-        }
-    }
 /* ==========================================================================
     HERO IMAGES
    ========================================================================== */

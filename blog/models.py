@@ -21,10 +21,12 @@ from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtailsearch import index
 from wagtail.wagtailsearch.models import Query
 
-from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock
+from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock, ChoiceBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
+
+from wagtail.contrib.table_block.blocks import TableBlock
 
 from taggit.models import TaggedItemBase, Tag
 

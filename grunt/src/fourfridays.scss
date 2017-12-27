@@ -146,7 +146,6 @@ a {
             text-transform: uppercase;
             color: #fff !important;
             text-decoration: none;
-            letter-spacing: 0.229rem;
             display: block;
             &:hover {
                 background-color: #403F3C !important;
@@ -154,9 +153,9 @@ a {
             }
         }
         &.active a, &.active a:hover {
-            background-color: #b94a48 !important;
+            background-color: #403f3c !important;
             color: #fff !important;    
-        }                  
+        }                
     }
 }
 .navbar-default .navbar-toggle {
@@ -340,6 +339,12 @@ footer {
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    /* Navigation */
+    header {
+        .nav-link {
+            padding: 0.5rem 1rem !important;
+        }
+    }
     /* Hero Images */
     .block-hero_image figure.overlay {
         figcaption {

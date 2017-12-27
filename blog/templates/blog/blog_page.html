@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block body_class %}{{ self.title.lower }}{% endblock %}
+
 {% load wagtailcore_tags %}
 
 {% block content %}

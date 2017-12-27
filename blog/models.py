@@ -114,9 +114,12 @@ class ImageBlock(StructBlock):
 
 
 class BlogStreamBlock(StreamBlock):
-    h2 = CharBlock(icon="title", classname="title")
-    h3 = CharBlock(icon="title", classname="title")
-    h4 = CharBlock(icon="title", classname="title")
+    h1 = CharBlock(classname='title', help_text='Always use only one H1 per page')
+    h2 = CharBlock(classname='title')
+    h3 = CharBlock(classname='title')
+    h4 = CharBlock(classname='title')
+    h5 = CharBlock(classname='title')
+    h6 = CharBlock(classname='title')
     intro = RichTextBlock(icon="pilcrow")
     paragraph = RichTextBlock(icon="pilcrow")
     aligned_image = ImageBlock(label="Aligned image", icon="image")

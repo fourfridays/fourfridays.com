@@ -37,6 +37,26 @@ import datetime
 
 # Global Streamfield definition
 
+
+class AlignmentChoiceBlock(ChoiceBlock):
+    choices = [
+        ('normal', 'Normal'),
+        ('text-left', 'Left'),
+        ('text-center', 'Center'),
+        ('text-right', 'Right'),
+        ('text-justify', 'Justify'),
+        ('text-nowrap', 'No Wrap')
+    ]
+
+
+class AlignedRAWHTMLBlock(StructBlock):
+    html = RawHTMLBlock()
+    alignment = AlignmentChoiceBlock(default='normal')
+
+    class Meta:
+        icon = 'code'
+
+
 class PullQuoteBlock(StructBlock):
     quote = TextBlock("quote title")
     attribution = CharBlock()
@@ -51,24 +71,10 @@ class ImageFormatChoiceBlock(FieldBlock):
     ))
 
 
-class HTMLAlignmentChoiceBlock(FieldBlock):
-    field = forms.ChoiceField(choices=(
-        ('normal', 'Normal'), ('full', 'Full width'),
-    ))
-
-
 class ImageBlock(StructBlock):
     image = ImageChooserBlock()
     caption = RichTextBlock()
     alignment = ImageFormatChoiceBlock()
-
-
-class AlignedHTMLBlock(StructBlock):
-    html = RawHTMLBlock()
-    alignment = HTMLAlignmentChoiceBlock()
-
-    class Meta:
-        icon = "code"
 
 
 class BlogStreamBlock(StreamBlock):
@@ -79,7 +85,7 @@ class BlogStreamBlock(StreamBlock):
     paragraph = RichTextBlock(icon="pilcrow")
     aligned_image = ImageBlock(label="Aligned image", icon="image")
     pullquote = PullQuoteBlock()
-    aligned_html = AlignedHTMLBlock(icon="code", label='Raw HTML')
+    raw_html = AlignedRAWHTMLBlock()
     document = DocumentChooserBlock(icon="doc-full-inverse")
 
     search_fields = Page.search_fields + [

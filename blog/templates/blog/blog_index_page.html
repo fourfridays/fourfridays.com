@@ -60,7 +60,12 @@
                     {% endif %}
                 </ul>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                    <form class="my-4" name="blog-search" action="{% url 'search' %}" method="get">
+                    <input class="form-control" type="text" name="query" value="{{ search_query }}">
+                    <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}

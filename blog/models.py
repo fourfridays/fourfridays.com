@@ -125,6 +125,7 @@ class BlogStreamBlock(StreamBlock):
     icon = IconBlock()
     pullquote = PullQuoteBlock()
     raw_html = AlignedRAWHTMLBlock()
+    table = TableBlock(template='includes/table.html')
     document = DocumentChooserBlock(icon="doc-full-inverse")
 
     search_fields = Page.search_fields + [

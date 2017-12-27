@@ -340,7 +340,7 @@ class BlogPage(Page):
 
     def recent_posts(self):
         recent_posts = BlogPage.objects.live()
-        recent_posts = recent_posts.order_by('-first_published_at')[:3] 
+        recent_posts = recent_posts.order_by('-date')[:3] 
         return recent_posts
 
     def get_context(self, request, *args, **kwargs):

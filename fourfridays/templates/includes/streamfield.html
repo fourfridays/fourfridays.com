@@ -57,7 +57,7 @@
         <!-- IMAGE -->
         {% elif child.block_type == 'image' %}
             <figure class="thumbnail">
-                {% image child.value width-900 class="img-responsive" %}
+                {% image child.value width-900 class="img-fluid" %}
 
         {% else %}
             {{ child }}

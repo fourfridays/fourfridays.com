@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}{{ self.title.lower }}{% endblock %}
+
+{% block content %}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=184910714927313";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="block-hero_image">
+        <figure class="overlay">
+            <img class="img-fluid" src="/media/images/blog-london-big-ben.original.jpg" alt="London Big Ben">
+                <figcaption>
+                    <h2>MASS ANALYTICS</h2>
+                    <p class="fine-print">Uncover the bright side of your Marketing ROI</p>
+                </figcaption>
+        </figure>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="my-4">Blog Articles</h1>
+                {% for article in blogs %}
+                    <article class="my-3 blog-index">
+                        <h2 class="my-4">
+                            <a href="{{ article.slug }}">{{ article.title }}</a>
+                        </h2>
+                        <p class="small">
+                            Posted by {{ article.author.first_name }} {{ article.author.last_name }} on {{ article.date }}        
+                            {% if article.categories.all %}
+                                in 
+                                {% for cat in article.categories.all %}
+                                    <span style="text-transform: lowercase;">{{ cat.category.name }}</span> {% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </p>
+                        {% for block in article.body %}
+                            {% if block.block_type == 'paragraph' %}
+                                <div class="paragraph-block">
+                                    {{ block.value|striptags|richtext|truncatewords_html:50 }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        <p class="text-center"><a class="mt-3 btn btn-primary btn-sm" href="{{ article.slug }}">Read Article</a></p>
+                    </article>
+                {% endfor %}
+                <ul class="justify-content-center pagination">
+                    {% if blogs.has_previous %}
+                        <li class="mx-2">
+                            <a href="?page={{ blogs.previous_page_number }}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                        </li>
+                    {% endif %}
+                    {% for page_num in blogs.paginator.page_range %}
+                        <li {% if page_num == blogs.number %}class="active mx-2"{% else %}class="mx-2"{% endif %}>
+                            <a href="?page={{ page_num }}">{{ page_num }}</a>
+                        </li>
+                    {% endfor %}
+                    {% if blogs.has_next %}
+                        <li class="mx-2">
+                            <a href="?page={{ blogs.next_page_number }}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-md-4 align-middle">
+                <form class="my-4" name="blog-search" action="{% url 'search' %}" method="get">
+                    <input class="form-control" type="text" name="query" value="{{ search_query }}">
+                    <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+                <h4 class="text-center my-3">Facebook</h4>
+                <div class="fb-page" data-href="https://www.facebook.com/massanalytics1/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/massanalytics1/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/massanalytics1/">MASS Analytics</a></blockquote></div>
+                
+                <h4 class="text-center my-3">Twitter</h4>
+                <a class="twitter-timeline" data-height="550" href="https://twitter.com/mass_analytics">Tweets by Mass_Analytics</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -5,21 +5,12 @@
 {% block body_class %}{{ self.title.lower }}{% endblock %}
 
 {% block content %}
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=184910714927313";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
     <div class="block-hero_image">
         <figure class="overlay">
-            <img class="img-fluid" src="/media/images/blog-london-big-ben.original.jpg" alt="London Big Ben">
-                <figcaption>
-                    <h2>MASS ANALYTICS</h2>
-                    <p class="fine-print">Uncover the bright side of your Marketing ROI</p>
+            <img class="img-fluid" src="/media/images/istanbul.original.jpg" alt="Istanbul">
+                <figcaption class="p-2">
+                    <h2>fourfridays Blog</h2>
+                    <p class="fine-print">Articles on the latest updates to our infrastructure</p>
                 </figcaption>
         </figure>
     </div>
@@ -27,10 +18,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h1 class="my-4">Blog Articles</h1>
                 {% for article in blogs %}
                     <article class="my-3 blog-index">
-                        <h2 class="my-4">
+                        <h2 class="my-1">
                             <a href="{{ article.slug }}">{{ article.title }}</a>
                         </h2>
                         <p class="small">
@@ -70,17 +60,7 @@
                     {% endif %}
                 </ul>
             </div>
-            <div class="col-md-4 align-middle">
-                <form class="my-4" name="blog-search" action="{% url 'search' %}" method="get">
-                    <input class="form-control" type="text" name="query" value="{{ search_query }}">
-                    <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </form>
-                <h4 class="text-center my-3">Facebook</h4>
-                <div class="fb-page" data-href="https://www.facebook.com/massanalytics1/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/massanalytics1/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/massanalytics1/">MASS Analytics</a></blockquote></div>
-                
-                <h4 class="text-center my-3">Twitter</h4>
-                <a class="twitter-timeline" data-height="550" href="https://twitter.com/mass_analytics">Tweets by Mass_Analytics</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
 {% endblock %}

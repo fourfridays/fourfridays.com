@@ -460,7 +460,10 @@ footer {
 /* Landscape phones and down */
 @media (max-width: 525px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2em;
+    }
+    .table {
+        font-size: 0.82em;
     }
 /* ==========================================================================
     HERO IMAGES

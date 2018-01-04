@@ -290,6 +290,11 @@ p.recent-articles {
     font-size: .89em;
 }
 
+.rich-text img {
+    max-width: 100%;
+    height: auto;
+}
+
 footer.blockquote-footer {
     background-color: #fff;
 }

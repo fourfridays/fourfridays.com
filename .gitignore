@@ -1,7 +1,13 @@
 # Custom ignore
 .DS_Store
 *.swp
-/static/
+
+# Exclude everything in static except for images and fonts sub-folders
+!static/
+static/*
+!static/fonts/
+!static/images/
+
 /media/
 base.py
 production.py

@@ -24,7 +24,7 @@
                 {% for article in blogs %}
                     <article class="my-3 blog-index">
                         <h2 class="my-1">
-                            <a href="{{ article.slug }}">{{ article.title }}</a>
+                            <a href="{{ article.slug }}/">{{ article.title }}</a>
                         </h2>
                         <p class="small">
                             Posted by {{ article.author.first_name }} {{ article.author.last_name }} on {{ article.date }}        

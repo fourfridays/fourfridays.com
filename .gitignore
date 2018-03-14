@@ -111,3 +111,6 @@ ENV/
 /grunt/.sass-cache
 /gunicorn.conf.py
 /grunt/package-lock.json
+/grunt/src/fa-solid.min.js
+/grunt/src/fa-brands.min.js
+/grunt/src/fontawesome.min.js

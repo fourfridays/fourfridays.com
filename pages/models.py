@@ -3,21 +3,20 @@ from __future__ import absolute_import, unicode_literals
 from django.db import models
 from django import forms
 
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import StreamField, RichTextField
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
+from wagtail.core.models import Page
+from wagtail.core.fields import StreamField, RichTextField
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
 
 from wagtail.contrib.table_block.blocks import TableBlock
 
-from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock, ChoiceBlock
-from wagtail.wagtailimages.blocks import ImageChooserBlock
-from wagtail.wagtaildocs.blocks import DocumentChooserBlock
-from wagtail.wagtailembeds.blocks import EmbedBlock
+from wagtail.core.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock, ChoiceBlock
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.documents.blocks import DocumentChooserBlock
+from wagtail.embeds.blocks import EmbedBlock
 
 
 from modelcluster.fields import ParentalKey
-from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 
 
 class AlignmentChoiceBlock(ChoiceBlock):

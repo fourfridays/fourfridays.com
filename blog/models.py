@@ -6,31 +6,31 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db.models import Count, Q
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import redirect, render
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 from django import forms
 
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailadmin.edit_handlers import (
+from wagtail.core.models import Page
+from wagtail.core.fields import RichTextField, StreamField
+from wagtail.core import blocks
+from wagtail.admin.edit_handlers import (
     FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel, StreamFieldPanel)
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailsnippets.models import register_snippet
-from wagtail.wagtailsearch import index
-from wagtail.wagtailsearch.models import Query
+from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.snippets.models import register_snippet
+from wagtail.search import index
+from wagtail.search.models import Query
 
-from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock, ChoiceBlock
-from wagtail.wagtailimages.blocks import ImageChooserBlock
-from wagtail.wagtaildocs.blocks import DocumentChooserBlock
-from wagtail.wagtailembeds.blocks import EmbedBlock
+from wagtail.core.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, BooleanBlock, ChoiceBlock
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.documents.blocks import DocumentChooserBlock
+from wagtail.embeds.blocks import EmbedBlock
 
 from wagtail.contrib.table_block.blocks import TableBlock
 
 from taggit.models import TaggedItemBase, Tag
 
-from modelcluster.tags import ClusterTaggableManager
+from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 
 import datetime
@@ -136,6 +136,9 @@ class BlogStreamBlock(StreamBlock):
 #Blog Index Page
 
 class BlogIndexPage(Page):
+    # Speficies that only BlogPage objects can live under this index page
+    subpage_types = ['BlogPage']
+    
     @property
     def blogs(self):
         # Get list of blog pages that are descendants of this page
@@ -229,7 +232,8 @@ class BlogCategory(models.Model):
         help_text=_(
             'Categories, unlike tags, can have a hierarchy. You might have a '
             'Jazz category, and under that have children categories for Bebop'
-            ' and Big Band. Totally optional.')
+            ' and Big Band. Totally optional.'),
+        on_delete=models.CASCADE
     )
     description = models.CharField(max_length=500, blank=True)
 
@@ -267,7 +271,7 @@ class BlogCategory(models.Model):
 
 class BlogCategoryBlogPage(models.Model):
     category = models.ForeignKey(
-        BlogCategory, related_name="+", verbose_name=_('Category'))
+        BlogCategory, related_name="+", verbose_name=_('Category'), on_delete=models.CASCADE)
     page = ParentalKey('BlogPage', related_name='categories')
     panels = [
         FieldPanel('category'),
@@ -275,7 +279,7 @@ class BlogCategoryBlogPage(models.Model):
 
 
 class BlogPageTag(TaggedItemBase):
-    content_object = ParentalKey('BlogPage', related_name='tagged_items')
+    content_object = ParentalKey('BlogPage', related_name='tagged_items', on_delete=models.CASCADE)
 
 
 @register_snippet
@@ -305,8 +309,7 @@ def limit_author_choices():
 class BlogPage(Page):
     date = models.DateField(
         _("Post date"), default=datetime.datetime.today,
-        help_text=_("This date may be displayed on the blog post. It is not "
-                    "used to schedule posts to go live at a later date.")
+        help_text=_("This date may be displayed on the blog post. It is not used to schedule posts to go live at a later date.")
     )
 
     author = models.ForeignKey(
@@ -318,6 +321,8 @@ class BlogPage(Page):
         related_name='author_pages',
     )
 
+    # Specifies parent to BlogPage as being BlogIndexPages
+    parent_page_types = ['BlogIndexPage']
 
     body = StreamField(BlogStreamBlock())
 

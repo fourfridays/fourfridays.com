@@ -89,7 +89,7 @@ class PullQuoteBlock(StructBlock):
 class IconBlock(StructBlock):
     font_awesome_icon_name = CharBlock(required=False)
     font_awesome_icon_size = FontAwesomeIconSizeBlock()
-    font_awesome_icon_choice = FontAwesomeIconTypeBlock()
+    font_awesome_icon_choice = FontAwesomeIconTypeBlock(required=False, default='solid')
     material_icon_name = CharBlock(required=False)
     material_icon_size = MaterialIconSizeBlock()
     alignment = AlignmentChoiceBlock(default='normal')

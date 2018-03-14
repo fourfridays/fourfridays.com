@@ -27,10 +27,10 @@
         {% elif child.block_type == 'icon' %}
             <div class="icon {{ child.value.alignment }}">
                 {% if child.value.font_awesome_icon_name and value.material_icon_name %}
-                    <i class="fa {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
+                    <i class="{% if child.value.font_awesome_icon_choice == 'brand' %}fab{% else %}fas{% endif %} {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
                     <i class="material-icons md-{{ child.value.material_icon_size }}">{{ child.value.material_icon_name }}</i>
                 {% elif child.value.font_awesome_icon_name %}
-                    <i class="fa {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
+                    <i class="{% if child.value.font_awesome_icon_choice == 'brand' %}fab{% else %}fas{% endif %} {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
                 {% elif child.value.material_icon_name %}
                     <i class="material-icons md-{{ child.value.material_icon_size }}">{{ child.value.material_icon_name }}</i>
                 {% endif %}

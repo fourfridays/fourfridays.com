@@ -54,6 +54,15 @@ class FontAwesomeIconSizeBlock(FieldBlock):
     ))
 
 
+class FontAwesomeIconTypeBlock(ChoiceBlock):
+    choices = [
+        ('solid', 'Solid'),
+        ('regular', 'Regular'),
+        ('light', 'Light'),
+        ('brand', 'Brand')
+    ]
+
+
 class MaterialIconSizeBlock(FieldBlock):
     field = forms.ChoiceField(choices=(
         ('18', '18'), 
@@ -80,6 +89,7 @@ class PullQuoteBlock(StructBlock):
 class IconBlock(StructBlock):
     font_awesome_icon_name = CharBlock(required=False)
     font_awesome_icon_size = FontAwesomeIconSizeBlock()
+    font_awesome_icon_choice = FontAwesomeIconTypeBlock()
     material_icon_name = CharBlock(required=False)
     material_icon_size = MaterialIconSizeBlock()
     alignment = AlignmentChoiceBlock(default='normal')

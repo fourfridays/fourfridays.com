@@ -1,5 +1,5 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
-@import 'font-awesome-custom';
+/* @import 'font-awesome-custom';*/
 
 @font-face {
     font-family: 'Material Icons';
@@ -49,7 +49,7 @@
 .material-icons.md-108 { font-size: 108px; }
 .material-icons.md-120 { font-size: 120px; }
 
-.fa {
+.svg-inline--fa {
     color: #a43f33;
 }
 

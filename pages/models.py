@@ -147,6 +147,17 @@ class TwoColumnBlock(StructBlock):
         label = 'Two Columns'
 
 
+class ThreeColumnBlock(StructBlock):
+    left_column = HtmlFormatBlock()
+    middle_column = HtmlFormatBlock()
+    right_column = HtmlFormatBlock()
+    background_color = BackgroundColorBlock()
+
+    class Meta:
+        template = 'three_column_block.html'
+        label = 'Three Columns'
+
+
 class FourColumnBlock(StructBlock):
     left_column_1 = HtmlFormatBlock()
     left_column_2 = HtmlFormatBlock()
@@ -197,6 +208,7 @@ class Pages(Page):
     body = StreamField([
         ('single_column', SingleColumnBlock(group='COLUMNS')),
         ('two_columns', TwoColumnBlock(group='COLUMNS')),
+        ('three_columns', ThreeColumnBlock(group='COLUMNS')),        
         ('four_columns', FourColumnBlock(group='COLUMNS')),
         ('hero_image', HeroImageBlock(icon='image')),
     ],default='')

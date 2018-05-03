@@ -29,6 +29,16 @@ class AlignmentChoiceBlock(ChoiceBlock):
         ('text-nowrap', 'No Wrap')
     ]
 
+class ImageAlignmentChoiceBlock(ChoiceBlock):
+    choices = [
+        ('left', 'Left'),
+        ('right', 'Right'),
+        ('center', 'Center'),
+    ]
+
+class ImageBlock(StructBlock):
+    image = ImageChooserBlock(required=False)
+    image_alignment = ImageAlignmentChoiceBlock(required=False, default='left')
 
 class AlignedRAWHTMLBlock(StructBlock):
     html = RawHTMLBlock()
@@ -107,7 +117,7 @@ class HtmlFormatBlock(StreamBlock):
     h6 = CharBlock(classname='title')
     paragraph = RichTextBlock()
     table = TableBlock(template='includes/table.html')
-    image = ImageChooserBlock()
+    image = ImageBlock()
     document = DocumentChooserBlock(icon='doc-full-inverse')
     embedded_video = EmbedBlock()
     lead_body = CharBlock(classname='lead')

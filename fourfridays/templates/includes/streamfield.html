@@ -54,10 +54,12 @@
         {% elif child.block_type == 'paragraph' %}
             {{ child.value|richtext }}
 
-        <!-- IMAGE -->
+        <!-- ALIGNED IMAGE -->
         {% elif child.block_type == 'image' %}
-            <figure class="thumbnail">
-                {% image child.value width-900 class="img-fluid" %}
+            {% image child.value.image width-900 as theimage %}
+            <figure>
+                    <img class="img-fluid img-thumbnail{% if child.value.image_alignment != 'center' %} float-{{ child.value.image_alignment }} {% else %} mx-auto d-block{% endif %}" src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" />
+            </figure>
 
         {% else %}
             {{ child }}

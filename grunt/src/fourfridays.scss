@@ -197,6 +197,7 @@ main {
 
 
 article {
+    padding: 50px 0;
     &.white-smoke {
         background-color: rgba(236, 236, 236, 1);
     }
@@ -205,9 +206,6 @@ article {
     }
     &.concrete {
         background-color: rgba(149, 165, 166,1.0);
-    }
-    &.full-width {
-        padding: 50px 0;
     }
 }
 

@@ -1,22 +1,18 @@
-{% if self.background_color.value != 'normal' %}
-    <article class="full-width {{ self.background_color }}">
-{% else %}
-    <article>
-{% endif %}
-  <div class="container">
-    <div class="row">
-        <div class="col-12 col-sm-3">
-           {% include "includes/streamfield.html" with content=self.left_column_1 only %}
-        </div>
-        <div class="col-12 col-sm-3">
-           {% include "includes/streamfield.html" with content=self.left_column_2 only %}
-        </div>
-        <div class="col-12 col-sm-3">
-           {% include "includes/streamfield.html" with content=self.right_column_1 only %}
-        </div>
-        <div class="col-12 col-sm-3">
-           {% include "includes/streamfield.html" with content=self.right_column_2 only %}
+<article class="{% if self.background_color != 'normal' %}full-width {{ self.background_color }}{% endif %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                {% include "includes/streamfield.html" with content=self.left_column_1 only %}
+            </div>
+            <div class="col-12 col-sm-3">
+                {% include "includes/streamfield.html" with content=self.left_column_2 only %}
+            </div>
+            <div class="col-12 col-sm-3">
+                {% include "includes/streamfield.html" with content=self.right_column_1 only %}
+            </div>
+            <div class="col-12 col-sm-3">
+                {% include "includes/streamfield.html" with content=self.right_column_2 only %}
+            </div>
         </div>
     </div>
-  </div>
 </article>

@@ -1,8 +1,4 @@
-{% if self.background_color != 'normal' %}
-    <article class="full-width {{ self.background_color }}">
-{% else %}
-    <article>
-{% endif %}
+<article class="{% if self.background_color != 'normal' %}full-width {{ self.background_color }}{% endif %}">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-10 col-md-offset-1">

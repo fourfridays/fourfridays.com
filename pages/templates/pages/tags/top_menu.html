@@ -1,8 +1,8 @@
-{% load fourfridays_tags wagtailcore_tags %}
+{% load staticfiles fourfridays_tags wagtailcore_tags %}
 {% get_site_root as site_root %}
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
-    <a class="navbar-brand p-2" href="{% pageurl site_root %}" title="fourfridays [BETA]">fourfridays [BETA]</a>
+    <a class="navbar-brand" href="{% pageurl site_root %}" title="fourfridays [BETA]"><img class="img-fluid" src="{% static 'images/fourfridays-wordmark.png' %}" alt="fourfridays beta" width="180px"/></a>
     <button class="mx-2 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

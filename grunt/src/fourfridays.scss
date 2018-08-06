@@ -123,23 +123,21 @@ a {
 
 /* Navigation */
 .navbar {
+    .nav-link {
+        padding: 0.8rem 1rem !important;
+    }
     padding: 0;
     a {   
         color: #fff !important;
-        &.navbar-brand {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            background-color: #a43f33;
-            color: #fff;
-            letter-spacing: 0.062rem;
-            text-shadow: none;
-            &:hover {
-                background-color: #a43f33;
-                color: #fff;
-            }
-        }
         &:hover {
             color: #fff !important;  
+        }
+        &.navbar-brand {
+            background-color: #a43f33;
+            &:hover {
+                background-color: #403F3C;
+                color: #fff;
+            }
         }
     }
     li {

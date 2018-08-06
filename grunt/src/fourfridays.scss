@@ -193,17 +193,18 @@ main {
     }
 }
 
-
-article {
-    padding: 50px 0;
-    &.white-smoke {
-        background-color: rgba(236, 236, 236, 1);
-    }
-    &.aqua-island {
-        background-color: rgba(162, 222, 208, 1);
-    }
-    &.concrete {
-        background-color: rgba(149, 165, 166,1.0);
+.fourfridays {
+    article {
+        padding: 50px 0;
+        &.white-smoke {
+            background-color: rgba(236, 236, 236, 1);
+        }
+        &.aqua-island {
+            background-color: rgba(162, 222, 208, 1);
+        }
+        &.concrete {
+            background-color: rgba(149, 165, 166,1.0);
+        }
     }
 }
 

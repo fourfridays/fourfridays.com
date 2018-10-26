@@ -3,11 +3,11 @@ boto3==1.4.7
 botocore==1.7.20
 certifi==2018.1.18
 chardet==3.0.4
-Django==2.0.8
+Django==2.1.2
 django-cors-headers==2.1.0
-django-modelcluster==4.1
+django-modelcluster==4.2
 django-storages==1.6.5
-django-taggit==0.22.2
+django-taggit==0.23.0
 django-treebeard==4.2.1
 djangorestframework==3.8.2
 docutils==0.14
@@ -31,6 +31,6 @@ s3transfer==0.1.11
 six==1.11.0
 Unidecode==0.4.21
 urllib3==1.22
-wagtail==2.2.2
+wagtail==2.3
 webencodings==0.5.1
 Willow==1.1

@@ -8,9 +8,12 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from wagtail.contrib.sitemaps.views import sitemap
 
+from pages import views as page_views
 from search import views as search_views
 
 urlpatterns = [
+    url(r'^sales/$', page_views.sales_inquiry_form),
+    url(r'^sales/inquiry/', page_views.sales_inquiry_hubspot_form),
     url(r'^django-admin/', admin.site.urls),
 
     url(r'^admin/', include(wagtailadmin_urls)),

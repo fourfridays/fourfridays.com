@@ -38,9 +38,3 @@ if settings.DEBUG:
     # Serve static and media files from development server
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-    # Add views for testing 404 and 500 templates
-    urlpatterns += [
-        url(r'^test404/$', TemplateView.as_view(template_name='404.html')),
-        url(r'^test500/$', TemplateView.as_view(template_name='500.html')),
-    ]

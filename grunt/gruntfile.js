@@ -18,16 +18,16 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                '/home/fourfridays/sites/fourfridays/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
-                //'../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
+                //'/home/fourfridays/sites/fourfridays/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
+                '../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
             }
         }
     },
     sass: {                              // Task
       dist: {                            // Target
         files: {                         // Dictionary of files
-          '/home/fourfridays/sites/fourfridays/static/css/fourfridays.css': 'src/fourfridays.scss'
-          //'../static/css/fourfridays.css': 'src/fourfridays.scss'
+          //'/home/fourfridays/sites/fourfridays/static/css/fourfridays.css': 'src/fourfridays.scss'
+          '../static/css/fourfridays.css': 'src/fourfridays.scss'
         }
       }
     },
@@ -35,9 +35,9 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: '/home/fourfridays/sites/fourfridays/static/css',
+          cwd: '../static/css',
           src: ['*.css', '!*.min.css'],
-          dest: '/home/fourfridays/sites/fourfridays/static/css',
+          dest: '../static/css',
           ext: '.min.css'
         }]
       }

@@ -1,3 +1,16 @@
+/*===========================================
+=            BOOTSTRAP VARIABLES            =
+===========================================*/
+$brand: rgba(164, 63, 51, 1);
+$primary: rgba(64, 63, 60, 1);
+$secondary: rgba(59, 83, 108, 1);
+$white: #fff;
+$warning: rgba(247, 220, 111, 1);
+$info: rgba(85, 153, 199, 1);
+$success: rgba(83, 190, 128, 1);
+$danger: rgba(204, 97, 85, 1);
+$link-hover-color: $brand;
+
 @import '../node_modules/bootstrap/scss/bootstrap';
 /* @import 'font-awesome-custom';*/
 

@@ -9,10 +9,8 @@ services:
         links:
             - db:db
         volumes:
-            - ".:/code:rw"
+            - .:/code
         env_file: .env
-        environment:
-            DEBUG: 'true'
         command: /usr/local/bin/gunicorn fourfridays.wsgi:application -w 2 -b :8000
         depends_on:
             - db
@@ -25,7 +23,6 @@ services:
         volumes:
             - ./static:/code/static
             - ./media:/code/media
-            - ".:/code:rw"
         links:
             - web:web
 
@@ -38,7 +35,6 @@ services:
             - "5432:5432"
         volumes:
             - pgdata:/var/lib/postgresql/data/
-            - ".:/code:rw"
 
 volumes:
     pgdata:

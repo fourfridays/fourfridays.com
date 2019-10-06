@@ -1,0 +1,15 @@
+<article class="{% if self.background_color != 'normal' %}{{ self.background_color }} {% endif %}p-2 p-sm-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                {% include "includes/streamfield.html" with content=self.left_column only %}
+            </div>
+            <div class="col-12 col-sm-4">
+                {% include "includes/streamfield.html" with content=self.middle_column only %}
+            </div>
+            <div class="col-12 col-sm-4">
+                {% include "includes/streamfield.html" with content=self.right_column only %}
+            </div>
+        </div>
+    </div>
+</article>

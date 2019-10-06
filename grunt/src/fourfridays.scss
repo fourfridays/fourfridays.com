@@ -1,0 +1,425 @@
+/*===========================================
+=            BOOTSTRAP VARIABLES            =
+===========================================*/
+// Dark Red
+$brand: rgba(164, 63, 51, 1);
+// Dark Blue
+$secondary: rgba(59, 83, 108, 1);
+$white: #fff;
+$white-smoke: rgba(236, 236, 236, 1);
+$concrete: rgba(149, 165, 166,1.0);
+$aqua-island: rgba(162, 222, 208, 1);
+// Dark Gray
+$body-text: rgba(64, 63, 60, 1);
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Font Awesome Color Definition
+.svg-inline--fa {
+    color: $brand;
+}
+small {
+    color: #d2d2d2;
+}
+body {
+    color: $body-text;
+    font-family: 'Droid Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Droid Serif', serif;
+}
+a {
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+    color: #3398a4;
+}
+
+.btn-primary {
+    background-color: $brand;
+    border-color: $secondary;
+    color: $white !important;
+    &:hover {
+        background-color: $secondary;
+    }
+}
+
+.assistive-text { /*For accessibility to skip navigation*/
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+.btn-label { /*To hide rempty links on social media links*/
+    font-size: 0;
+    height: 1px;
+    overflow: hidden;
+}
+
+.material-icons {
+    color: $brand;
+    &.md-24 {
+        font-size: 24px;
+    }
+    &.md-36 {
+        font-size: 36px;
+    }
+    &.md-48 {
+        font-size: 48px;
+    }
+}
+
+[class*='fa-'] {
+    color: $brand;
+}
+
+/* ==========================================================================
+  HEADER
+   ========================================================================== */
+
+/* Navigation */
+nav {
+    &.bg-dark {
+        background-color: $secondary !important;
+    }
+    &.navbar {
+        .nav-link {
+            padding: 0.8rem 1rem !important;
+        }
+        padding: 0;
+        a {   
+            color: #fff !important;
+            &:hover {
+                color: #fff !important;  
+            }
+            &.navbar-brand {
+                background-color: $brand;
+                &:hover {
+                    background-color: #403F3C;
+                    color: #fff;
+                }
+            }
+        }
+        li {
+            a {
+                text-transform: uppercase;
+                color: #fff !important;
+                text-decoration: none;
+                display: block;
+                &:hover {
+                    background-color: #403F3C !important;
+                    color: #fff !important;
+                }
+            }
+            &.active a, &.active a:hover {
+                background-color: #403f3c !important;
+                color: #fff !important;    
+            }                
+        }
+    }
+}
+
+
+/* ==========================================================================
+  CONTENT
+   ========================================================================== */
+main {
+    margin-bottom: 20px;
+}
+
+/* Blocks */
+.block-four_columns {
+    h2, h3, h4, h5, h6 {
+        margin-top: 0;
+    }    
+    .rich-text {
+        p {
+            font-size: 0.9rem;
+        }
+    }
+    .icon {
+        position: relative;
+        left: -10px;
+    }
+}
+
+.block-two_columns {
+    .row {
+        display: flex;
+        justify-content: center;
+        align-itrems: center;
+    }
+}
+
+article {
+    &.white-smoke {
+        background-color: $white-smoke;
+    }
+    &.aqua-island {
+        background-color: $aqua-island;
+    }
+    &.concrete {
+        background-color: $concrete;
+    }
+}
+
+/* Hero Images */
+.hero-image figure {
+    position: relative; 
+    width: 100%; /* for IE 6 */
+    figcaption {
+        max-width: 45%;
+        background-color: rgba(164, 63, 51, 0.82);
+        position: absolute;
+        top: 65%;
+        left: 10%;  
+        transform: translate(-10%, -65%);
+        h2 {
+            color: #f0f0f0;
+            font-size: 1.4rem;
+            letter-spacing: -0.03rem;
+            margin-bottom: 0;
+        }
+    }
+    .photo-credit {
+        position: absolute; /* absolute position (so we can position it where we want)*/
+        bottom: 0; /* position will be on bottom */
+        width: auto;
+        right: 0;
+        padding: 4px;
+        background-color: #000;
+        color: #fff;
+        opacity: 0.5; /* transparency */
+        filter: alpha(opacity=50); /* IE transparency */
+    }
+}
+
+
+form[name="blog-search"] {
+    input {
+        &[type="text"] {
+            @extend .form-control;
+        }
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+    .form-control + button  {
+        position: absolute;
+        right: 20px;
+        top: 28px;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+form[name="blog-search-results"] {
+    input {
+        &[type="text"] {
+            @extend .form-control;
+        }
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+    .form-control + button  {
+        position: absolute;
+        right: 20px;
+        top: 40px;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+p.recent-articles {
+    font-size: .89rem;
+}
+
+.rich-text img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer.blockquote-footer {
+    background-color: #fff;
+}
+
+/* ==========================================================================
+    FORMS
+   ========================================================================== */
+form {
+    p {
+        @extend .form-group, .row;
+        span.helptext {
+            @extend .small;
+        }
+        textarea {
+            @extend .form-control;
+            &[required=""]:focus {
+                border-color: rgba(164, 63, 51, 1);
+                box-shadow: 0 1px 1px rgba(164, 63, 51, 0.2) inset, 0 0 8px rgba(164, 63, 51, 0.8);
+            }
+        }
+    }
+    input {
+        &[type="text"], &[type="remail"] {
+            @extend .form-control;
+        }
+        &[required=""]:focus {
+            border-color: rgba(164, 63, 51, 1);
+            box-shadow: 0 1px 1px rgba(164, 63, 51, 0.2) inset, 0 0 8px rgba(164, 63, 51, 0.8);
+        }
+
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+}
+
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+footer {
+    padding: 12px 0 12px 0;
+    background-color: #403F3C;
+    display: block;
+    font-size: 0.87rem;
+    overflow: hidden;
+    ul {
+        list-style: none;
+        li {
+            i {
+                color: #fff;
+            }
+            a {
+                color: #3398a4;
+                &:hover {
+                    color: #fff;
+                }
+            }
+            &.copyright {
+                color: #b94a48;
+            }
+        }
+        &.footerRight {
+            text-align: right;
+        }
+        &.footerLeft li {
+            float: left;
+            margin-right: 12px;
+            i {
+                font-size: 22px;
+            }
+            a {
+                &:hover {
+                    i {
+                        text-decoration: none;
+                        color: #2790B0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* Large desktop */
+@media (min-width: 1200px) {  }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    /* Navigation */
+    header {
+        .nav-link {
+            padding: 0.5rem 1rem !important;
+        }
+    }
+    /* Hero Images */
+    .hero-image figure {
+        figcaption {
+            padding: 6px; 
+            h2 {
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: 0.78rem;
+            }
+        }
+    }
+
+/* ==========================================================================
+    BLOCKS
+   ========================================================================== */
+    .block-two_columns {
+        .row {
+            display: block;
+            justify-content: none;
+            align-itrems: none;
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+    .block-four_columns {
+        h2, h3, h4, h5, h6 {
+            text-align: center;
+        }    
+        .icon {
+            position: none;
+            left: 0;
+            text-align: center;
+        }
+    }
+
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+    footer {
+        ul {
+            &.footerLeft {
+                text-align: center;
+                padding: 0;
+                li {
+                    float: none;
+                    display: inline-block;
+                }
+            }
+            &.footerRight {
+                text-align: center;
+                padding: 0;
+            }
+        }
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 525px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .table {
+        font-size: 0.82rem;
+    }
+/* ==========================================================================
+    HERO IMAGES
+   ========================================================================== */
+    .hero-image figure {
+        figcaption {
+            max-width: 55%;
+            h2 {
+                font-size: 0.9rem;
+            }
+            p {
+                line-height: 0.7rem;
+            }
+        }
+        .photo-credit {
+            font-size: 0.7rem;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="container image-grid">
+    <div class="row">
+        <div class="offset-1 col-10">
+            <hr>
+            <div class="card-group">
+                {% for child in content %} 
+                    <div class="card {% if child.value.description %}border{% else %}border-0{% endif %} mr-2">
+                        {% if child.value.link %}
+                            <a class="text-black" href="{% pageurl child.value.link %}">
+                        {% endif %}
+                        <h4 class="bg-lian-gold p-2 mb-0"><small>{{ child.value.caption|upper }}</small></h4>
+                        {% image child.value.image fill-800x450-c100 as grid_image %}
+                        <figure class="overlay">
+                            <img class="card-img img-fluid" src="{{ grid_image.url }}" alt="{{ child.value.image.title }}"/>
+                        </figure>
+                        {% if child.value.link %}
+                            </a>
+                        {% endif %}
+                        {% if child.value.description %}
+                            <p class="px-3">{{ child.value.description }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

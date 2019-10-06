@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}{{ self.slug }}{% endblock %}
+
+{% block content %}
+    {% if page.hero_image %}
+        {% image page.hero_image fill-2400x858-c100 as heroimage %}
+        <div class="hero-image">
+            <figure>
+                <img class="img-fluid" src="{{ heroimage.url }}" alt="{{ page.hero_image.title }}"/>
+                {% if page.hero_heading or page.hero_caption or page.hero_photo_credit %}
+                    <figcaption class="p-sm-3">
+                        {% if page.hero_heading %}
+                            <h2>{{ page.hero_heading }}</h2>
+                        {% endif %}
+                        {% if page.hero_caption %}
+                            <p class="d-none d-sm-block"><small>{{ page.hero_caption }}</small></p>
+                        {% endif %}
+                    </figcaption>
+                    {% if page.hero_photo_credit %}
+                        <div class="photo-credit d-none d-sm-block">
+                            <small><b>Photo:</b> {{ page.hero_photo_credit }}</small>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </figure>
+        </div>
+    {% else %}
+        <h1 class="text-center text-uppercase my-3">{{ page.title }}</h1>
+    {% endif %}
+
+    <!-- BODY -->
+    {% for block in page.body %}
+        {{ block }}
+    {% endfor %}
+{% endblock %}

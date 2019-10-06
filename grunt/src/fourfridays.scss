@@ -90,14 +90,7 @@ nav {
         a {   
             color: #fff !important;
             &:hover {
-                color: #fff !important;  
-            }
-            &.navbar-brand {
-                background-color: $brand;
-                &:hover {
-                    background-color: #403F3C;
-                    color: #fff;
-                }
+                background-color: $white-smoke !important;  
             }
         }
         li {

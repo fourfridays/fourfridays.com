@@ -33,7 +33,8 @@ class IconBlock(StructBlock):
     size = ChoiceBlock(choices = [
         ('sm', 'Small'),
         ('md', 'Medium'),
-        ('lg', 'Large')
+        ('lg', 'Large'),
+        ('xl', 'Extra Large')
     ])
     font_awesome_icon_choice = ChoiceBlock([
         ('solid', 'Solid'),

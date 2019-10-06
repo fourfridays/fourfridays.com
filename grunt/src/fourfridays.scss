@@ -53,16 +53,19 @@ a {
     overflow: hidden;
 }
 
-.material-icons {
+[class*='fa-'], .material-icons {
     color: $brand;
-    &.md-24 {
+    &.sm {
         font-size: 24px;
     }
-    &.md-36 {
+    &.md {
         font-size: 36px;
     }
-    &.md-48 {
+    &.lg {
         font-size: 48px;
+    }
+    &.xl {
+        font-size: 120px;
     }
 }
 

@@ -1,9 +1,0 @@
-<article class="{% if self.background_color != 'normal' %}full-width {{ self.background_color }}{% endif %}">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-10 col-md-offset-1">
-               {% include "includes/streamfield.html" with content=self.column only %}
-            </div>
-        </div>
-    </div>
-</article>

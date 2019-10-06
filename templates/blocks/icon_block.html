@@ -1,4 +1,4 @@
-<div class="icon {{ child.value.alignment }}">
+<div class="icon text-{{ self.alignment }}">
     {% if self.icon == 'font-awesome' %}
         <i class="{% if self.font_awesome_icon_choice == 'brand' %}fab{% elif self.font_awesome_icon_choice == 'solid' %} %}fas{% elif self.font_awesome_icon_choice == 'regular' %}far{% elif self.font_awesome_icon_choice == 'light' %}fal{% endif %} fa-{{ self.name }} {% if self.size == 'sm' %}fa-2x{% elif self.size == 'md' %}fa-3x{% elif self.size == 'lg' %}fa-4x{% endif %}" aria-hidden="true"></i>
     {% elif self.icon == 'material-icon' %}

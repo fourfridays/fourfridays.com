@@ -45,6 +45,8 @@ aldryn_addons.settings.load(locals())
 
 INSTALLED_APPS.extend([
     'pages',
+
+    'wagtail.contrib.styleguide',
 ])
 
 # To see the settings that have been applied, use the Django diffsettings 

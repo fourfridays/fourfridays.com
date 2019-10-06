@@ -1,0 +1,442 @@
+/*===========================================
+=            BOOTSTRAP VARIABLES            =
+===========================================*/
+$brand: rgba(164, 63, 51, 1);
+$primary: rgba(64, 63, 60, 1);
+$secondary: rgba(59, 83, 108, 1);
+$white: #fff;
+$warning: rgba(247, 220, 111, 1);
+$info: rgba(85, 153, 199, 1);
+$success: rgba(83, 190, 128, 1);
+$danger: rgba(204, 97, 85, 1);
+$link-hover-color: $brand;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Font Awesome Color Definition
+.svg-inline--fa {
+    color: #a43f33;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Droid Serif', serif;
+    color: #403F3C;
+}
+h1 {
+    text-transform: uppercase;
+}
+p {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 0.99em;
+    color: #403F3C;
+}
+a {
+    color: #3398a4;
+}
+
+.btn-primary {
+    background-color: #a43f33;
+    border-color: #a43f33;
+    color: #fff !important;
+    &:hover {
+        background-color: #3b536c;
+    }
+}
+
+.assistive-text { /*For accessibility to skip navigation*/
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+.btn-label { /*To hide empty links on social media links*/
+    font-size: 0;
+    height: 1px;
+    overflow: hidden;
+}
+
+.bg-dark {
+    background-color: #3b536c !important;
+}
+
+.responsive-object {
+    display: block;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+    line-height: 1.42857;
+    margin-bottom: 20px;
+    padding: 4px;
+    transition: border 0.2s ease-in-out 0s; 
+    iframe, object, embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ==========================================================================
+  HEADER
+   ========================================================================== */
+
+/* Navigation */
+.navbar {
+    .nav-link {
+        padding: 0.8rem 1rem !important;
+    }
+    padding: 0;
+    a {   
+        color: #fff !important;
+        &:hover {
+            color: #fff !important;  
+        }
+        &.navbar-brand {
+            background-color: #a43f33;
+            &:hover {
+                background-color: #403F3C;
+                color: #fff;
+            }
+        }
+    }
+    li {
+        a {
+            text-transform: uppercase;
+            color: #fff !important;
+            text-decoration: none;
+            display: block;
+            &:hover {
+                background-color: #403F3C !important;
+                color: #fff !important;
+            }
+        }
+        &.active a, &.active a:hover {
+            background-color: #403f3c !important;
+            color: #fff !important;    
+        }                
+    }
+}
+.navbar-default .navbar-toggle {
+    border-color: #b94a48;
+}
+
+
+/* ==========================================================================
+  CONTENT
+   ========================================================================== */
+main {
+    margin-bottom: 20px;
+}
+
+/* Blocks */
+.block-four_columns {
+    h2, h3, h4, h5, h6 {
+        margin-top: 0;
+    }    
+    .rich-text {
+        p {
+            font-size: 0.9em;
+        }
+    }
+    .icon {
+        position: relative;
+        left: -10px;
+    }
+}
+
+.block-two_columns {
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+article {
+    padding: 50px 0;
+    &.white-smoke {
+        background-color: rgba(236, 236, 236, 1);
+    }
+    &.aqua-island {
+        background-color: rgba(162, 222, 208, 1);
+    }
+    &.concrete {
+        background-color: rgba(149, 165, 166,1.0);
+    }
+}
+
+/* Hero Images */
+.hero-image figure {
+    position: relative; 
+    width: 100%; /* for IE 6 */
+    figcaption {
+        max-width: 45%;
+        background-color: rgba(164, 63, 51, 0.82);
+        position: absolute;
+        top: 65%;
+        left: 10%;  
+        transform: translate(-10%, -65%);
+        h2 {
+            color: #f0f0f0;
+            font-size: 1.4em;
+            letter-spacing: -0.03em;
+            margin-bottom: 0;
+        }
+        p.fine-print {
+            color: #d2d2d2;
+            line-height: 1em;
+            margin-top: 4px;
+        }
+    }
+    .photo-credit {
+        position: absolute; /* absolute position (so we can position it where we want)*/
+        bottom: 0; /* position will be on bottom */
+        width: auto;
+        right: 0;
+        padding: 4px;
+        background-color: #000;
+        color: #fff;
+        opacity: 0.5; /* transparency */
+        filter: alpha(opacity=50); /* IE transparency */
+    }
+}
+
+
+form[name="blog-search"] {
+    input {
+        &[type="text"] {
+            @extend .form-control;
+        }
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+    .form-control + button  {
+        position: absolute;
+        right: 20px;
+        top: 28px;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+form[name="blog-search-results"] {
+    input {
+        &[type="text"] {
+            @extend .form-control;
+        }
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+    .form-control + button  {
+        position: absolute;
+        right: 20px;
+        top: 40px;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+p.recent-articles {
+    font-size: .89em;
+}
+
+.rich-text img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer.blockquote-footer {
+    background-color: #fff;
+}
+
+/* ==========================================================================
+    FORMS
+   ========================================================================== */
+form {
+    p {
+        @extend .form-group, .row;
+        span.helptext {
+            @extend .small;
+        }
+        textarea {
+            @extend .form-control;
+            &[required=""]:focus {
+                border-color: rgba(164, 63, 51, 1);
+                box-shadow: 0 1px 1px rgba(164, 63, 51, 0.2) inset, 0 0 8px rgba(164, 63, 51, 0.8);
+            }
+        }
+    }
+    input {
+        &[type="text"], &[type="email"] {
+            @extend .form-control;
+        }
+        &[required=""]:focus {
+            border-color: rgba(164, 63, 51, 1);
+            box-shadow: 0 1px 1px rgba(164, 63, 51, 0.2) inset, 0 0 8px rgba(164, 63, 51, 0.8);
+        }
+
+        &[type="submit"] {
+            @extend .btn, .btn-primary;
+        }
+    }
+}
+
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+footer {
+    padding: 12px 0 12px 0;
+    background-color: #403F3C;
+    display: block;
+    font-size: 0.87em;
+    overflow: hidden;
+    ul {
+        list-style: none;
+        li {
+            i {
+                color: #fff;
+            }
+            a {
+                color: #3398a4;
+                &:hover {
+                    color: #fff;
+                }
+            }
+            &.copyright {
+                color: #b94a48;
+            }
+        }
+        &.footerRight {
+            text-align: right;
+        }
+        &.footerLeft li {
+            float: left;
+            margin-right: 12px;
+            i {
+                font-size: 22px;
+            }
+            a {
+                &:hover {
+                    i {
+                        text-decoration: none;
+                        color: #2790B0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* Large desktop */
+@media (min-width: 1200px) {  }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    /* Navigation */
+    header {
+        .nav-link {
+            padding: 0.5rem 1rem !important;
+        }
+    }
+    /* Hero Images */
+    .block-hero_image figure.overlay {
+        figcaption {
+            padding: 6px; 
+            h2 {
+                font-size: 1.2em;
+            }
+            p.fine-print {
+                font-size: 0.6em;
+            }
+        }
+        .photo-credit {
+            font-size: 95%;
+        }
+    }
+
+/* ==========================================================================
+    BLOCKS
+   ========================================================================== */
+    .block-two_columns {
+        .row {
+            display: block;
+            justify-content: none;
+            align-items: none;
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+    .block-four_columns {
+        h2, h3, h4, h5, h6 {
+            text-align: center;
+        }    
+        .icon {
+            position: none;
+            left: 0;
+            text-align: center;
+        }
+    }
+
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+    footer {
+        ul {
+            &.footerLeft {
+                text-align: center;
+                padding: 0;
+                li {
+                    float: none;
+                    display: inline-block;
+                }
+            }
+            &.footerRight {
+                text-align: center;
+                padding: 0;
+            }
+        }
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 525px) {
+    h1 {
+        font-size: 2em;
+    }
+    .table {
+        font-size: 0.82em;
+    }
+/* ==========================================================================
+    HERO IMAGES
+   ========================================================================== */
+    .block-hero_image figure.overlay {
+        figcaption {
+            max-width: 55%;
+            h2 {
+                font-size: 0.9em;
+            }
+        }
+        .photo-credit {
+            font-size: 65%;
+            padding: 3px;
+        }
+    }
+}

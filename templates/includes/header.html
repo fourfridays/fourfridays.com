@@ -8,10 +8,13 @@
 
     {% block main_navigation %}
         <div class="collapse navbar-collapse" id="main-navigation" role="navigation" aria-label="Primary site navigation">
-            <ul class="nav nav-pills">
-                {# main_menu is defined in base/templatetags/navigation_tags.py #}
+            <ul class="navbar-nav mr-auto">
+                {# main_menu is defined in pages/templatetags/navigation_tags.py #}
                 {% get_site_root as site_root %}
                 {% top_menu parent=site_root calling_page=self %}
+            </ul>
+            <ul class="list-unstyled mb-0">
+                <li><a class="btn btn-sm btn-primary mr-md-2" href="/sales/" role="button">I am Interested</a></li>
             </ul>
         </div>
     {% endblock %}

@@ -1,0 +1,56 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="streamfield">
+    {% for child in content %}
+        {% if child.block_type == 'h1' %}
+            <h1>{{ child }}</h1>
+        {% elif child.block_type == 'h2' %}
+            <h2>{{ child }}</h2>
+        {% elif child.block_type == 'h3' %}
+            <h3>{{ child }}</h3>
+        {% elif child.block_type == 'h4' %}
+            <h4>{{ child }}</h4>
+        {% elif child.block_type == 'h5' %}
+            <h5>{{ child }}</h5>
+        {% elif child.block_type == 'h6' %}
+            <h6>{{ child }}</h6>   
+
+        <!-- RAW HTML -->   
+        {% elif child.block_type == 'raw_html' %}
+            <div class="raw-html {{ child.value.alignment }}">
+                {{ child.value.html }}
+            </div>
+
+        <!-- ICON -->
+        {% elif child.block_type == 'icon' %}
+            <div class="icon {{ child.value.alignment }}">
+                {% if child.value.font_awesome_icon_name and value.material_icon_name %}
+                    <i class="{% if child.value.font_awesome_icon_choice == 'brand' %}fab{% else %}fas{% endif %} {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
+                    <i class="material-icons md-{{ child.value.material_icon_size }}">{{ child.value.material_icon_name }}</i>
+                {% elif child.value.font_awesome_icon_name %}
+                    <i class="{% if child.value.font_awesome_icon_choice == 'brand' %}fab{% else %}fas{% endif %} {{ child.value.font_awesome_icon_name }} fa-{{ child.value.font_awesome_icon_size }}" aria-hidden="true"></i>
+                {% elif child.value.material_icon_name %}
+                    <i class="material-icons md-{{ child.value.material_icon_size }}">{{ child.value.material_icon_name }}</i>
+                {% endif %}
+            </div>
+
+        <!-- SMALL TEXT -->
+        {% elif child.block_type == 'small_text' %}
+            <small>{{ child }}</small>
+
+        <!-- PARAGRAPH -->
+        {% elif child.block_type == 'paragraph' %}
+            {{ child.value|richtext }}
+
+        <!-- ALIGNED IMAGE -->
+        {% elif child.block_type == 'image' %}
+            {% image child.value.image width-900 as theimage %}
+            <figure>
+                    <img class="img-fluid img-thumbnail{% if child.value.image_alignment != 'center' %} float-{{ child.value.image_alignment }} {% else %} mx-auto d-block{% endif %}" src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" />
+            </figure>
+
+        {% else %}
+            {{ child }}
+        {% endif %}
+    {% endfor %}
+</div>

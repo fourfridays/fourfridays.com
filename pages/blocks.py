@@ -115,6 +115,7 @@ class BaseStreamBlock(StreamBlock):
         icon='fa-s15',
         template='blocks/embed_block.html')
     icon_block = IconBlock()
+    raw_html = AlignedRAWHTMLBlock()
 
 
 class SingleColumnBlock(StructBlock):

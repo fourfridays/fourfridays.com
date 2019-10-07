@@ -5,6 +5,7 @@ from wagtail.embeds.blocks import EmbedBlock
 from wagtail.core.blocks import (
     BooleanBlock, CharBlock, ChoiceBlock, FieldBlock, PageChooserBlock, RichTextBlock, StreamBlock, StructBlock, TextBlock
 )
+from wagtail.contrib.table_block.blocks import TableBlock
 
 
 class AlignmentBlock(ChoiceBlock):
@@ -115,6 +116,7 @@ class BaseStreamBlock(StreamBlock):
         icon='fa-s15',
         template='blocks/embed_block.html')
     icon_block = IconBlock()
+    table = TableBlock(template='includes/table.html')
     raw_html = AlignedRAWHTMLBlock()
 
 

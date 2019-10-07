@@ -46,7 +46,7 @@ class IconBlock(StructBlock):
     alignment = AlignmentBlock(default='left')
 
     class Meta:
-        label = 'Icon'
+        icon = 'wagtail'
         template = 'blocks/icon_block.html'
 
 
@@ -75,6 +75,7 @@ class ImageGridBlock(StreamBlock):
     ])
 
     class Meta:
+        icon = 'image'
         template = 'blocks/image_grid_block.html'
 
 
@@ -95,7 +96,7 @@ class HeadingBlock(StructBlock):
     alignment = AlignmentBlock(default='left', required=False)
 
     class Meta:
-        icon = 'title'
+        icon = 'pilcrow'
         template = 'blocks/heading_block.html'
 
 
@@ -106,14 +107,14 @@ class BaseStreamBlock(StreamBlock):
     """
     heading_block = HeadingBlock()
     paragraph_block = RichTextBlock(
-        icon='fa-paragraph',
+        icon='pilcrow',
         template='blocks/paragraph_block.html'
     )
     image_block = ImageBlock()
     image_grid_block = ImageGridBlock()
     embed_block = EmbedBlock(
         help_text='Insert an embed URL e.g https://www.youtube.com/embed/SGJFWirQ3ks',
-        icon='fa-s15',
+        icon='code',
         template='blocks/embed_block.html')
     icon_block = IconBlock()
     table = TableBlock(template='includes/table.html')
@@ -122,6 +123,7 @@ class BaseStreamBlock(StreamBlock):
 
 class SingleColumnBlock(StructBlock):
     column = BaseStreamBlock()
+    alignment = AlignmentBlock(default='left')
     background_color = BackgroundColorBlock()
 
     class Meta:
@@ -132,6 +134,7 @@ class SingleColumnBlock(StructBlock):
 class TwoColumnBlock(StructBlock):
     left_column = BaseStreamBlock()
     right_column = BaseStreamBlock()
+    alignment = AlignmentBlock(default='left')
     background_color = BackgroundColorBlock()
 
     class Meta:
@@ -143,6 +146,7 @@ class ThreeColumnBlock(StructBlock):
     left_column = BaseStreamBlock()
     middle_column = BaseStreamBlock()
     right_column = BaseStreamBlock()
+    alignment = AlignmentBlock(default='left')
     background_color = BackgroundColorBlock()
 
     class Meta:
@@ -155,6 +159,7 @@ class FourColumnBlock(StructBlock):
     left_column_2 = BaseStreamBlock()
     right_column_1 = BaseStreamBlock()
     right_column_2 = BaseStreamBlock()
+    alignment = AlignmentBlock(default='left')
     background_color = BackgroundColorBlock()
 
     class Meta:

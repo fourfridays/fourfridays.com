@@ -9,7 +9,7 @@
             <figure>
                 <img class="img-fluid" src="{{ heroimage.url }}" alt="{{ page.hero_image.title }}"/>
                 {% if page.hero_heading or page.hero_caption or page.hero_photo_credit %}
-                    <figcaption class="p-sm-3">
+                    <figcaption class="p-3">
                         {% if page.hero_heading %}
                             <h2>{{ page.hero_heading }}</h2>
                         {% endif %}
@@ -18,7 +18,7 @@
                         {% endif %}
                     </figcaption>
                     {% if page.hero_photo_credit %}
-                        <div class="photo-credit d-none d-sm-block">
+                        <div class="photo-credit d-none d-sm-block p-1">
                             <small><b>Photo:</b> {{ page.hero_photo_credit }}</small>
                         </div>
                     {% endif %}

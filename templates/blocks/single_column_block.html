@@ -1,4 +1,4 @@
-<article class="{% if self.background_color != 'normal' %}{{ self.background_color }} {% endif %}text-center text-sm-left py-4 py-sm-5">
+<article class="{% if self.background_color != 'normal' %}{{ self.background_color }} {% endif %}text-center {% if self.alignment != 'center' %}text-sm-{{ self.alignment }} {% endif %}py-4 py-sm-5">
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-12 col-sm-10 col-sm-offset-1">

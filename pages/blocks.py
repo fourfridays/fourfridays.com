@@ -33,6 +33,28 @@ class BackgroundColorBlock(FieldBlock):
     ))
 
 
+class ButtonBlock(StructBlock):
+    alignment = AlignmentBlock(default='left')
+    size = ChoiceBlock([
+        ('sm', 'Small'),
+        ('md', 'Medium'),
+        ('lg', 'Large')
+    ])
+    cta_text = CharBlock(max_length=25, help_text='25 character limit.')
+    color = ChoiceBlock([
+        ('primary', 'Primary'),
+        ('secondary', 'Secondary'),
+        ('dark-brown', 'Dark Brown'),
+        ('white-smoke', 'White Smoke'),
+        ('concrete', 'Concrete'),
+        ('aqua-island', 'Aqua Island'),
+
+    ])
+
+    class Meta:
+        icon = 'pick'
+        template = 'blocks/button_block.html'
+
 class IconBlock(StructBlock):
     icon = ChoiceBlock([
         ('font-awesome', 'Font Awesome'),
@@ -119,6 +141,7 @@ class BaseStreamBlock(StreamBlock):
         template='blocks/paragraph_block.html'
     )
     image_block = ImageBlock()
+    button_block = ButtonBlock()
     image_grid_block = ImageGridBlock()
     embed_block = EmbedBlock(
         help_text='Insert an embed URL e.g https://www.youtube.com/embed/SGJFWirQ3ks',

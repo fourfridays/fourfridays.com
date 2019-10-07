@@ -1,7 +1,7 @@
 {% load navigation_tags static %}
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
-    <a class="navbar-brand" href="/" title="fourfridays [BETA]"><img class="img-fluid" src="{% static 'images/fourfridays-wordmark.png' %}" alt="fourfridays beta" width="180px"/></a>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark p-0" role="navigation">
+    <a class="navbar-brand p-0" href="/" title="fourfridays [BETA]"><img class="img-fluid" src="{% static 'images/fourfridays-wordmark.png' %}" alt="fourfridays beta" width="190px"/></a>
     <button class="mx-2 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,7 +14,7 @@
                 {% top_menu parent=site_root calling_page=self %}
             </ul>
             <ul class="list-unstyled mb-0">
-                <li><a class="btn btn-sm btn-primary mr-md-2" href="/sales/" role="button">I am Interested</a></li>
+                <li><a class="btn btn-sm btn-primary text-uppercase mr-md-2" href="/sales/" role="button">I am Interested</a></li>
             </ul>
         </div>
     {% endblock %}

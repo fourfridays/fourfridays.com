@@ -3,8 +3,9 @@ from django import forms
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.core.blocks import (
-    BooleanBlock, CharBlock, ChoiceBlock, FieldBlock, PageChooserBlock, RichTextBlock, StreamBlock, StructBlock, TextBlock
+    BooleanBlock, CharBlock, ChoiceBlock, FieldBlock, PageChooserBlock, RawHTMLBlock, RichTextBlock, StreamBlock, StructBlock, TextBlock
 )
+from wagtail.contrib.table_block.blocks import TableBlock
 
 
 class AlignmentBlock(ChoiceBlock):
@@ -13,6 +14,14 @@ class AlignmentBlock(ChoiceBlock):
         ('center', 'Center'),
         ('right', 'Right')
     ]
+
+
+class AlignedRAWHTMLBlock(StructBlock):
+    html = RawHTMLBlock()
+    alignment = AlignmentBlock(default='left')
+
+    class Meta:
+        template = 'blocks/aligned_raw_html_block.html'
 
 
 class BackgroundColorBlock(FieldBlock):
@@ -24,6 +33,28 @@ class BackgroundColorBlock(FieldBlock):
     ))
 
 
+class ButtonBlock(StructBlock):
+    alignment = AlignmentBlock(default='left')
+    size = ChoiceBlock([
+        ('sm', 'Small'),
+        ('md', 'Medium'),
+        ('lg', 'Large')
+    ])
+    cta_text = CharBlock(max_length=25, help_text='25 character limit.')
+    color = ChoiceBlock([
+        ('primary', 'Primary'),
+        ('secondary', 'Secondary'),
+        ('dark-brown', 'Dark Brown'),
+        ('white-smoke', 'White Smoke'),
+        ('concrete', 'Concrete'),
+        ('aqua-island', 'Aqua Island'),
+
+    ])
+
+    class Meta:
+        icon = 'pick'
+        template = 'blocks/button_block.html'
+
 class IconBlock(StructBlock):
     icon = ChoiceBlock([
         ('font-awesome', 'Font Awesome'),
@@ -33,7 +64,8 @@ class IconBlock(StructBlock):
     size = ChoiceBlock(choices = [
         ('sm', 'Small'),
         ('md', 'Medium'),
-        ('lg', 'Large')
+        ('lg', 'Large'),
+        ('xl', 'Extra Large')
     ])
     font_awesome_icon_choice = ChoiceBlock([
         ('solid', 'Solid'),
@@ -44,7 +76,7 @@ class IconBlock(StructBlock):
     alignment = AlignmentBlock(default='left')
 
     class Meta:
-        label = 'Icon'
+        icon = 'wagtail'
         template = 'blocks/icon_block.html'
 
 
@@ -73,6 +105,7 @@ class ImageGridBlock(StreamBlock):
     ])
 
     class Meta:
+        icon = 'image'
         template = 'blocks/image_grid_block.html'
 
 
@@ -93,7 +126,7 @@ class HeadingBlock(StructBlock):
     alignment = AlignmentBlock(default='left', required=False)
 
     class Meta:
-        icon = 'title'
+        icon = 'pilcrow'
         template = 'blocks/heading_block.html'
 
 
@@ -104,20 +137,24 @@ class BaseStreamBlock(StreamBlock):
     """
     heading_block = HeadingBlock()
     paragraph_block = RichTextBlock(
-        icon='fa-paragraph',
+        icon='pilcrow',
         template='blocks/paragraph_block.html'
     )
     image_block = ImageBlock()
+    button_block = ButtonBlock()
     image_grid_block = ImageGridBlock()
     embed_block = EmbedBlock(
         help_text='Insert an embed URL e.g https://www.youtube.com/embed/SGJFWirQ3ks',
-        icon='fa-s15',
+        icon='code',
         template='blocks/embed_block.html')
     icon_block = IconBlock()
+    table = TableBlock(template='includes/table.html')
+    raw_html = AlignedRAWHTMLBlock()
 
 
 class SingleColumnBlock(StructBlock):
     column = BaseStreamBlock()
+    alignment = AlignmentBlock(default='left')
     background_color = BackgroundColorBlock()
 
     class Meta:
@@ -128,6 +165,7 @@ class SingleColumnBlock(StructBlock):
 class TwoColumnBlock(StructBlock):
     left_column = BaseStreamBlock()
     right_column = BaseStreamBlock()
+    alignment = AlignmentBlock(default='left')
     background_color = BackgroundColorBlock()
 
     class Meta:
@@ -139,6 +177,7 @@ class ThreeColumnBlock(StructBlock):
     left_column = BaseStreamBlock()
     middle_column = BaseStreamBlock()
     right_column = BaseStreamBlock()
+    alignment = AlignmentBlock(default='left')
     background_color = BackgroundColorBlock()
 
     class Meta:
@@ -151,6 +190,7 @@ class FourColumnBlock(StructBlock):
     left_column_2 = BaseStreamBlock()
     right_column_1 = BaseStreamBlock()
     right_column_2 = BaseStreamBlock()
+    alignment = AlignmentBlock(default='left')
     background_color = BackgroundColorBlock()
 
     class Meta:

@@ -3,24 +3,21 @@
 ===========================================*/
 // Dark Red
 $brand: rgba(164, 63, 51, 1);
+$text-brand: rgba(185, 74, 72, 1);
+.text-brand { color: $text-brand; }
 // Dark Blue
 $secondary: rgba(59, 83, 108, 1);
 $white: #fff;
+$dark-brown: rgba(64, 63, 60, 1);
 $white-smoke: rgba(236, 236, 236, 1);
 $concrete: rgba(149, 165, 166,1.0);
 $aqua-island: rgba(162, 222, 208, 1);
 // Dark Gray
 $body-text: rgba(64, 63, 60, 1);
+$enable-responsive-font-sizes: true;
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
-// Font Awesome Color Definition
-.svg-inline--fa {
-    color: $brand;
-}
-small {
-    color: #d2d2d2;
-}
 body {
     color: $body-text;
     font-family: 'Droid Sans', sans-serif;
@@ -32,7 +29,6 @@ a {
     font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
     color: #3398a4;
 }
-
 .btn-primary {
     background-color: $brand;
     border-color: $secondary;
@@ -41,112 +37,74 @@ a {
         background-color: $secondary;
     }
 }
-
 .assistive-text { /*For accessibility to skip navigation*/
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
 }
-
-.btn-label { /*To hide rempty links on social media links*/
-    font-size: 0;
-    height: 1px;
-    overflow: hidden;
-}
-
-.material-icons {
+/* ICON SIZE */
+[class*='fa-'], .material-icons {
     color: $brand;
-    &.md-24 {
-        font-size: 24px;
+    &.sm {
+        font-size: 18px;
     }
-    &.md-36 {
+    &.md {
         font-size: 36px;
     }
-    &.md-48 {
+    &.lg {
         font-size: 48px;
     }
+    &.xl {
+        font-size: 120px;
+    }
 }
-
+/* ICON COLOR */
 [class*='fa-'] {
     color: $brand;
 }
 
-/* ==========================================================================
-  HEADER
-   ========================================================================== */
-
-/* Navigation */
+/*==============================
+=            HEADER            =
+==============================*/
 nav {
     &.bg-dark {
         background-color: $secondary !important;
     }
     &.navbar {
-        .nav-link {
-            padding: 0.8rem 1rem !important;
-        }
-        padding: 0;
         a {   
-            color: #fff !important;
             &:hover {
-                color: #fff !important;  
-            }
-            &.navbar-brand {
-                background-color: $brand;
-                &:hover {
-                    background-color: #403F3C;
-                    color: #fff;
-                }
+                background-color: $white-smoke !important;  
             }
         }
         li {
             a {
-                text-transform: uppercase;
-                color: #fff !important;
-                text-decoration: none;
-                display: block;
                 &:hover {
-                    background-color: #403F3C !important;
-                    color: #fff !important;
+                    background-color: $dark-brown !important;
+                    color: $white !important;
                 }
             }
             &.active a, &.active a:hover {
-                background-color: #403f3c !important;
-                color: #fff !important;    
+                background-color: $dark-brown !important;
+                color: $white !important;    
             }                
         }
     }
 }
 
 
-/* ==========================================================================
-  CONTENT
-   ========================================================================== */
-main {
-    margin-bottom: 20px;
-}
-
+/*===============================
+=            CONTENT            =
+===============================*/
 /* Blocks */
-.block-four_columns {
-    h2, h3, h4, h5, h6 {
-        margin-top: 0;
-    }    
-    .rich-text {
-        p {
-            font-size: 0.9rem;
-        }
+.rich-text {
+    p {
+        font-size: 0.9rem;
     }
-    .icon {
-        position: relative;
-        left: -10px;
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
-.block-two_columns {
-    .row {
-        display: flex;
-        justify-content: center;
-        align-itrems: center;
-    }
-}
 
 article {
     &.white-smoke {
@@ -159,6 +117,7 @@ article {
         background-color: $concrete;
     }
 }
+
 
 /* Hero Images */
 .hero-image figure {
@@ -175,7 +134,9 @@ article {
             color: #f0f0f0;
             font-size: 1.4rem;
             letter-spacing: -0.03rem;
-            margin-bottom: 0;
+        }
+        small {
+            color: #d2d2d2;
         }
     }
     .photo-credit {
@@ -183,7 +144,6 @@ article {
         bottom: 0; /* position will be on bottom */
         width: auto;
         right: 0;
-        padding: 4px;
         background-color: #000;
         color: #fff;
         opacity: 0.5; /* transparency */
@@ -192,59 +152,9 @@ article {
 }
 
 
-form[name="blog-search"] {
-    input {
-        &[type="text"] {
-            @extend .form-control;
-        }
-        &[type="submit"] {
-            @extend .btn, .btn-primary;
-        }
-    }
-    .form-control + button  {
-        position: absolute;
-        right: 20px;
-        top: 28px;
-        border: 0;
-        background-color: transparent;
-        box-shadow: none;
-    }
-}
-form[name="blog-search-results"] {
-    input {
-        &[type="text"] {
-            @extend .form-control;
-        }
-        &[type="submit"] {
-            @extend .btn, .btn-primary;
-        }
-    }
-    .form-control + button  {
-        position: absolute;
-        right: 20px;
-        top: 40px;
-        border: 0;
-        background-color: transparent;
-        box-shadow: none;
-    }
-}
-
-p.recent-articles {
-    font-size: .89rem;
-}
-
-.rich-text img {
-    max-width: 100%;
-    height: auto;
-}
-
-footer.blockquote-footer {
-    background-color: #fff;
-}
-
-/* ==========================================================================
-    FORMS
-   ========================================================================== */
+/*=============================
+=            FORMS            =
+=============================*/
 form {
     p {
         @extend .form-group, .row;
@@ -274,40 +184,27 @@ form {
     }
 }
 
-/* ==========================================================================
-    FOOTER
-   ========================================================================== */
+
+/*==============================
+=            FOOTER            =
+==============================*/
 footer {
-    padding: 12px 0 12px 0;
-    background-color: #403F3C;
-    display: block;
+    background-color: $dark-brown;
     font-size: 0.87rem;
     overflow: hidden;
     ul {
-        list-style: none;
         li {
-            i {
-                color: #fff;
-            }
             a {
                 color: #3398a4;
                 &:hover {
-                    color: #fff;
+                    color: $white;
                 }
             }
             &.copyright {
-                color: #b94a48;
+                color: $brand;
             }
         }
-        &.footerRight {
-            text-align: right;
-        }
-        &.footerLeft li {
-            float: left;
-            margin-right: 12px;
-            i {
-                font-size: 22px;
-            }
+        &.footer-left li {
             a {
                 &:hover {
                     i {
@@ -321,10 +218,9 @@ footer {
 }
 
 
-/* ==========================================================================
-   MEDIA QUERIES
-   ========================================================================== */
-
+/*=====================================
+=            MEDIA QUERIES            =
+=====================================*/
 /* Large desktop */
 @media (min-width: 1200px) {  }
  
@@ -333,65 +229,14 @@ footer {
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-    /* Navigation */
-    header {
-        .nav-link {
-            padding: 0.5rem 1rem !important;
-        }
-    }
-    /* Hero Images */
+    /* HERO IMAGES */
     .hero-image figure {
         figcaption {
-            padding: 6px; 
             h2 {
                 font-size: 1.2rem;
             }
             p {
                 font-size: 0.78rem;
-            }
-        }
-    }
-
-/* ==========================================================================
-    BLOCKS
-   ========================================================================== */
-    .block-two_columns {
-        .row {
-            display: block;
-            justify-content: none;
-            align-itrems: none;
-            h2 {
-                text-align: center;
-            }
-        }
-    }
-    .block-four_columns {
-        h2, h3, h4, h5, h6 {
-            text-align: center;
-        }    
-        .icon {
-            position: none;
-            left: 0;
-            text-align: center;
-        }
-    }
-
-/* ==========================================================================
-    FOOTER
-   ========================================================================== */
-    footer {
-        ul {
-            &.footerLeft {
-                text-align: center;
-                padding: 0;
-                li {
-                    float: none;
-                    display: inline-block;
-                }
-            }
-            &.footerRight {
-                text-align: center;
-                padding: 0;
             }
         }
     }
@@ -405,9 +250,7 @@ footer {
     .table {
         font-size: 0.82rem;
     }
-/* ==========================================================================
-    HERO IMAGES
-   ========================================================================== */
+    /* HERO IMAGE */
     .hero-image figure {
         figcaption {
             max-width: 55%;

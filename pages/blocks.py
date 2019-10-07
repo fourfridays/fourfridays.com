@@ -3,7 +3,7 @@ from django import forms
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.core.blocks import (
-    BooleanBlock, CharBlock, ChoiceBlock, FieldBlock, PageChooserBlock, RichTextBlock, StreamBlock, StructBlock, TextBlock
+    BooleanBlock, CharBlock, ChoiceBlock, FieldBlock, PageChooserBlock, RawHTMLBlock, RichTextBlock, StreamBlock, StructBlock, TextBlock
 )
 from wagtail.contrib.table_block.blocks import TableBlock
 
@@ -14,6 +14,14 @@ class AlignmentBlock(ChoiceBlock):
         ('center', 'Center'),
         ('right', 'Right')
     ]
+
+
+class AlignedRAWHTMLBlock(StructBlock):
+    html = RawHTMLBlock()
+    alignment = AlignmentBlock(default='left')
+
+    class Meta:
+        template = 'blocks/aligned_raw_html_block.html'
 
 
 class BackgroundColorBlock(FieldBlock):

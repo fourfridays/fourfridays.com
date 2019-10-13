@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpRequest
 from django.shortcuts import render, redirect
 from django.template.defaultfilters import slugify
 import requests, json, urllib, os
@@ -22,10 +22,17 @@ def sales_inquiry_hubspot_form(request):
             headers["Content-Type"]='application/x-www-form-urlencoded'
             endpoint = os.environ.get('HUBSPOT_SALES_INQUIRY_FORM')
 
+            # Getting visitors ip address
+            x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+            if x_forwarded_for:
+                ip = x_forwarded_for.split(',')[0]
+            else:
+                ip = request.META.get('REMOTE_ADDR')
+
             #Convert the hs_context dictionary to a string
             hs_context = json.dumps({
-                "hutk": request.COOKIES.get('hubspotutk'), 
-                "ipAddress": request.META['HTTP_X_FORWARDED_FOR'],
+                "hutk": request.COOKIES.get('hubspotutk'),
+                "ipAddress": ip,
                 "pageUrl": request.POST['slug'],
                 "pageName": request.POST['page_title'], 
             })

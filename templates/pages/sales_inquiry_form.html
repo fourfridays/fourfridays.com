@@ -25,9 +25,9 @@
 
                 {% for key, value in request.GET.items %}
                     {% if value == 'success' %}
-                        <p class='bg-success text-white mt-2' style='font-weight: 800; padding: 12px;'>Thank you! We have received your inquiry.</p>
+                        <p class='bg-success text-white p-2 mt-2' style='font-weight: 800;'>Thank you! We have received your inquiry.</p>
                     {% elif value == 'unsuccessful' %}
-                        <p class='bg-danger text-white mt-2' style='font-weight: 800; padding: 12px;'>Sorry! Something went wrong. Please try submitting again.</p>
+                        <p class='bg-danger text-white p-2 mt-2' style='font-weight: 800;'>Sorry! Something went wrong. Please try submitting again.</p>
                     {% endif %}
                 {% endfor %}
             </div>

@@ -24,6 +24,8 @@ def sales_inquiry_hubspot_form(request):
 
             #Convert the hs_context dictionary to a string
             hs_context = json.dumps({
+                "hutk": request.COOKIES.get('hubspotutk'), 
+                "ipAddress": request.META['HTTP_X_FORWARDED_FOR'],
                 "pageUrl": request.POST['slug'],
                 "pageName": request.POST['page_title'], 
             })

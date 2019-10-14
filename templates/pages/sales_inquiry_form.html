@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+{% block body_class %}sales-form{% endblock %} 
+{% block title %}Talk with our Sales Team | {{ request.site.site_name }}{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-10">
+                 <h1 class="text-center text-uppercase my-3">Talk with our Sales Team</h1>
+                 <p>Please submit your information and a fourfridays representative will follow up as soon as possible.</p>
+                <form id="sales-inquiry-form" action="/sales/inquiry/" method="post">
+                    {% csrf_token %}
+                    <input id="website" name="website" type="text" value="" aria-label="If you are a human, do not fill in this field." style="display:none;">
+                    <input type="hidden" name="page_title" value="Sales">
+                    <input type="hidden" name="slug" value="{{ request.site.root_url }}{{ request.path }}">
+                    <div class="form-group"><label>First Name*</label> <input aria-label="Contact first name" class="form-control" id="firstname" name="firstname" placeholder="First Name" type="text" required=""></div>
+                    <div class="form-group"><label>Last Name*</label> <input aria-label="Contact last name" class="form-control" id="lastname" name="lastname" placeholder="Last Name" type="text" required=""></div>
+                    <div class="form-group"><label>Email*</label> <input aria-label="Contact email address" class="form-control" id="email" name="email" placeholder="Email" type="email" required=""></div>
+                    <div class="form-group"><label>Company Name</label> <input aria-label="Company name" class="form-control" id="company" name="company" placeholder="Company name" type="text"></div>
+                    <div class="form-group"><label>Message</label><textarea aria-label="Message" class="form-control" id="question" name="message" placeholder="Message" rows="3"></textarea></div>
+                    <button id="sales-inquiry-submit" class="btn btn-primary" type="submit" name="submit">Submit</button>
+                </form>
+
+                {% for key, value in request.GET.items %}
+                    {% if value == 'success' %}
+                        <p class='bg-success text-white p-2 mt-2' style='font-weight: 800;'>Thank you! We have received your inquiry.</p>
+                    {% elif value == 'unsuccessful' %}
+                        <p class='bg-danger text-white p-2 mt-2' style='font-weight: 800;'>Sorry! Something went wrong. Please try submitting again.</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -22,13 +22,16 @@ body {
     color: $body-text;
     font-family: 'Droid Sans', sans-serif;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Droid Serif', serif;
 }
+
 a {
     font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
     color: #3398a4;
 }
+
 .btn-primary {
     background-color: $brand;
     border-color: $secondary;
@@ -37,10 +40,19 @@ a {
         background-color: $secondary;
     }
 }
+
+.bg-success {
+    background-color: $aqua-island !important;
+}
+.bg-danger {
+    background-color: $brand !important;
+}
+
 .assistive-text { /*For accessibility to skip navigation*/
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
 }
+
 /* ICON SIZE */
 [class*='fa-'], .material-icons {
     color: $brand;

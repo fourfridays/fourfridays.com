@@ -24,6 +24,7 @@
                 </form>
 
                 {% for key, value in request.GET.items %}
+                    {{ key, value }}
                     {% if value == 'success' %}
                         <p class='bg-success text-white p-2 mt-2' style='font-weight: 800;'>Thank you! We have received your inquiry.</p>
                     {% elif value == 'unsuccessful' %}

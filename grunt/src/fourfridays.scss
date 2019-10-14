@@ -42,10 +42,10 @@ a {
 }
 
 .bg-success {
-    background-color: $aqua-island;
+    background-color: $aqua-island !important;
 }
 .bg-danger {
-    background-color: $brand;
+    background-color: $brand !important;
 }
 
 .assistive-text { /*For accessibility to skip navigation*/

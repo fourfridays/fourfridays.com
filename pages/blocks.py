@@ -3,7 +3,7 @@ from django import forms
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.core.blocks import (
-    BooleanBlock, CharBlock, ChoiceBlock, FieldBlock, PageChooserBlock, RawHTMLBlock, RichTextBlock, StreamBlock, StructBlock, TextBlock
+    BooleanBlock, CharBlock, ChoiceBlock, FieldBlock, PageChooserBlock, RawHTMLBlock, RichTextBlock, StreamBlock, StructBlock, TextBlock, URLBlock
 )
 from wagtail.contrib.table_block.blocks import TableBlock
 
@@ -41,6 +41,8 @@ class ButtonBlock(StructBlock):
         ('lg', 'Large')
     ])
     cta_text = CharBlock(max_length=25, help_text='25 character limit.')
+    internal_link = PageChooserBlock(required=False)
+    external_link = URLBlock(required=False)
     color = ChoiceBlock([
         ('primary', 'Primary'),
         ('secondary', 'Secondary'),

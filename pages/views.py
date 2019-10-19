@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect, HttpRequest
+from django.http import HttpResponse, HttpResponseRedirect, HttpRequest, Http404
 from django.shortcuts import render, redirect
 from django.template.defaultfilters import slugify
 import requests, json, urllib, os
@@ -53,3 +53,5 @@ def sales_inquiry_hubspot_form(request):
             else:
                 slug = request.POST['slug']+'?inquiry-status=unsuccessful#anchor-inquiry-form'
             return redirect(slug)
+    else:
+        raise Http404()

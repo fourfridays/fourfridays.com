@@ -54,4 +54,4 @@ def sales_inquiry_hubspot_form(request):
                 slug = request.POST['slug']+'?inquiry-status=unsuccessful#anchor-inquiry-form'
             return redirect(slug)
     else:
-        raise Http404()
+        raise Http404

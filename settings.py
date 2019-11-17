@@ -46,6 +46,8 @@ aldryn_addons.settings.load(locals())
 INSTALLED_APPS.extend([
     'pages',
 
+    'django.contrib.sitemaps',
+
     'wagtail.contrib.styleguide',
     'wagtail.contrib.table_block',
 ])

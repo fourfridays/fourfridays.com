@@ -1,0 +1,30 @@
+{% load static %}
+{% extends "base.html" %}
+{% block title %}Page Not Found | fourfridays{% endblock %}
+
+{% block content %}
+    <div class="hero_image">
+        <figure>
+            <img class="img-fluid" src="{% static 'images/page-not-found.jpg' %}" alt="On top of Eiffel Tower next to some binoculars."/>          
+                <figcaption class="p-3">
+                    <h2>404 - Oops! We can&#39;t find that page</h2>
+                </figcaption>          
+                <div class="photo-credit d-none d-sm-block p-1">
+                    <small><b>Photo:</b> Overlooking Paris from the second floor of the Eiffel Tower.</small>
+                </div>     
+        </figure>
+    </div>
+
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <!-- PARAGRAPH -->
+                    <div class="rich-text"><h2>We are sorry, we know what it feels like</h2>
+                        <p>Please be ensured, the error has been reported and a fix it has been sent to our technical know-it-all department.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock %}

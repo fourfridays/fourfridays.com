@@ -12,7 +12,6 @@
                  <p>Please submit your information and a fourfridays representative will follow up as soon as possible.</p>
                 <form id="sales-inquiry-form" action="/sales/inquiry/" method="post">
                     {% csrf_token %}
-                    <input id="website" name="website" type="text" value="" aria-label="If you are a human, do not fill in this field." style="display:none;">
                     <input type="hidden" name="page_title" value="Sales">
                     <input type="hidden" name="slug" value="{{ request.site.root_url }}{{ request.path }}">
                     <div class="form-group"><label>First Name*</label> <input aria-label="Contact first name" class="form-control" id="firstname" name="firstname" placeholder="First Name" type="text" required=""></div>
@@ -20,6 +19,7 @@
                     <div class="form-group"><label>Email*</label> <input aria-label="Contact email address" class="form-control" id="email" name="email" placeholder="Email" type="email" required=""></div>
                     <div class="form-group"><label>Company Name</label> <input aria-label="Company name" class="form-control" id="company" name="company" placeholder="Company name" type="text"></div>
                     <div class="form-group"><label>Message</label><textarea aria-label="Message" class="form-control" id="question" name="message" placeholder="Message" rows="3"></textarea></div>
+                    <input id="website" name="website" type="text" value="" aria-label="If you are a human, do not fill in this field." style="display:none;">
                     <button id="sales-inquiry-submit anchor-inquiry-form" class="btn btn-primary" type="submit" name="submit">Submit</button>
                 </form>
 

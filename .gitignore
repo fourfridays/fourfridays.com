@@ -21,7 +21,6 @@ Thumbs.db
 /static_collected
 /node_modules
 # </DEFAULT>
-/.env-local
 .sass-cache
 grunt/dist
 grunt/node_modules

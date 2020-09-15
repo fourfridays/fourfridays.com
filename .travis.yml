@@ -1,0 +1,23 @@
+sudo: false
+language: python
+matrix:
+  include:
+    # Linting
+    - python: 3.7
+      env: TOXENV=flake8
+    - python: 3.7
+      env: TOXENV=isort
+    # Tests
+    - python: 3.6.11
+      env: TOXENV=py3611-django3010-wagtail2101
+cache:
+  directories:
+    - $HOME/.cache/pip
+install:
+  - pip install coveralls tox
+script:
+  - tox -e $TOXENV
+after_success:
+  - coveralls
+notifications:
+  email: false

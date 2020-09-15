@@ -4,7 +4,7 @@ matrix:
   include:
     # Tests
     - python: 3.6.11
-      env: TOXENV=py3611-django3010-wagtail2101
+      env: TOXENV=py36-django30-wagtail210
 cache:
   directories:
     - $HOME/.cache/pip

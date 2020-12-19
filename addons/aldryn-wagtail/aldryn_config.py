@@ -28,7 +28,7 @@ class Form(forms.BaseForm):
             'taggit',
         ])
         settings['MIDDLEWARE'].extend([
-            'wagtail.core.middleware.SiteMiddleware',
+            'wagtail.contrib.legacy.sitemiddleware.SiteMiddleware',
             'wagtail.contrib.redirects.middleware.RedirectMiddleware',
         ])
         # admin and cms urls need to be first, since we're overriding the

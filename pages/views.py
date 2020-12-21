@@ -14,7 +14,8 @@ def sales_inquiry_hubspot_form(request):
     if request.method == 'POST':
         #Need to check if hidden field website returned a value. If so then a bot is trying to submit the form. Skip to return redirect(slug).
         website = request.POST['website']
-        if website != '':
+        your_name = request.POST['your_name']
+        if website != '' or your_name != '':
             slug = request.POST['slug']+'?inquiry-status=unsuccessful#anchor-inquiry-form'
             return redirect(slug)
         else:

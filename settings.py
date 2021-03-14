@@ -32,6 +32,7 @@ INSTALLED_ADDONS = [
 
 import aldryn_addons.settings
 aldryn_addons.settings.load(locals())
+import os
 
 # Your own Django settings can be applied from here on. Key settings like
 # INSTALLED_APPS, MIDDLEWARE and TEMPLATES are provided in the Aldryn Django
@@ -48,8 +49,28 @@ INSTALLED_APPS.extend([
 
     'wagtail.contrib.styleguide',
     'wagtail.contrib.table_block',
+
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.contrib.modeladmin',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+
+    'modelcluster',
+    'taggit',
 ])
 
-# To see the settings that have been applied, use the Django diffsettings 
-# management command. 
-# See https://docs.divio.com/en/latest/how-to/configure-settings.html#list
+MIDDLEWARE.extend([
+    # add your own middlewares here
+    'wagtail.contrib.legacy.sitemiddleware.SiteMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+])
+
+WAGTAIL_SITE_NAME = 'fourfridays'

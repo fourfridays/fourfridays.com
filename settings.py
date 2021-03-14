@@ -67,10 +67,34 @@ INSTALLED_APPS.extend([
     'taggit',
 ])
 
+
 MIDDLEWARE.extend([
     # add your own middlewares here
     'wagtail.contrib.legacy.sitemiddleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ])
 
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['templates', ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
+TIME_ZONE = 'America/Los_Angeles'
+LANGUAGE_CODE = 'en-us'
+USE_I18N = True
+USE_TZ = True
+USE_L10N = True
 WAGTAIL_SITE_NAME = 'fourfridays'

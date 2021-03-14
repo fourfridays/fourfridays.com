@@ -24,11 +24,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Droid Serif', serif;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
 }
 
 a {
-    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+    font-family: 'Montserrat', serif;
     color: #3398a4;
 }
 
@@ -82,23 +83,31 @@ nav {
         background-color: $secondary !important;
     }
     &.navbar {
-        a {   
-            &:hover {
-                background-color: $white-smoke !important;  
-            }
-        }
-        li {
-            a {
-                &:hover {
-                    background-color: $dark-brown !important;
-                    color: $white !important;
+        .navbar-nav {
+            .nav-item {
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                .nav-link {
+                    color: $white;
+                    &:hover {
+                        background-color: $white;
+                        color: $brand;
+                    }
+                    &.active {
+                        background-color: $white;
+                        color: $brand;
+                    }
                 }
             }
-            &.active a, &.active a:hover {
-                background-color: $dark-brown !important;
-                color: $white !important;    
-            }                
         }
+        .list-unstyled {
+            .sales-btn {
+                &:hover {
+                background-color: $dark-brown !important;
+                color: $white !important;
+                }
+            }
+        }            
     }
 }
 

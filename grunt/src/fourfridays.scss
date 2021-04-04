@@ -16,6 +16,9 @@ $aqua-island: rgba(162, 222, 208, 1);
 $body-text: rgba(64, 63, 60, 1);
 $enable-responsive-font-sizes: true;
 
+@import '../node_modules/fontawesome/scss/fontawesome';
+@import '../node_modules/fontawesome/scss/solid';
+@import '../node_modules/fontawesome/scss/brands';
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 body {

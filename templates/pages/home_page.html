@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags static %}
+{% block body_class %}{{ self.slug }}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid education">
+        <div class="row row-cols-2 radial-gradient">
+            <div class="col-12 col-md-6">
+                <div class="bg-hanada rounded m-2 m-md-4 p-2 p-md-4 text-white">
+                    <div class="content p-4">
+                        <p class="text-uppercase">Introducing Web Developers for your Business</p>
+                        <h2 class="text-django text-left">Hire Professional <a class="text-django" target="_blank" href="https://wagtail.io/"><u>Wagtail</u></a> Developers</h2>
+                        <p><strong>Simple and straightforward,</strong> we manage all your long term website needs: code, design, maintenance, analytics, and hosting.</p>
+                    </div>
+                </div>
+                <div class="container text-center text-white mt-4">
+                    <div class="row">
+                        <div class="col">
+                            <i class="fad fa-2x fa-credit-card-front mx-4"></i>
+                            <div>
+                                <h6 class="mt-0 mb-1"><small>Month to Month Payments</small></h6>
+                            </div>
+                        </div>
+                        <div class="col">
+                           <i class="fad fa-2x fa-code"></i>
+                            <div>
+                                <h6 class="mt-0 mb-1"><small>Full-Stack Developers</small></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <i class="fab fa-2x fa-docker"></i>
+                            <div>
+                                <h6 class="mt-0 mb-1"><small><a class="text-white" target="_blank" href="https://www.docker.com/"><u>Docker</u></a> Containers</small></h6>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <i class="fab fa-2x fa-python"></i>
+                            <div>
+                                <h6 class="mt-0 mb-1"><small>Built on Python <a class="text-white" target="_blank" href="https://www.djangoproject.com/"><u>Django</u></a></small></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-10">
+                            <table class="table table-striped table-sm text-center text-white mt-4">
+                                <caption class="d-none">Monthly Pricing</caption>
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Starter<br/><small>per month</small></th>
+                                        <th scope="col">Professional<br/><small>per month</small></th>
+                                        <th scope="col">Advanced<br/><small>per month</small></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="mb-0">40hrs</p>
+                                            <h5>$2,500</h5>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0">80hrs</p>
+                                            <h5>$5,000</h5>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0">160hrs</p>
+                                            <h5>$8,500</h5>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center text-center my-4">
+                    <a class="btn btn-primary btn-md" href="/sales/">Get Started</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="text-white">
+                    <img class="img-fluid rounded d-none d-md-block" src="{% static 'images/pexels-sunyu-kim-1544880.jpg' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <article class="bg-success text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="offset-2 col-8">
+                    <h2 class="text-uppercase">Small Nonprofits</h2>
+                    <p>We <i class="material-icons sm">favorite</i> small* nonprofits, and to show our love we don't charge for our web development time. There is a required $14.99 per month hosting and code maintenance fee.</p>
+                    <a class="text-center btn btn-translucent btn-md" href="/sales/">Get Started</a>
+                    <p class="mt-4"><small>*small nonprofits are defined as 1-5 employees with less than 30 users a day to your website</small></p>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock %}

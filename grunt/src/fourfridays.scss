@@ -7,11 +7,13 @@ $text-brand: rgba(185, 74, 72, 1);
 .text-brand { color: $text-brand; }
 // Dark Blue
 $secondary: rgba(59, 83, 108, 1);
+.text-secondary { color: $secondary; }
 $white: #fff;
 $dark-brown: rgba(64, 63, 60, 1);
 $white-smoke: rgba(236, 236, 236, 1);
 $concrete: rgba(149, 165, 166,1.0);
 $aqua-island: rgba(162, 222, 208, 1);
+.text-aqua { color: $aqua-island; }
 // Dark Gray
 $body-text: rgba(64, 63, 60, 1);
 $enable-responsive-font-sizes: true;
@@ -53,6 +55,24 @@ a {
 }
 .bg-danger {
     background-color: $brand !important;
+}
+
+.text-django {
+    color: #44B78B;
+}
+.radial-gradient {
+    background: radial-gradient(#ff9191,#5d8cae);
+}
+.bg-sky-color {
+    background-color: #4D8FAC;
+}
+.bg-hanada {
+    background-color: #044F67;
+}
+.bg-translucent, .btn-translucent {
+    background-color: rgba(0 ,0, 0, 0);
+    border-color: $brand;
+    color: #000000;
 }
 
 .assistive-text { /*For accessibility to skip navigation*/

@@ -1,5 +1,5 @@
 # <INSTALLED_ADDONS>  # Warning: text inside the INSTALLED_ADDONS tags is auto-generated. Manual changes will be overwritten.
 https://divio-addons.s3-eu-central-1.amazonaws.com/aldryn-addons/2.0.1/75074b5c-4ff7-448b-acf9-412d78472b6b/aldryn-addons-2.0.1.tar.gz#egg=aldryn-addons==2.0.1
-https://divio-addons.s3-eu-central-1.amazonaws.com/aldryn-django/3.1.11.0/b2af4355-164a-42bf-9e35-66a72c2ae28e/aldryn-django-3.1.11.0.tar.gz#egg=aldryn-django==3.1.11.0
+https://divio-addons.s3-eu-central-1.amazonaws.com/aldryn-django/3.1.12.0/317e70eb-6763-4802-92f9-da6140c0b4a5/aldryn-django-3.1.12.0.tar.gz#egg=aldryn-django==3.1.12.0
 # </INSTALLED_ADDONS>
 wagtail==2.13

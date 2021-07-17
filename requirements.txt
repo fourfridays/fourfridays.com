@@ -62,7 +62,7 @@ telepath==0.2             # via wagtail
 typing-extensions==3.10.0.0  # via asgiref, importlib-metadata
 urllib3==1.26.6           # via botocore, requests, sentry-sdk
 uwsgi==2.0.19.1
-wagtail==2.13.2
+wagtail==2.13.4
 webencodings==0.5.1       # via html5lib
 willow==1.4               # via wagtail
 xlrd==2.0.1               # via tablib

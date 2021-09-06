@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0" role="navigation">
     <a class="navbar-brand p-0" href="/" title="fourfridays [BETA]"><img class="img-fluid" src="{% static 'images/fourfridays-wordmark.png' %}" alt="fourfridays beta" width="170px"/></a>
-    <button class="mx-2 navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="mx-2 navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -13,7 +13,7 @@
                 {% get_site_root as site_root %}
                 {% top_menu parent=site_root calling_page=self %}
             </ul>
-            <ul class="list-unstyled mb-0">
+            <ul class="text-center list-unstyled mb-md-0">
                 <li><a class="sales-btn btn btn-sm btn-primary text-uppercase mr-md-2" href="/sales/" role="button">I am Interested</a></li>
             </ul>
         </div>

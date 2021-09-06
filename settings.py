@@ -81,3 +81,5 @@ USE_I18N = True
 USE_TZ = True
 USE_L10N = True
 WAGTAIL_SITE_NAME = 'fourfridays'
+
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', default='')

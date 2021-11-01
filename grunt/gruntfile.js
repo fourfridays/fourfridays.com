@@ -20,6 +20,7 @@ module.exports = function(grunt) {
             files: {
                 //'/home/fourfridays/sites/fourfridays/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
                 '../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
+                '../static/js/fontawesome-free.min.js': ['node_modules/@fortawesome/fontawesome-free/js/all.js'],
             }
         }
     },
@@ -27,7 +28,7 @@ module.exports = function(grunt) {
       dist: {                            // Target
         files: {                         // Dictionary of files
           //'/home/fourfridays/sites/fourfridays/static/css/fourfridays.css': 'src/fourfridays.scss'
-          'dist/fourfridays.css': 'src/fourfridays.scss'
+          'dist/fourfridays.css': 'src/fourfridays.scss',
         }
       }
     },

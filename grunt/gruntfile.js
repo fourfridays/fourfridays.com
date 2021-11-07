@@ -39,7 +39,7 @@ module.exports = function(grunt) {
           cwd: 'dist',
           src: ['*.css', '!*.min.css'],
           dest: '../static/css',
-          ext: '.min.<%= grunt.template.today("yyyy-mm-dd") %>.css'
+          ext: '.min.css'
         }]
       }
     },

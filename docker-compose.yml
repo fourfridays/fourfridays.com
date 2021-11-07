@@ -4,7 +4,7 @@
 #
 # See our Developer Handbook for more information:
 # http://docs.divio.com/en/latest/reference/docker-docker-compose.html
-version: "2"
+version: "2.4"
 
 services:
   # The web container is an instance of exactly the same Docker image as your
@@ -29,9 +29,8 @@ services:
     # See https://docs.divio.com/en/latest/reference/configuration-environment-variables.html.
     env_file: .env-local
 
-  # On the Cloud, your database runs on a dedicated cluster. Locally, we
-  # replicate it in a Docker container called "db".
   db:
+    # Select one of the following db configurations for the database
     image: postgres:9.6-alpine
     environment:
       POSTGRES_DB: "db"

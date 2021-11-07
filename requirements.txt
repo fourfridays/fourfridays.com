@@ -104,7 +104,7 @@ urllib3==1.26.7
     #   requests
 uwsgi==2.0.20
     # via -r requirements.in
-wagtail==2.14.2
+wagtail==2.15
     # via -r requirements.in
 webencodings==0.5.1
     # via html5lib

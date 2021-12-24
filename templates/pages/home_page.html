@@ -3,14 +3,14 @@
 {% block body_class %}{{ self.slug }}{% endblock %}
 
 {% block content %}
-    <div class="container-fluid education">
+    <div class="container-fluid">
         <div class="row row-cols-2 radial-gradient">
-            <div class="col-12 col-lg-6">
-                <div class="bg-hanada rounded m-2 m-md-4 p-2 p-md-4 text-white">
-                    <div class="content p-4">
-                        <p class="text-uppercase">Introducing Web Developers for your Business</p>
-                        <h2 class="text-django text-left">Hire Professional <a class="text-django" target="_blank" href="https://wagtail.io/"><u>Wagtail</u></a> and <a class="text-django" target="_blank" href="https://www.djangoproject.com"><u>Django</u></a> Developers</h2>
-                        <p><strong>Simple and straightforward,</strong> we manage all your website needs: programming, design, maintenance, and analytics.</p>
+            <div class="col-12 offset-xl-1 col-xl-5 col-lg-5">
+                <div class="feature-text bg-hanada rounded m-2 m-md-4 p-2 text-white">
+                    <div class="content p-lg-3 p-2">
+                        <p class="feature-text-1 text-uppercase">Introducing Web Developers for your Business</p>
+                        <h2 class="feature-text-2 text-left">Hire Professional <a class="text-django" target="_blank" href="https://wagtail.io/"><u>Wagtail</u></a> and <a class="text-django" target="_blank" href="https://www.djangoproject.com"><u>Django</u></a> Developers</h2>
+                        <p class="feature-text-3"><strong>Simple and straightforward,</strong> we manage all your website needs: programming, seo, design, maintenance, accessibility, and analytics.</p>
                     </div>
                 </div>
                 <div class="container text-center text-white mt-4">
@@ -20,8 +20,7 @@
                             <div>
                                 <h6 class="mt-0 mb-1"><small>Month to Month Payments</small></h6>
                             </div>
-                        </div>
-                        <div class="col">
+                        </div>                        <div class="col">
                            <i class="fas fa-2x fa-code"></i>
                             <div>
                                 <h6 class="mt-0 mb-1"><small>Full-Stack Developers</small></h6>
@@ -77,9 +76,9 @@
                     <a class="btn btn-primary btn-md" href="/sales/">Get Started</a>
                 </div>
             </div>
-            <div class="col">
-                <div class="text-white">
-                    <img class="img-fluid rounded d-none d-lg-block" src="{% static 'images/pexels-sunyu-kim-1544880.jpg' %}">
+            <div class="col-xl-6 col-lg-7">
+                <div>
+                    <img class="img-fluid d-none d-lg-block" src="{% static 'images/pexels-sunyu-kim-1544880.jpg' %}">
                 </div>
             </div>
         </div>
@@ -91,8 +90,9 @@
                 <div class="offset-2 col-8">
                     <h2 class="text-uppercase">Small Nonprofits</h2>
                     <p>We <i class="fas fa-heart"></i> small* nonprofits, and to show our love we don't charge for our web development time. There is a required $14.99 per month hosting and code maintenance fee for our platform.</p>
-                    <a class="text-center btn btn-translucent btn-md" href="/sales/">Get Started</a>
-                    <p class="mt-4"><small>*small nonprofits are defined as less than five paid employees with less than 500 users a day to your website</small></p>
+                    <a class="text-center btn btn-translucent btn-md mb-2" href="/nonprofits/">Learn More</a>
+                    <a class="text-center btn btn-translucent btn-md mb-2" href="/sales/">Get Started</a>
+                    <p class="mt-4"><small>*less than four paid employees and less than 500 users a day to the website</small></p>
                 </div>
             </div>
         </div>

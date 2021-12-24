@@ -51,10 +51,6 @@ a {
 .bg-danger {
     background-color: $brand !important;
 }
-
-.text-django {
-    color: #44B78B;
-}
 .radial-gradient {
     background: radial-gradient(#ff9191,#5d8cae);
 }
@@ -95,6 +91,17 @@ a {
 [class*='fa-'] {
     color: $brand;
 }
+
+
+/*====================================
+=            FEATURE TEXT            =
+====================================*/
+.feature-text {
+    a {
+        color: #44B78B;
+    }
+}
+
 
 /*==============================
 =            HEADER            =
@@ -267,7 +274,16 @@ footer {
 @media (min-width: 1200px) {  }
  
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {  }
+@media (min-width: 768px) and (max-width: 1100px) {  
+    .feature-text {
+        .feature-text-2 {
+            font-size: 1.2rem;
+        }
+        .feature-text-3 {
+            font-size: 0.9rem;
+        }
+    }
+}
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {

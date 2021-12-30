@@ -4,7 +4,7 @@
 {% for menuitem in menuitems %}
     <li class="nav-item {{ menuitem.title|lower|cut:" " }}{% if menuitem.active %} active{% endif %}{% if menuitem.show_dropdown %} has-submenu{% endif %}">
         {% if menuitem.show_dropdown %}
-            <li class="nav-item"><a class="nav-link {% if menuitem.active %} active{% endif %} dropdown-toggle" href="{{ menuitem.url }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ menuitem.title }}</a>
+            <li class="nav-item"><a class="nav-link {% if menuitem.active %} active{% endif %} dropdown-toggle" href="{{ menuitem.url }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ menuitem.title }}</a>
             {% top_menu_children parent=menuitem %}
         {% else %}
             <a class="text-center p-2 text-md-left nav-link {% if menuitem.active %} active{% endif %}" href="{% pageurl menuitem %}">{{ menuitem.title }} <span class="sr-only">{{ menuitem.title }}</span></a>

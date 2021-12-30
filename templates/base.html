@@ -56,10 +56,9 @@
         <footer class="py-4">
             {% include "includes/footer.html" %}
         </footer>
+    </body>    
+    {# Global javascript #}
+    <script type="text/javascript" src="{% static 'js/fourfridays.min.js' %}" async></script>
 
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/fourfridays.min.js' %}" async></script>
-
-        {% block extra_js %}{% endblock %}
-    </body>
+    {% block extra_js %}{% endblock %}
 </html>

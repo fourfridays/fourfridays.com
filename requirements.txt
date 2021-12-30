@@ -10,9 +10,9 @@ asgiref==3.4.1
     # via django
 beautifulsoup4==4.9.3
     # via wagtail
-boto3==1.19.12
+boto3==1.20.26
     # via -r requirements.in
-botocore==1.22.12
+botocore==1.23.26
     # via
     #   boto3
     #   s3transfer
@@ -34,7 +34,7 @@ django-taggit==1.5.1
     # via wagtail
 django-treebeard==4.5.1
     # via wagtail
-django==3.2.9
+django==3.2.10
     # via
     #   -r requirements.in
     #   django-filter

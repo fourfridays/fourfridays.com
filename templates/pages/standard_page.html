@@ -4,12 +4,12 @@
 
 {% block content %}
     {% if page.hero_image %}
-        {% image page.hero_image fill-2400x858-c100 as heroimage %}
+        {% image page.hero_image fill-2400x658-c100 as heroimage %}
         <div class="hero-image">
             <figure>
-                <img class="img-fluid" src="{{ heroimage.url }}" alt="{{ page.hero_image.title }}"/>
+                <img class="card-img img-fluid" src="{{ heroimage.url }}" alt="{{ page.hero_image.title }}"/>
                 {% if page.hero_heading or page.hero_caption or page.hero_photo_credit %}
-                    <figcaption class="p-3">
+                    <figcaption class="p-2 p-md-3">
                         {% if page.hero_heading %}
                             <h2>{{ page.hero_heading }}</h2>
                         {% endif %}

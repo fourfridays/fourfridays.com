@@ -2,8 +2,6 @@ from pathlib import Path
 import os
 import dj_database_url
 from django_storage_url import dsn_configured_storage_class
-import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -63,11 +61,18 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
-sentry_sdk.init(
-    dsn = os.environ.get('SENTRY_DSN', ''),
-    integrations = [DjangoIntegration()],
-    traces_sample_rate = 0.2,
-)
+sentry_dsn = os.environ.get('SENTRY_DSN', '')
+if sentry_dsn:
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn=sentry_dsn,
+        integrations = [DjangoIntegration()],
+        release=os.environ.get('GIT_COMMIT', 'develop'),
+        environment=os.environ.get('STAGE', 'local'),
+        traces_sample_rate = 0.2,
+    )
 
 ROOT_URLCONF = 'urls'
 

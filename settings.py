@@ -66,8 +66,17 @@ if sentry_dsn:
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
 
+    def ignore_disallowedhost(event, hint):
+        if 'exc_info' in hint:
+            exc_type, exc_value, tb = hint['exc_info'] 
+            if exc_value.args[0] in ['Invalid HTTP_HOST header', 'OSError']:
+                return None
+        return event
+
+
     sentry_sdk.init(
         dsn=sentry_dsn,
+        before_send = ignore_disallowedhost,
         integrations = [DjangoIntegration()],
         release=os.environ.get('GIT_COMMIT', 'develop'),
         environment=os.environ.get('STAGE', 'local'),

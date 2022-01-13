@@ -67,12 +67,9 @@ if sentry_dsn:
     from sentry_sdk.integrations.django import DjangoIntegration
 
     def ignore_disallowedhost(event, hint):
-        if 'exc_info' in hint:
-            exc_type, exc_value, tb = hint['exc_info'] 
-            if exc_value.args[0] in ['Invalid HTTP_HOST header', 'OSError']:
-                return None
+        if (event.get('logger', None) == 'django.security.DisallowedHost':
+            return None
         return event
-
 
     sentry_sdk.init(
         dsn=sentry_dsn,

@@ -5,6 +5,6 @@ django-storage-url==0.8.1
 pillow==8.4.0
 psycopg2==2.9.3
 uWSGI==2.0.20
-wagtail==2.15.1
+wagtail==2.15.2
 whitenoise==5.3.0
 sentry-sdk==1.5.1

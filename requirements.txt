@@ -24,6 +24,16 @@ charset-normalizer==2.0.7
     # via requests
 dj-database-url==0.5.0
     # via -r requirements.in
+django==3.2.12
+    # via
+    #   -r requirements.in
+    #   django-filter
+    #   django-storage-url
+    #   django-storages
+    #   django-taggit
+    #   django-treebeard
+    #   djangorestframework
+    #   wagtail
 django-filter==2.4.0
     # via wagtail
 django-modelcluster==5.2
@@ -36,16 +46,6 @@ django-taggit==1.5.1
     # via wagtail
 django-treebeard==4.5.1
     # via wagtail
-django==3.2.10
-    # via
-    #   -r requirements.in
-    #   django-filter
-    #   django-storage-url
-    #   django-storages
-    #   django-taggit
-    #   django-treebeard
-    #   djangorestframework
-    #   wagtail
 djangorestframework==3.12.4
     # via wagtail
 draftjs-exporter==2.1.7

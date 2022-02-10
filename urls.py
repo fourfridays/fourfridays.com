@@ -1,6 +1,5 @@
 from django.conf import settings
-from django.urls import path
-from django.conf.urls import url, include, re_path
+from django.urls import path, include, re_path
 from django.contrib import admin
 from django.views.generic import TemplateView
 
@@ -15,12 +14,12 @@ from wagtail.contrib.sitemaps.views import sitemap
 urlpatterns = [
     path('django-admin/', admin.site.urls),
 
-    url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
-    url(r'^sales/$', page_views.sales_inquiry_form),
-    url(r'^sales/inquiry/', page_views.sales_inquiry_hubspot_form),
-    url(r'^sitemap\.xml$', sitemap),
-    url(r'^admin/', include(wagtailadmin_urls)),
-    url(r'^documents/', include(wagtaildocs_urls)),
+    re_path(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    re_path(r'^sales/$', page_views.sales_inquiry_form),
+    re_path(r'^sales/inquiry/', page_views.sales_inquiry_hubspot_form),
+    re_path(r'^sitemap\.xml$', sitemap),
+    re_path(r'^admin/', include(wagtailadmin_urls)),
+    re_path(r'^documents/', include(wagtaildocs_urls)),
     re_path(r'', include(wagtail_urls)),
 ]
 

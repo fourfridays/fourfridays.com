@@ -183,3 +183,5 @@ MEDIA_ROOT = os.path.join('/data/media/')
 WAGTAIL_SITE_NAME = 'fourfridays'
 
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', default='')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

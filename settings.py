@@ -190,7 +190,6 @@ ANYMAIL = {
 EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', default='')
 SERVER_EMAIL = os.environ.get('SERVER_EMAIL', default='')
-COMMENT_ADMIN_EMAIL = os.environ.get('COMMENT_ADMIN_EMAIL', default='')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 

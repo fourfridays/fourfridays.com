@@ -184,8 +184,8 @@ WAGTAIL_SITE_NAME = 'fourfridays'
 
 # DJANGO ANYMAIL
 ANYMAIL = {
-    "MAILGUN_API_KEY": os.environ.get('EMAIL_API_KEY', default=''),
-    "MAILGUN_SENDER_DOMAIN": os.environ.get('EMAIL_SENDER_DOMAIN', default=''),
+    "MAILGUN_API_KEY": os.environ.get('MAILGUN_API_KEY', default=''),
+    "MAILGUN_SENDER_DOMAIN": os.environ.get('MAILGUN_SENDER_DOMAIN', default=''),
 }
 EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', default='')

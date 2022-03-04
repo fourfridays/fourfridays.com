@@ -19,8 +19,7 @@ module.exports = function(grunt) {
         dist: {
             files: {
                 //'/home/fourfridays/sites/fourfridays/static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
-                '../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>'],
-                '../static/js/fontawesome-free.min.js': ['node_modules/@fortawesome/fontawesome-free/js/all.js'],
+                '../static/js/fourfridays.min.js': ['<%= concat.dist.dest %>']
             }
         }
     },

@@ -1,4 +1,5 @@
 {% load wagtailcore_tags navigation_tags static %}
+{% wagtail_site as current_site %}
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0" role="navigation">
     <a class="navbar-brand p-0" href="/" title="fourfridays [BETA]"><img class="img-fluid" src="{% static 'images/fourfridays-wordmark.png' %}" alt="fourfridays beta" width="170px"/></a>
@@ -8,9 +9,9 @@
 
     {% block main_navigation %}
         <div class="navbar-collapse collapse" id="main-navigation" role="navigation" aria-label="Primary site navigation">
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav me-auto text-center text-md-left">
+                <li class="nav-item"><a class="nav-link{% if request.path == '/for-profit-organizations/' %} active{% endif %}" href="/for-profit-organizations/">For-Profit</a></li>
                 {# main_menu is defined in pages/templatetags/navigation_tags.py #}
-                {% wagtail_site as current_site %}
                 {% top_menu parent=current_site.root_page calling_page=self %}
             </ul>
             <ul class="text-center list-unstyled mb-md-0">

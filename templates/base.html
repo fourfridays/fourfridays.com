@@ -27,11 +27,10 @@
         {# Global stylesheets #}
         <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
         <link href='//fonts.googleapis.com/css?family=Droid+Sans|Montserrat' rel='stylesheet' type='text/css'>
-        <script defer src="{% static 'js/fontawesome-free.min.js' %}"></script>
+        <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/fourfridays.min.css' %}">
 
-        {% block head-extra %}
-        {% endblock head-extra %}
+        {% block head-extra %}{% endblock head-extra %}
     </head>
 
     <body class="{% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}">
@@ -48,8 +47,7 @@
         </header>
 
         <main role="main">
-            {% block content %}
-            {% endblock content %}
+            {% block content %}{% endblock content %}
         </main>
 
         <!-- Footer -->
@@ -58,6 +56,7 @@
         </footer>
     </body>    
     {# Global javascript #}
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fourfridays.min.js' %}" async></script>
 
     {% block extra_js %}{% endblock %}

@@ -16,6 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 INSTALLED_APPS = [
     'anymail',
+    'fontawesomefree',
     'pages',
 
     'django.contrib.sitemaps',

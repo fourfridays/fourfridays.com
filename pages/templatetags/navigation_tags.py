@@ -14,18 +14,15 @@ def get_site_root(context):
     # attribute 'get_children')
     return context['request'].site.root_page
 
-
 def has_menu_children(page):
     # This is used by the top_menu property
     # get_children is a Treebeard API thing
     # https://tabo.pe/projects/django-treebeard/docs/4.0.1/api.html
     return page.get_children().live().in_menu().exists()
 
-
 def has_children(page):
     # Generically allow index pages to list their children
     return page.get_children().live().exists()
-
 
 def is_active(page, current_page):
     # To give us active state on main navigation
@@ -50,7 +47,6 @@ def top_menu(context, parent, calling_page=None):
         # required by the pageurl tag that we want to use within this template
         'request': context['request'],
     }
-
 
 # Retrieves the children of the top menu items for the drop downs
 @register.inclusion_tag('tags/top_menu_children.html', takes_context=True)

@@ -15,10 +15,6 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from .blocks import ImageGridBlock, BaseStreamBlock, SingleColumnBlock, TwoColumnBlock, ThreeColumnBlock, FourColumnBlock
 
 
-class HomePage(Page):
-    pass
-
-    
 class StandardPage(Page):
     # Hero section of Page
     hero_image = models.ForeignKey(

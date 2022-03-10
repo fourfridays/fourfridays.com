@@ -6,26 +6,16 @@ from django_storage_url import dsn_configured_storage_class
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Your own Django settings can be applied from here on. Key settings like
-# INSTALLED_APPS, MIDDLEWARE and TEMPLATES are provided in the Aldryn Django
-# addon. See:
-#
-#   http://docs.divio.com/en/latest/how-to/configure-settings.html
-#
-# for guidance on managing these settings.
-
 INSTALLED_APPS = [
     'anymail',
     'fontawesomefree',
     'pages',
 
-    'django.contrib.sitemaps',
-
+    'wagtail.contrib.forms',
+    'wagtail.contrib.modeladmin',
+    'wagtail.contrib.redirects',
     'wagtail.contrib.styleguide',
     'wagtail.contrib.table_block',
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.contrib.modeladmin',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -43,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sitemaps',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
@@ -99,11 +90,12 @@ DIVIO_DOMAIN_REDIRECTS = [
     for d in os.environ.get('DOMAIN_REDIRECTS', '').split(',')
     if d.strip()
 ]
+HOST_DOMAIN = os.environ.get('HOST_DOMAIN', '').split(',')
 
-ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS
+ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS + HOST_DOMAIN
 
-# Redirect to HTTPS by default, unless explicitly disabled
-SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != "False"
+# Redirect to HTTPS by default disabled, unless explicitly enabled
+SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') == "True"
 
 TEMPLATES = [
     {
@@ -127,9 +119,6 @@ DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite://:memory:')
 
 DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -145,14 +134,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
-
-TIME_ZONE = 'America/Los_Angeles'
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 USE_TZ = True
-USE_L10N = True
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -193,6 +177,8 @@ DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', default='')
 SERVER_EMAIL = os.environ.get('SERVER_EMAIL', default='')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+PREPEND_WWW = os.environ.get('PREPEND_WWW', default=False)
+SITE_ID = 1
 
 # Make low-quality but small images
 WAGTAILIMAGES_JPEG_QUALITY = 40

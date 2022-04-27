@@ -38,7 +38,7 @@ django-taggit==2.1.0
     # via wagtail
 django-treebeard==4.5.1
     # via wagtail
-django==4.0.2
+django==4.0.4
     # via
     #   -r requirements.in
     #   django-anymail

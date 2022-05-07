@@ -15,7 +15,10 @@ $concrete: rgba(149, 165, 166,1.0);
 $aqua-island: rgba(162, 222, 208, 1);
 .text-aqua { color: $aqua-island; }
 // Dark Gray
-$body-text: rgba(64, 63, 60, 1);
+$body-text: rgba(54, 53, 50, 1);
+$hyper-link: rgba(15, 116, 128, 1);
+$hyper-link-md-bg: rgba(0, 57, 69, 1);
+$hyper-link-dark-bg: rgba(91, 192, 204, 1);
 $enable-responsive-font-sizes: true;
 
 // @import '../node_modules/@fortawesome/fontawesome-free/scss/_variables';
@@ -32,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     font-family: 'Montserrat', serif;
-    color: #3398a4;
+    color: $hyper-link;
 }
 
 .btn-primary {
@@ -97,7 +100,7 @@ a {
 ====================================*/
 .feature-text {
     a {
-        color: #44B78B;
+        color: $hyper-link;
     }
 }
 
@@ -163,6 +166,7 @@ article {
     }
     &.concrete {
         background-color: $concrete;
+        a { color: $hyper-link-md-bg }
     }
 }
 
@@ -184,7 +188,7 @@ article {
             letter-spacing: -0.03rem;
         }
         small {
-            color: #d2d2d2;
+            color: #e5e5e5;
         }
     }
     .photo-credit {
@@ -243,13 +247,10 @@ footer {
     ul {
         li {
             a {
-                color: #3398a4;
+                color: $hyper-link-dark-bg;
                 &:hover {
                     color: $white;
                 }
-            }
-            &.copyright {
-                color: $brand;
             }
         }
         &.footer-left li {

@@ -13,6 +13,7 @@ $dark-brown: rgba(64, 63, 60, 1);
 $white-smoke: rgba(236, 236, 236, 1);
 $concrete: rgba(149, 165, 166,1.0);
 $aqua-island: rgba(162, 222, 208, 1);
+$gold: #c58e47;
 .text-aqua { color: $aqua-island; }
 // Dark Gray
 $body-text: rgba(54, 53, 50, 1);
@@ -29,9 +30,7 @@ body {
     font-family: 'Droid Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', serif;
-}
+h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', serif; }
 
 a {
     font-family: 'Montserrat', serif;
@@ -46,22 +45,12 @@ a {
         background-color: $secondary;
     }
 }
-
-.bg-success {
-    background-color: $aqua-island !important;
-}
-.bg-danger {
-    background-color: $brand !important;
-}
-.radial-gradient {
-    background: radial-gradient(#ff9191,#5d8cae);
-}
-.bg-sky-color {
-    background-color: #4D8FAC;
-}
-.bg-hanada {
-    background-color: #044F67;
-}
+.bg-success { background-color: $aqua-island !important; }
+.bg-danger { background-color: $brand !important; }
+.radial-gradient { background: radial-gradient(#ff9191,#5d8cae); }
+.bg-sky-color { background-color: #4D8FAC; }
+.bg-hanada { background-color: #044F67; }
+.bg-gold { background-color: $gold;  }
 .bg-translucent, .btn-translucent {
     background-color: rgba(0 ,0, 0, 0);
     border-color: $brand;
@@ -203,6 +192,25 @@ article {
     }
 }
 
+/*===============================
+*            MOSQUE             *
+===============================*/
+.mosque {
+     $blue: rgba(17, 68, 97, 1);
+    .text-blue { color: $blue }
+    h2 { color: $blue; }
+    a { color: white; }
+    .btn-gold {
+        background-color: $gold;
+        border-color: $white;
+        color: $white;
+        &:hover {
+            background-color: $secondary;
+        }
+    }
+    &.mosque-radial-gradient { background: radial-gradient(#1299ce,#e5c087); }
+}
+
 
 /*=============================
 =            FORMS            =
@@ -271,7 +279,16 @@ footer {
 =            MEDIA QUERIES            =
 =====================================*/
 /* Large desktop */
-@media (min-width: 1200px) {  }
+@media (min-width: 992px) {
+    .mosque {
+        #intro {
+            .feature-text, .btn-gold {
+                position: relative;
+                top: 120px;
+            }
+        }
+    }
+}
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 1100px) {  

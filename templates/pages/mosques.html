@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags static %}
+{% wagtail_site as current_site %}
+{% block title %}Websites for Mosques | {{ current_site.site_name }}{% endblock %}
+{% block body_class %}mosque mosque-radial-gradient text-black{% endblock %}
+
+{% block content %}
+    <section id="intro" class="mt-lg-4">
+        <div class="container">
+            <div class="row row-cols-2">
+                <div class="col-12 col-lg-7 col-xl-8 order-lg-last mb-4">
+                    <img alt="Mosque Concept Ramadan kareem illustration Free Vector" class="img-fluid" src="{% static 'images/vecteezy_mosque-concept-ramadan-kareem-illustration_5648223.png' %}">
+                    <p class="text-center"><small><a target="_blank" href="https://www.vecteezy.com/free-vector/mosque">Mosque Vectors by Vecteezy</a></small></p>
+                </div>
+                <div class="col-12 col-lg-5 col-xl-4 order-lg-first">
+                    <div class="feature-text rounded">
+                        <p class="feature-text-1 text-uppercase">Introducing Websites for Masjid's at $12.99 per month</p>
+                        <h2 class="feature-text-2 text-blue">Professional Website Developers</h2>
+                        <p class="feature-text-3"><strong>Simple and straightforward,</strong> we manage all your website needs: programming, SEO, design, maintenance, accessibility, and analytics. You do content.</p>
+                        <p>Let us build your mosque presence online as beautiful it is offline.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <a class="btn btn-gold btn-md" role="button" href="/sales/">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <hr/>
+        <div class="container">
+            <div class="row text-center p-4 mb-4">
+                <div class="col-12 col-lg-6 order-lg-last mb-4">
+                    <img alt="Content managed by Wagtail" class="img-fluid mx-auto d-block" src="{% static 'images/wagtail.dbf60545a188.png' %}">
+                </div>
+                <div class="col-12 col-lg-6 text-lg-start align-self-center order-lg-first">
+                    <h2>Content Management</h2>
+                    <p>Manage your website content on <a target="_blank" href="https://wagtail.org/">Wagtail</a>, the powerful CMS for modern websites. Make your editors happy.</p>
+                    <p>Trusted by oraganizations you know: Google, NASA, MIT, Mozilla</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row text-center p-4 mb-4">
+                <div class="col-12 col-lg-6 text-lg-start order-lg-first mb-4">
+                    <img alt="Muslim Woman Praying At The Mosque Free Vector" class="img-fluid" src="{% static 'images/vecteezy_moslem-woman-praying-at-the-mosque_6915384.png' %}" width="432">
+                    <p class="m-0 text-center"><small><a href="https://www.vecteezy.com/free-vector/mosque">Mosque Vectors by Vecteezy</a></small></p>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-start align-self-center order-lg-last">
+                    <h2>Web Apps</h2>
+                    <p>Publish your prayer schedules, events, announcements, adhan times (auto-pulled based on your location), donation links, image gallery, blogs and articles easily.</p>
+                    <p>We continue to release new web apps for our clients as needs arise. Feel free to request one.</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row text-center p-4 mb-4">
+                <div class="col-12 col-lg-6 text-center order-lg-last mb-4">
+                    <i class="fa-solid fa-pencil fa-4x"></i>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-start align-self-center order-lg-first">
+                    <h2>Custom Template Designs</h2>
+                    <p>We custom design every website using your branding. No cookie-cutter websites here.</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row text-center p-4 mb-4">
+                <div class="col-12 col-lg-6 text-center order-lg-first mb-4">
+                    <svg class="i made-with-wagtail i--no-fill">
+                        <use xlink:href="#i-made-with-wagtail-logo"></use>
+                        <symbol id="i-made-with-wagtail-logo" viewBox="0 0 205 32">
+                            <path fill="#FFF" d="M20.643.945v1.394s-2.506-.936-4.126.76c-1.176 1.239-1.267 2.595-.746 4.429 5.33 0 6.125 2.961 6.125 2.961l-.518-3.379 1.658-2.024c.012-2.419-1.974-4.003-2.393-4.141"></path><path fill="#231F20" d="M21.759 4.399c0 .355-.278.633-.633.633s-.633-.278-.633-.633.278-.633.633-.633c.327-.025.633.278.633.633"></path><path d="M21.935 10.525S21.1 6.449 15.81 7.564c-.545-1.834-.43-3.203.746-4.429 1.62-1.697 4.101-.76 4.101-.76V.981c-.873-.416-1.721-.479-2.658-.479-3.404 0-5.305 2.556-6.114 4.277L2.267 22.423l2.707-.507L0 31.498l3.468-.633 2.644-7.53c7.508 0 17.153-2.708 15.823-12.81"></path><path fill="#231F20" d="M25.163 7.12l-2.115-2.049L21.39 7.12z"></path><path fill="#FFF" d="M7.379 21.159s.24-.039.672-.151c.43-.091 1.063-.242 1.785-.432.366-.113.757-.215 1.176-.353.419-.127.848-.303 1.292-.482.43-.176.873-.391 1.303-.633.43-.24.848-.518 1.267-.835.113-.088.204-.151.303-.24l.278-.242c.176-.176.366-.353.521-.518.176-.176.328-.366.482-.57.063-.088.127-.204.215-.278l.113-.151.088-.151c.063-.113.127-.204.176-.303.039-.116.116-.204.151-.306.028-.039.039-.113.088-.151.025-.039.039-.113.063-.151.039-.113.088-.204.127-.303.091-.204.154-.394.218-.598l.176-.567c.039-.179.088-.355.127-.521.025-.176.063-.328.088-.482.025-.154.039-.278.039-.419.025-.124.025-.264.039-.364l.039-.697.391.025s-.025.267-.039.722c-.025.113-.025.24-.039.366a2.78 2.78 0 0 1-.063.432c-.025.151-.063.328-.088.504-.039.179-.088.355-.127.545-.039.19-.127.366-.176.595-.063.204-.151.394-.24.609a1.465 1.465 0 0 1-.154.303c-.025.039-.036.113-.063.151-.025.039-.063.113-.088.151a5.948 5.948 0 0 1-.176.306 2.508 2.508 0 0 1-.204.303c-.036.039-.063.113-.113.151l-.113.151c-.063.113-.154.204-.215.303a5.541 5.541 0 0 1-.507.57c-.179.204-.369.355-.57.521l-.303.24c-.113.088-.204.151-.303.24-.419.306-.851.57-1.306.81-.454.242-.898.432-1.355.609a19.171 19.171 0 0 1-2.507.785c-.746.176-1.38.303-1.81.391-.419.062-.658.115-.658.115"></path><g><path d="M43.63 20.107V9.31l-4.467 10.797h-1.088L33.619 9.31v10.797h-2.556V5.55h3.594l3.95 9.582 3.974-9.582h3.594v14.556H43.63zM55.655 20.107v-1.138c-.785.898-2.013 1.394-3.404 1.394-1.721 0-3.671-1.151-3.671-3.492 0-2.418 1.936-3.429 3.671-3.429 1.418 0 2.644.454 3.404 1.355v-1.57c0-1.228-1-1.961-2.468-1.961-1.176 0-2.203.43-3.115 1.33l-.936-1.595c1.228-1.151 2.746-1.697 4.429-1.697 2.33 0 4.379.986 4.379 3.823v6.988c.003-.008-2.289-.008-2.289-.008zm0-2.391v-1.595c-.518-.722-1.507-1.088-2.506-1.088-1.292 0-2.253.746-2.253 1.898 0 1.14.961 1.873 2.253 1.873 1 0 1.975-.366 2.506-1.088zM68.325 20.107v-1.443c-.81 1.049-2.024 1.697-3.379 1.697-2.707 0-4.696-2.049-4.696-5.52 0-3.404 1.961-5.544 4.696-5.544 1.303 0 2.531.609 3.379 1.721V5.537h2.292v14.556h-2.292v.014zm0-3.151v-4.189c-.518-.785-1.633-1.418-2.721-1.418-1.81 0-2.961 1.454-2.961 3.506 0 2.024 1.151 3.492 2.961 3.492 1.088 0 2.201-.606 2.721-1.391zM72.933 14.829c0-3.052 2.228-5.52 5.341-5.52 3.165 0 5.189 2.418 5.189 5.734v.545h-8.139c.176 1.595 1.38 2.897 3.355 2.897 1.025 0 2.253-.419 2.988-1.151l1.049 1.507c-1.049 1-2.595 1.531-4.277 1.531-3.154.002-5.506-2.202-5.506-5.543zm5.34-3.632c-1.961 0-2.862 1.507-2.961 2.798h5.935c-.048-1.253-.897-2.798-2.974-2.798zM100.525 20.107l-2.443-7.72-2.443 7.72h-2.404L89.957 9.574h2.38l2.228 7.657 2.506-7.657h2.013l2.506 7.657 2.228-7.657h2.38l-3.278 10.532h-2.395zM107.499 6.867c0-.785.658-1.418 1.418-1.418.785 0 1.418.633 1.418 1.418s-.633 1.418-1.418 1.418c-.76 0-1.418-.633-1.418-1.418zm.292 13.24V9.577h2.292v10.532h-2.292v-.002zM113.501 17.664v-6.087h-1.735V9.563h1.746V6.677h2.292v2.886h2.14v2.013h-2.14v5.52c0 .722.355 1.239 1 1.239.43 0 .848-.176 1.025-.366l.545 1.721c-.419.391-1.088.672-2.165.672-1.761.012-2.708-.949-2.708-2.698zM127.145 20.107v-6.632c0-1.633-.848-2.14-2.14-2.14-1.151 0-2.165.697-2.707 1.418v7.354h-2.292V5.55h2.292v5.456c.697-.824 2.077-1.697 3.735-1.697 2.267 0 3.404 1.176 3.404 3.341v7.456l-2.292.001zM147.18 20.107l-2.443-7.72-2.443 7.72h-2.404l-3.278-10.532h2.38l2.228 7.657 2.506-7.657h2.013l2.506 7.657 2.228-7.657h2.38l-3.278 10.532h-2.395zM160.888 20.107v-1.138c-.785.898-2.013 1.394-3.404 1.394-1.721 0-3.671-1.151-3.671-3.492 0-2.418 1.936-3.429 3.671-3.429 1.418 0 2.644.454 3.404 1.355v-1.57c0-1.228-1-1.961-2.468-1.961-1.176 0-2.203.43-3.115 1.33l-.936-1.595c1.228-1.151 2.746-1.697 4.429-1.697 2.33 0 4.379.986 4.379 3.823v6.988c.002-.008-2.289-.008-2.289-.008zm0-2.391v-1.595c-.518-.722-1.507-1.088-2.506-1.088-1.292 0-2.253.746-2.253 1.898 0 1.14.961 1.873 2.253 1.873 1.002 0 1.974-.366 2.506-1.088zM166.016 22.817l1.063-1.658c.848.986 1.936 1.355 3.341 1.355 1.507 0 3.115-.697 3.115-2.862v-1.267c-.813 1.052-2.013 1.746-3.382 1.746-2.683 0-4.671-1.936-4.671-5.404 0-3.404 1.961-5.404 4.671-5.404 1.33 0 2.531.609 3.379 1.721V9.588h2.292v9.987c0 3.798-2.809 4.823-5.404 4.823-1.785-.011-3.115-.405-4.404-1.581zm7.517-6.128v-3.922c-.507-.785-1.633-1.418-2.707-1.418-1.81 0-2.961 1.355-2.961 3.379s1.151 3.379 2.961 3.379c1.076 0 2.213-.633 2.707-1.418zM179.256 17.664v-6.087h-1.746V9.563h1.746V6.677h2.292v2.886h2.14v2.013h-2.14v5.52c0 .722.355 1.239 1 1.239.43 0 .848-.176 1.025-.366l.545 1.721c-.419.391-1.088.672-2.165.672-1.761.012-2.697-.949-2.697-2.698zM192.19 20.107v-1.138c-.785.898-2.013 1.394-3.404 1.394-1.721 0-3.671-1.151-3.671-3.492 0-2.418 1.936-3.429 3.671-3.429 1.418 0 2.644.454 3.404 1.355v-1.57c0-1.228-1-1.961-2.468-1.961-1.176 0-2.203.43-3.115 1.33l-.936-1.595c1.228-1.151 2.746-1.697 4.429-1.697 2.33 0 4.379.986 4.379 3.823v6.988c.002-.008-2.289-.008-2.289-.008zm0-2.391v-1.595c-.518-.722-1.507-1.088-2.506-1.088-1.292 0-2.253.746-2.253 1.898 0 1.14.961 1.873 2.253 1.873.999 0 1.988-.366 2.506-1.088zM197.164 6.867c0-.785.658-1.418 1.418-1.418.785 0 1.418.633 1.418 1.418s-.633 1.418-1.418 1.418c-.76 0-1.418-.633-1.418-1.418zm.281 13.24V9.577h2.292v10.532h-2.292v-.002zM202.708 20.107V5.55H205v14.556h-2.292z"></path></g>
+                        </symbol>
+                    </svg>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-start align-self-center order-lg-last">
+                    <p>See some of our past work as featured on <a target="_blank" href="https://madewithwagtail.org/developers/fourfridays/">Made with Wagtail</a>.</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row text-center p-4">
+                <div class="col-12 col-lg-6 order-lg-last mb-4">
+                    <i class="fa-solid fa-dolly fa-4x"></i>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-start align-self-center order-lg-first">
+                    <h2>Existing Website</h2>
+                    <p>Already have an existing website? Not a problem, as part of your subscription we will help migrate your website to fourfridays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="get-started">
+        <hr/>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2>Get Started</h2>
+                    <p>Ready to get started? It's easy. Fill out our no obligation interest form and get the process started.</p>
+                    <p><a class="btn btn-gold btn-md" href="/sales/">Get Started</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

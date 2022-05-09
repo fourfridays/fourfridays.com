@@ -14,7 +14,7 @@ from wagtail.contrib.sitemaps.views import sitemap
 urlpatterns = [
     path('django-admin/', admin.site.urls),
     re_path(r'^for-profit-organizations/', TemplateView.as_view(template_name='pages/for_profit_organizations.html')),
-    re_path(r'^mosques/', TemplateView.as_view(template_name='pages/mosques.html')),
+    re_path(r'^mosque/', TemplateView.as_view(template_name='pages/mosque.html')),
     re_path(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
     re_path(r'^sales/$', page_views.sales_inquiry_form),
     re_path(r'^sales/inquiry/', page_views.sales_inquiry_hubspot_form),

@@ -166,7 +166,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join('/data/media/')
 
 WAGTAIL_SITE_NAME = 'fourfridays'
-WAGTAILADMIN_BASE_URL = 'https://fourfridays.com'
+WAGTAILADMIN_BASE_URL = 'https://fourfridays.com/'
 
 # DJANGO ANYMAIL
 ANYMAIL = {

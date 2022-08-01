@@ -1,4 +1,4 @@
-FROM python:3.9.7-slim-bullseye
+FROM python:3.10.5-slim-bullseye
 
 RUN apt-get update \
     # lipq-dev and gg for psycopg2 build

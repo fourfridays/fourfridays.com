@@ -1,12 +1,12 @@
-boto3==1.24.51
-Django==4.0.7
+boto3==1.24.64
+Django==4.1
 django-anymail[mailgun]==8.6
 dj-database-url==1.0.0
 django-storage-url==0.9.0
-fontawesomefree==6.1.2
+fontawesomefree==6.2.0
 pillow==9.2.0
 psycopg2==2.9.3
-sentry-sdk==1.9.4
+sentry-sdk==1.9.6
 uWSGI==2.0.20
-wagtail==3.0.1
+wagtail==4.0
 whitenoise==6.2.0

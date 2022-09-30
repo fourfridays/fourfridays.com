@@ -10,9 +10,9 @@
     {% block main_navigation %}
         <div class="navbar-collapse collapse" id="main-navigation" role="navigation" aria-label="Primary site navigation">
             <ul class="navbar-nav me-auto text-center text-md-left">
-                <li class="nav-item me-md-3 my-1 my-md-0"><a class="nav-link{% if request.path == '/mosque/' %} active{% endif %}" href="/mosque/">Mosque</a></li>
+<!--                 <li class="nav-item me-md-3 my-1 my-md-0"><a class="nav-link{% if request.path == '/mosque/' %} active{% endif %}" href="/mosque/">Mosque</a></li>
                 <li class="nav-item me-md-3 my-1 my-md-0"><a class="nav-link{% if request.path == '/for-profit-organizations/' %} active{% endif %}" href="/for-profit-organizations/">For-Profit</a></li>
-                {# main_menu is defined in pages/templatetags/navigation_tags.py #}
+                {# main_menu is defined in pages/templatetags/navigation_tags.py #} -->
                 {% top_menu parent=current_site.root_page calling_page=self %}
             </ul>
             <ul class="text-center list-unstyled mb-md-0">

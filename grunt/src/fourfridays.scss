@@ -18,6 +18,7 @@ $gold: #c58e47;
 // Dark Gray
 $body-text: rgba(54, 53, 50, 1);
 $hyper-link: rgba(15, 116, 128, 1);
+$hyper-link-feature: rgba(85, 186, 198, 1);
 $hyper-link-md-bg: rgba(0, 57, 69, 1);
 $hyper-link-dark-bg: rgba(91, 192, 204, 1);
 $enable-responsive-font-sizes: true;
@@ -49,7 +50,7 @@ a {
 .bg-danger { background-color: $brand !important; }
 .radial-gradient { background: radial-gradient(#ff9191,#5d8cae); }
 .bg-sky-color { background-color: #4D8FAC; }
-.bg-hanada { background-color: #044F67; }
+.bg-hanada { background-color: #403f3c; }
 .bg-gold { background-color: $gold;  }
 .bg-translucent, .btn-translucent {
     background-color: rgba(0 ,0, 0, 0);
@@ -89,8 +90,9 @@ a {
 ====================================*/
 .feature-text {
     a {
-        color: $hyper-link;
+        color: $hyper-link-feature;
     }
+
 }
 
 

@@ -94,7 +94,7 @@ HOST_DOMAIN = os.environ.get('HOST_DOMAIN', '').split(',')
 
 ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS + HOST_DOMAIN
 
-CSRF_TRUSTED_ORIGINS = [os.environ.get('CSRF_TRUSTED_ORIGINS', default='https://umairabbasi.com')]
+CSRF_TRUSTED_ORIGINS = [os.environ.get('CSRF_TRUSTED_ORIGINS', default='https://fourfridays.com')]
 
 # Redirect to HTTPS by default disabled, unless explicitly enabled
 SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') == "True"

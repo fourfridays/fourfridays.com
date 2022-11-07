@@ -90,7 +90,6 @@ DIVIO_DOMAIN_REDIRECTS = [
     for d in os.environ.get('DOMAIN_REDIRECTS', '').split(',')
     if d.strip()
 ]
-HOST_DOMAIN = os.environ.get('HOST_DOMAIN', '').split(',')
 
 ALLOWED_HOSTS = [DIVIO_DOMAIN] + DIVIO_DOMAIN_ALIASES + DIVIO_DOMAIN_REDIRECTS
 

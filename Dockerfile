@@ -2,7 +2,8 @@ FROM python:3.11.0-slim-bullseye
 
 RUN apt-get update \
     # lipq-dev and gg for psycopg2 build
-    && apt-get install -y libpq-dev gcc libjpeg62-turbo-dev zlib1g-dev libwebp-dev \
+    && apt-get install -y libpq-dev gcc libjpeg62-turbo-dev zlib1g-dev \
+    libwebp-dev libffi-dev \
     && pip install pip-tools==6.8.0
 
 

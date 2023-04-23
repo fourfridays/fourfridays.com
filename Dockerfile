@@ -1,11 +1,11 @@
-FROM python:3.11.1-slim-bullseye
+FROM python:3.11.3-slim-bullseye
 
 RUN apt-get update \
     # lipq-dev and gg for psycopg2 build
     && apt-get install -y libpq-dev gcc libjpeg62-turbo-dev zlib1g-dev \
     libwebp-dev libffi-dev \
     && pip install --upgrade pip \
-    && pip install pip-tools==6.12.2
+    && pip install pip-tools
 
 
 # set the working directory

@@ -5,7 +5,7 @@ RUN apt-get update \
     && apt-get install -y libpq-dev gcc libjpeg62-turbo-dev zlib1g-dev \
     libwebp-dev libffi-dev \
     && pip install --upgrade pip \
-    && pip install pip-tools==6.12.2
+    && pip install pip-tools
 
 
 # set the working directory

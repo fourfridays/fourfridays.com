@@ -11,7 +11,6 @@ INSTALLED_APPS = [
     "fontawesomefree",
     "pages",
     "wagtail.contrib.forms",
-    "wagtail.contrib.modeladmin",
     "wagtail.contrib.redirects",
     "wagtail.contrib.styleguide",
     "wagtail.contrib.table_block",

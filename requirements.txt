@@ -6,7 +6,7 @@
 #
 anyascii==0.3.2
     # via wagtail
-asgiref==3.6.0
+asgiref==3.7.2
     # via django
 beautifulsoup4==4.11.2
     # via wagtail
@@ -31,7 +31,7 @@ defusedxml==0.7.1
     # via willow
 dj-database-url==2.1.0
     # via -r requirements.in
-django==4.2.7
+django==5.0.2
     # via
     #   -r requirements.in
     #   dj-database-url
@@ -44,6 +44,7 @@ django==4.2.7
     #   django-taggit
     #   django-treebeard
     #   djangorestframework
+    #   laces
     #   wagtail
 django-anymail[mailgun]==10.2
     # via
@@ -51,7 +52,7 @@ django-anymail[mailgun]==10.2
     #   django-anymail
 django-filter==23.4
     # via wagtail
-django-modelcluster==6.1
+django-modelcluster==6.2.1
     # via wagtail
 django-permissionedforms==0.1
     # via wagtail
@@ -88,6 +89,8 @@ jmespath==1.0.1
     #   boto3
     #   botocore
 l18n==2021.3
+    # via wagtail
+laces==0.1.1
     # via wagtail
 openpyxl==3.1.2
     # via wagtail
@@ -130,7 +133,7 @@ soupsieve==2.4.1
     # via beautifulsoup4
 sqlparse==0.4.4
     # via django
-telepath==0.3
+telepath==0.3.1
     # via wagtail
 typing-extensions==4.5.0
     # via
@@ -144,7 +147,7 @@ urllib3==1.26.15
     #   sentry-sdk
 uwsgi==2.0.23
     # via -r requirements.in
-wagtail==5.2.1
+wagtail==6.0.1
     # via -r requirements.in
 webencodings==0.5.1
     # via html5lib

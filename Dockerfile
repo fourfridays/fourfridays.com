@@ -1,4 +1,4 @@
-FROM python:3.11.6-slim-bullseye
+FROM python:3.11.8-slim-bookworm
 
 RUN apt-get update \
     # lipq-dev and gg for psycopg2 build

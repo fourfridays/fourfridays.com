@@ -20,6 +20,4 @@ RUN pip install -r requirements.txt
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 80
-
-# GUNICORN
-CMD ["gunicorn", "--bind", ":80", "--workers", "1", "--threads", "2", "--worker-class", "gevent", "--max-requests-jitter", " 2000", "--max-requests", "1500", "wsgi"]
+CMD uwsgi --http=0.0.0.0:80 --module=wsgi --ignore-sigpipe --ignore-write-errors --disable-write-exception

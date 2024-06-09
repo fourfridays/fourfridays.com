@@ -1,16 +1,9 @@
-# This docker-compose.yml file is used to set up your project in the local
-# development environment *only*. It is *not* used in deployment to our cloud
-# servers, and has no effect whatsoever in cloud deployments.
-#
-# See our Developer Handbook for more information:
-# http://docs.divio.com/en/latest/reference/docker-docker-compose.html
-version: "3.8"
-
 services:
   # The web container is an instance of exactly the same Docker image as your
   # Cloud application container.
   web:
     build: "."
+    container_name: fourfridays-web
     links:
       - "db:postgres"
     # Change the port if you'd like to expose your project locally on a
@@ -32,6 +25,7 @@ services:
   db:
     # Select one of the following db configurations for the database
     image: postgres
+    container_name: fourfridays-db
     environment:
       POSTGRES_DB: "db"
       POSTGRES_HOST_AUTH_METHOD: "trust"

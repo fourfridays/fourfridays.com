@@ -24,7 +24,7 @@ services:
 
   db:
     # Select one of the following db configurations for the database
-    image: postgres
+    image: postgres:latest
     container_name: fourfridays-db
     environment:
       POSTGRES_DB: "db"

@@ -199,9 +199,10 @@ article {
 *            MOSQUE             *
 ===============================*/
 .mosque {
-     $blue: rgba(17, 68, 97, 1);
-    .text-blue { color: $blue }
-    h2 { color: $blue; }
+    h2 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+    }
     a { color: white; }
     .btn-gold {
         background-color: $gold;
@@ -211,7 +212,15 @@ article {
             background-color: $secondary;
         }
     }
-    &.mosque-radial-gradient { background: radial-gradient(#1299ce,#e5c087); }
+    &.mosque-radial-gradient { 
+        background: radial-gradient(#1299ce,#e5c087);
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        p.feature-text-1 {
+            color: #a43f33;
+            font-weight: 800;
+        }
+    }
 }
 
 

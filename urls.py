@@ -27,6 +27,7 @@ urlpatterns = [
     ),
     re_path(r"^sales/$", page_views.sales_inquiry_form),
     re_path(r"^sales/inquiry/", page_views.sales_inquiry_hubspot_form),
+    path("__debug__/", include("debug_toolbar.urls")),
     re_path(r"^sitemap\.xml$", sitemap),
     re_path(r"^admin/", include(wagtailadmin_urls)),
     re_path(r"^documents/", include(wagtaildocs_urls)),

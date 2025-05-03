@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+data:
+  DJANGO_DEBUG: "False"
+  DOMAIN_ALIASES: "fourfridays.com"
+  DJANGO_LOGLEVEL: "info"
+  WAGTAILADMIN_BASE_URL: "https://fourfridays.com"
+  WAGTAIL_SITE_NAME: "Umair Abbasi"
+  CSRF_TRUSTED_ORIGINS: "https://fourfridays.com"

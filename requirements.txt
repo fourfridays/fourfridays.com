@@ -35,6 +35,7 @@ django==5.1.8
     #   django-filter
     #   django-modelcluster
     #   django-permissionedforms
+    #   django-recaptcha
     #   django-storage-url
     #   django-storages
     #   django-stubs-ext
@@ -54,6 +55,10 @@ django-modelcluster==6.2.1
     # via wagtail
 django-permissionedforms==0.1
     # via wagtail
+django-recaptcha==4.1.0
+    # via
+    #   -r requirements.in
+    #   wagtail-django-recaptcha
 django-storage-url==0.12.1
     # via -r requirements.in
 django-storages==1.14.6
@@ -147,6 +152,8 @@ urllib3==1.26.15
     #   requests
     #   sentry-sdk
 wagtail==6.4.1
+    # via -r requirements.in
+wagtail-django-recaptcha==2.1.1
     # via -r requirements.in
 whitenoise==6.9.0
     # via -r requirements.in

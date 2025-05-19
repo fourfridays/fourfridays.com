@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+{% block title %}Inquiry Received | {{ current_site.site_name }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-10 mt-4">
+                <h1>Submission Received</h1>
+                <p>{{ page.thank_you_text|richtext }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

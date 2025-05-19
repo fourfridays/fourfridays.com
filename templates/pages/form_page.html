@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+{% block title %}{{ page.title }} | {{ current_site.site_name }}{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-10">
+                <h1 class="text-center text-uppercase my-3">{{ page.intro|richtext }}</h1>
+                {% if page.description %}
+                    <p>{{ page.description|richtext }}</p>
+                {% endif %}
+                <form class="mb-4" action="{% pageurl page %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

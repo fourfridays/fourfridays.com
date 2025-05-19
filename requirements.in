@@ -13,3 +13,6 @@ psycopg==3.2.6
 sentry-sdk==2.27.0
 wagtail==6.4.1
 whitenoise==6.9.0
+
+django-recaptcha==4.1.0
+wagtail-django-recaptcha==2.1.1

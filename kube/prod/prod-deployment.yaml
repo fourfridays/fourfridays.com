@@ -57,9 +57,9 @@ kind: Ingress
 metadata:
   name: fourfridays
   annotations:
-    kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
+  ingressClassName: traefik
   rules:
     - host: fourfridays.com
       http:
@@ -72,7 +72,7 @@ spec:
                 port:
                   number: 8088
 ---
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: fourfridays-tls
@@ -91,7 +91,7 @@ spec:
     certResolver: le # Uses our certificate resolver to get a certificate automatically!
 ---
 # Enable gzip compression
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: fourfridays-gzip-compress

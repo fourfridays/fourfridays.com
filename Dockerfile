@@ -1,4 +1,4 @@
-FROM python:3.12.10-slim-bookworm
+FROM python:3.13.9-slim-bookworm
 
 # Force Python stdout and stderr streams to be unbuffered.
 ENV PYTHONUNBUFFERED=1

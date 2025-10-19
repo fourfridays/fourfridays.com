@@ -25,4 +25,5 @@ Thumbs.db
 .sass-cache
 grunt/dist
 grunt/node_modules
+/runner
 /.vscode

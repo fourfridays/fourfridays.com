@@ -2,6 +2,8 @@ services:
   web:
     build: "."
     container_name: fourfridays-web
+    depends_on:
+      - db
     links:
       - "db:postgres"
     ports:
@@ -11,11 +13,20 @@ services:
       - "./data:/data:rw"
     command: python manage.py runserver 0.0.0.0:80
     env_file: .env-local
+
   db:
-    image: postgres
+    image: postgres:17
     container_name: fourfridays-db
     environment:
+      POSTGRES_USER: "fourfridays"
       POSTGRES_DB: "db"
       POSTGRES_HOST_AUTH_METHOD: "trust"
+    ports:
+      - '5432:5432'
     volumes:
-      - ".:/app:rw"
+      - db:/var/lib/postgresql/data
+      - ./data/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
+volumes:
+  db:
+    driver: local

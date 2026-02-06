@@ -165,22 +165,38 @@ article {
 
 /* Hero Images */
 .hero-image figure {
-    position: relative; 
+    position: relative;
     width: 100%; /* for IE 6 */
+    overflow: hidden;
+    img {
+        min-height: 320px;
+        object-fit: cover;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(0,0,0,0.55), rgba(0,0,0,0));
+        pointer-events: none;
+    }
     figcaption {
-        max-width: 45%;
+        max-width: 56%;
         background-color: rgba(164, 63, 51, 0.82);
         position: absolute;
-        top: 65%;
-        left: 10%;  
-        transform: translate(-10%, -65%);
+        top: 60%;
+        left: 8%;
+        transform: translate(-8%, -60%);
+        border-radius: 6px;
         h2 {
             color: #f0f0f0;
-            font-size: 1.4rem;
-            letter-spacing: -0.03rem;
+            font-size: 1.7rem;
+            letter-spacing: -0.02rem;
         }
-        small {
+        .hero-caption small {
             color: #e5e5e5;
+        }
+        .hero-cta {
+            margin-top: 0.5rem;
         }
     }
     .photo-credit {
@@ -192,6 +208,17 @@ article {
         color: #fff;
         opacity: 0.5; /* transparency */
         filter: alpha(opacity=50); /* IE transparency */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-image figure {
+        figcaption {
+            max-width: 88%;
+            left: 6%;
+            transform: translate(-6%, -60%);
+            h2 { font-size: 1.25rem; }
+        }
     }
 }
 

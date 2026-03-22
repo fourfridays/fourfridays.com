@@ -1,4 +1,4 @@
-FROM python:3.14.2-slim-bookworm
+FROM python:3.14.3-slim-bookworm
 
 # Force Python stdout and stderr streams to be unbuffered.
 ENV PYTHONUNBUFFERED=1
@@ -19,11 +19,11 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet \
 WORKDIR /app
 
 # Copy the repository files to it
-COPY . /app
 COPY requirements.* /app/
+RUN pip install -U pip pip-tools wheel python-magic \
+    && pip install -r requirements.txt
 
-RUN pip install -U pip pip-tools wheel python-magic && pip install -r requirements.txt
-
+COPY . /app
 RUN python manage.py collectstatic --noinput --clear
 
 # Port used by this container to serve HTTP.
